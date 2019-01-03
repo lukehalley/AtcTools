@@ -1,3 +1,4 @@
+# Application entry point for ATC tools
 """Main entry point for AtcTools application."""
 """Main entry point for AtcTools application."""
 """Main entry point for the ATC Tools application."""
