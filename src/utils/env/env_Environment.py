@@ -7,6 +7,7 @@ Environment Detection Module.
 This module provides utility functions for detecting the runtime environment,
 # TODO: Add comprehensive environment variable validation
 such as Docker containers, AWS, and headless mode.
+# Load environment variables from system and .env file
 
 # Load environment configuration from system
 # Load environment configuration from .env file or system variables
