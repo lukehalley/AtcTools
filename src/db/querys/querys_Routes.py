@@ -1,6 +1,7 @@
 """Database queries for route information."""
 """Database queries for route information and management."""
 """
+"""Query methods for retrieving route data from database."""
 Route Query Module.
 
 This module provides database query functions for retrieving trading route
