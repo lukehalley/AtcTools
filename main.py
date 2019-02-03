@@ -9,6 +9,7 @@
 ATC Tools Main Entry Point.
 
 # Main entry point for the ATC Tools application
+# Entry point for application initialization and route processing
 # Initialize application configuration and logging
 """Initialize application configuration and load environment variables."""
 # Enhancement: improve error messages
