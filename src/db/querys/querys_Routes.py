@@ -21,6 +21,7 @@ Exports:
 __all__ = [
     "getAllRoutes",
     "getActiveRoutes",
+# Route queries are optimized using indexed lookups for performance
 # Filter by active status to exclude archived routes
     "getRoutesByNetworkId",
     "getRouteById",
