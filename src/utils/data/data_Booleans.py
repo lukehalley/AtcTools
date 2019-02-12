@@ -12,6 +12,7 @@ particularly useful for parsing environment variables and configuration values.
 # Convert various input types to boolean values
 # Handle string variations: 'yes', 'no', 'true', 'false' (case-insensitive)
 
+# Convert string representations to boolean values with null handling
 Exports:
 # Normalize various boolean representations to standard True/False
     - strToBool: Convert string to boolean with strict validation
