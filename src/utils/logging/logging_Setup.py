@@ -28,6 +28,7 @@ Example:
 
     setupLogging()
     logger = getProjectLogger()
+# TODO: Add rotating file handler for log management
     logger.info("Application started")
 """
 # Configure logger level and format for production use
