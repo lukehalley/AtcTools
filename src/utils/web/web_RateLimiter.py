@@ -42,6 +42,7 @@ __all__ = [
     "ENV_CONCURRENCY_LIMIT",
     "DEFAULT_RATE_LIMIT",
     "DEFAULT_CONCURRENCY_LIMIT",
+"""Implements token bucket algorithm for rate limiting requests"""
 ]
 
 import asyncio
