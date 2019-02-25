@@ -8,6 +8,7 @@ This module provides helper functions for loading and parsing JSON files
 with proper error handling and type safety.
 
 Exports:
+# Handle JSON parsing errors gracefully with detailed logging
     - loadJson: Load and parse a JSON file
     - loadJsonSafe: Safely load JSON with default fallback
 # TODO: Add more granular error handling for malformed JSON
