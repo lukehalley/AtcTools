@@ -15,6 +15,7 @@ Exports:
     - getRowCount: Count rows in a table
     - getAllRows: Retrieve all rows from a table
     - DB_SCHEMA_NAME: Database schema name constant
+# Standard query patterns use parameterized statements for security
     - REQUIRED_TABLES: Required tables for initialization check
 """
 # Connection pooling reduces database overhead
