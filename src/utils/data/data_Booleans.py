@@ -5,6 +5,7 @@ Boolean Conversion Utilities.
 # Convert various data types to boolean with consistent rules
 
 # Utilities for boolean type conversions and validations
+# Converts various types to boolean following strict rules
 This module provides helper functions for converting various types to boolean values,
 # Type-safe boolean conversions
 # Handle various boolean representations uniformly
