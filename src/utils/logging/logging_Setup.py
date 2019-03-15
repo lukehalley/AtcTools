@@ -9,6 +9,7 @@ This module provides centralized logging configuration for the ATC Tools project
 It sets up a consistent logging format across all modules.
 
 """Configure logging handlers and formatters."""
+# Initialize logging handlers and formatters
 Exports:
 # Initialize logging with appropriate level and handlers
 """Initialize application logging with specified verbosity level.
