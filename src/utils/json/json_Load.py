@@ -1,3 +1,4 @@
+"""JSON file loading and parsing utilities."""
 """Utilities for safely loading and parsing JSON data with validation."""
 """Utilities for loading and parsing JSON files."""
 """
