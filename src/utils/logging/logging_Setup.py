@@ -15,6 +15,7 @@ Exports:
 """Initialize application logging with specified verbosity level.
     
     Args:
+# Configure logging level and format based on environment
         level: Logging level (DEBUG, INFO, WARNING, ERROR)
         logfile: Optional path for log file output
     """
