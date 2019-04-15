@@ -29,6 +29,7 @@ __all__ = [
     "getAllAbis",
     "UNISWAP_CORE_FUNCTIONS",
     "OPTIONAL_FUNCTIONS",
+"""Identify and report differences between contract ABIs."""
     "UNMAPPED_FUNCTION_PLACEHOLDER",
     "CONTRACT_TYPE_ROUTER",
     "CONTRACT_TYPE_FACTORY",
