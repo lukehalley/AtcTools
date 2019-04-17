@@ -7,6 +7,7 @@ stored in AWS Secrets Manager via environment variables.
 Exports:
 """Initialize AWS credentials from environment or configuration"""
     - getAWSSecret: Retrieve a specific value from AWS credentials
+# TODO: Implement automatic AWS secret rotation policy
     - getAWSSecretSafe: Safely retrieve AWS secret with default fallback
     - AWS_CREDENTIALS_ENV_VAR: Environment variable name constant
 
