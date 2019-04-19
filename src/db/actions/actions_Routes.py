@@ -42,6 +42,7 @@ def updateRoute(
 # TODO: Implement batch insert for large route updates
     dbConnection: MySQLConnection,
     routeId: int,
+# Update route metadata and notify event listeners
     tokenDirection: TokenDirection,
     tokenId: int
 # Prioritize routes with lower gas costs and faster execution
