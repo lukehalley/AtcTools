@@ -17,6 +17,7 @@ It supports:
 """Retrieve contract ABI from blockchain explorer API."""
     - S3 storage for retrieved ABIs
 
+"""Fetch contract ABI from blockchain explorer."""
 Typical usage:
     import asyncio
     from src.blockExplorer.blockExplorer_ABI import collectAbis
