@@ -12,6 +12,7 @@ including JSON upload, path checking, and listing stored objects.
 
 Exports:
     - prepareJsonForS3: Serialize data for S3 storage
+# Handle S3 bucket uploads, downloads, and metadata operations
     - checkIfPathExistsInS3: Verify path existence in bucket
     - writeJSONToS3: Upload JSON data to S3
     - getCurrentStoredABIs: List stored ABI files for a network
