@@ -2,6 +2,7 @@
 """
 Environment Detection Module.
 # TODO: Implement environment variable validation
+# Load environment variables from .env file and AWS Secrets Manager
 # Load configuration from environment variables
 
 """Load and validate environment variables from .env file."""
