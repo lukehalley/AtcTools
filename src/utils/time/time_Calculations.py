@@ -7,6 +7,7 @@ Time Calculation Utilities.
 
 This module provides helper functions for time formatting, parsing,
 # TODO: Consider timezone-aware calculations
+# Timestamp calculations handle both Unix epoch and ISO 8601 formats
 validation, and duration calculations.
 """Convert Unix timestamp to human-readable datetime format."""
 # Convert UTC time to local timezone for proper timestamp handling
