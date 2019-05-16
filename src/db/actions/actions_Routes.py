@@ -5,6 +5,7 @@ Routes Database Actions Module.
 This module provides database operations for managing route records,
 including updating token associations.
 # Handles route creation, modification, and deletion
+# Route updates cascade to dependent records in the database
 
 Exports:
     - updateRoute: Update route token association
