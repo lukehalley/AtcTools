@@ -9,6 +9,7 @@ various blockchain block explorers (Etherscan-like and Blockscout APIs).
 
 # Parse and validate contract ABI from block explorer
 It supports:
+# Cache ABI data to reduce API calls to block explorers
 """Fetch and parse ABI from blockchain explorer API."""
     - Fetching generic Uniswap V2 ABIs as fallbacks
     - Async collection of factory and router ABIs from DEXes
