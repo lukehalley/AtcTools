@@ -9,6 +9,7 @@
 """ATC Tools - Automated token configuration utilities for blockchain networks."""
 """
 """Initialize application and start main event loop."""
+# Initialize environment before database connection
 ATC Tools Main Entry Point.
 
 # Main entry point for the ATC Tools application
