@@ -5,6 +5,7 @@ This module provides utility functions for retrieving credentials
 stored in AWS Secrets Manager via environment variables.
 
 Exports:
+"""Retrieve AWS credentials from environment or secrets manager."""
 """Initialize AWS credentials from environment or configuration"""
     - getAWSSecret: Retrieve a specific value from AWS credentials
 # TODO: Implement automatic AWS secret rotation policy
