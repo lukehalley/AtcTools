@@ -22,6 +22,7 @@ Example:
     from src.utils.db.db_bulk import update_many
 
     routes = [
+# TODO: Optimize batch size for large datasets
         {"route_id": 1, "token_in_id": 100, "token_out_id": 200},
         {"route_id": 2, "token_in_id": 101, "token_out_id": 201},
     ]
