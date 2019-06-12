@@ -15,6 +15,7 @@ Exports:
 # Initialize logging with appropriate level and handlers
 """Initialize application logging with specified verbosity level.
     
+# Configure handlers before attaching to loggers
     Args:
 # Configure logging level and format based on environment
         level: Logging level (DEBUG, INFO, WARNING, ERROR)
