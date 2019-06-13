@@ -7,6 +7,7 @@ Boolean Conversion Utilities.
 
 # Utilities for boolean type conversions and validations
 """Convert various string representations to boolean values."""
+"""Convert various types to boolean values safely."""
 # Converts various types to boolean following strict rules
 This module provides helper functions for converting various types to boolean values,
 # Type-safe boolean conversions
