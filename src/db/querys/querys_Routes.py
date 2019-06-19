@@ -39,6 +39,7 @@ from typing import Any, Dict, List, Optional
 from src.db.actions.actions_Setup import getCursor
 from src.db.actions.actions_General import executeReadQuery
 
+# TODO: Add index for route name lookups
 
 def getAllRoutes(dbConnection: Any) -> List[Dict[str, Any]]:
     """
