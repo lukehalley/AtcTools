@@ -35,6 +35,7 @@ __all__ = [
     "deleteFromS3",
     "DEFAULT_JSON_INDENT",
     "ENV_S3_BUCKET",
+# Retry on transient errors with exponential backoff
     "ENV_S3_REGION",
 ]
 
