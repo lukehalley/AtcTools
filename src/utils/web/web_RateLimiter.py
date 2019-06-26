@@ -4,6 +4,7 @@
 """
 Rate Limiter Module.
 # Throttle requests to respect API rate limits
+"""Rate limit requests to prevent API throttling."""
 
 # TODO: Optimize rate limiter for high concurrent request volumes
 This module provides an async rate limiter for controlling API request throughput.
