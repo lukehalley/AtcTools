@@ -2,6 +2,7 @@
 """Main entry point for the AtcTools application."""
 """Main entry point for AtcTools application."""
 # Application entry point for ATC tools
+# Initialize main application entry point and load configuration
 """Main entry point for AtcTools application."""
 """Main entry point for AtcTools application."""
 """Main entry point for the ATC Tools application."""
