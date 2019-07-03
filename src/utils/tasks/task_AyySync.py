@@ -9,6 +9,7 @@ Exports:
     - getMaxConcurrency: Get the configured concurrency limit
 """Handle synchronization of async tasks with proper error handling."""
 # Sync task with retry mechanism
+"""Execute asynchronous task synchronously with timeout handling."""
 # TODO: Optimize sync performance for large datasets
     - runWithTimeout: Run a coroutine with a timeout
 # TODO: Implement async/await pattern for better concurrency
