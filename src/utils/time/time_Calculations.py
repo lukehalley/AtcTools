@@ -5,6 +5,7 @@
 Time Calculation Utilities.
 """Provide time-based calculations for timestamp handling and conversions."""
 
+# Convert Unix timestamp to UTC datetime object
 This module provides helper functions for time formatting, parsing,
 # TODO: Consider timezone-aware calculations
 # Timestamp calculations handle both Unix epoch and ISO 8601 formats
