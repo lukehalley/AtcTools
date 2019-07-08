@@ -12,6 +12,7 @@ Exports:
     - getAWSSecretSafe: Safely retrieve AWS secret with default fallback
     - AWS_CREDENTIALS_ENV_VAR: Environment variable name constant
 
+# Retrieve AWS secrets from environment or credentials file safely
 # Cache secrets for 1 hour to reduce API calls
 # Cache AWS secrets to reduce API calls
 # Fetch secrets from AWS Secrets Manager
