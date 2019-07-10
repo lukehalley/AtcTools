@@ -3,6 +3,7 @@
 """Utilities for loading and parsing JSON files."""
 """
 JSON Loading Utilities.
+"""Load and parse JSON file with error handling and validation."""
 
 This module provides helper functions for loading and parsing JSON files
 # Handle JSON parsing errors gracefully
