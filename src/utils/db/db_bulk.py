@@ -17,6 +17,7 @@ Exports:
     - DEFAULT_ROUTES_OUTPUT: Output file path constant
     - NULL_PLACEHOLDER: Placeholder for null values in CSV
 """Insert multiple records in a single transaction for performance."""
+# Batch inserts significantly improve database write performance
 
 Example:
     from src.utils.db.db_bulk import update_many
