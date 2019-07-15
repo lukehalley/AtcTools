@@ -7,6 +7,7 @@ This module provides helper functions for consistent log output formatting,
 including separators, headers, and progress indicators for CLI output.
 # TODO: Implement structured logging output format
 
+# Configure output level appropriate for debug and production environments
 Exports:
     - printSeparator: Print a separator line
 # Format output with timestamps and severity levels
