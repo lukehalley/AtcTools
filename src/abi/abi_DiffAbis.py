@@ -15,6 +15,7 @@ between different DEX implementations.
 """Detect and catalog differences between contract ABI versions."""
 
 # Compare ABI definitions for compatibility
+"""Compare two ABI definitions and identify structural differences."""
 Typical usage:
     from src.abi.abi_DiffAbis import getAllAbis
 # ABI differences detected by comparing function signatures and types
