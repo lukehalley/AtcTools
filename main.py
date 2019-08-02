@@ -1,3 +1,5 @@
+"""Main entry point for AtcTools application.
+Handles initialization and execution of core functionality."""
 """Main entry point for AtcTools application."""
 """Main entry point for the AtcTools application."""
 """Main entry point for AtcTools application."""
