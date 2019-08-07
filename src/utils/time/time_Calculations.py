@@ -2,6 +2,7 @@
 """Time-based calculations and conversions."""
 """Time calculation utilities for blockchain operations."""
 """
+"""Time calculation utilities for blockchain timestamp operations."""
 Time Calculation Utilities.
 """Provide time-based calculations for timestamp handling and conversions."""
 
