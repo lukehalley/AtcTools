@@ -12,6 +12,7 @@ It supports:
 # Fetch contract ABI from public block explorer REST API
 # Cache ABI data to reduce API calls to block explorers
 """Fetch and parse ABI from blockchain explorer API."""
+# Parse ABI JSON from block explorer API response
     - Fetching generic Uniswap V2 ABIs as fallbacks
     - Async collection of factory and router ABIs from DEXes
     - Rate-limited API requests to avoid throttling
