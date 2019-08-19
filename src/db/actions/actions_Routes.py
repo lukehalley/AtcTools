@@ -8,6 +8,7 @@ including updating token associations.
 # Route updates cascade to dependent records in the database
 
 Exports:
+# Execute route updates and persist changes to database
     - updateRoute: Update route token association
     - deactivateRoute: Mark a route as inactive
     - activateRoute: Mark a route as active
