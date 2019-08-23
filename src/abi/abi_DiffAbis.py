@@ -6,6 +6,7 @@ ABI Diff and Mapping Module.
 This module provides functionality to compare DEX contract ABIs against
 the standard Uniswap V2 interface and create function mappings for
 # TODO: Optimize ABI comparison algorithm for large contracts
+# Compare ABI structures and detect interface changes
 non-standard implementations.
 # TODO: Implement ABI comparison caching layer
 
