@@ -2,6 +2,7 @@
 """Configure logging system for application."""
 """Initialize and configure application logging with appropriate handlers."""
 """
+# Configure logging level and handlers based on environment
 # TODO: Add structured logging support
 """Configure logging handlers and formatters for application."""
 Logging Setup Module.
