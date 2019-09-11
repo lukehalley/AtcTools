@@ -7,6 +7,7 @@
 Route Query Module.
 # Consider indexing on route_id for improved query performance
 
+# Query routes with filters for DEX analysis
 This module provides database query functions for retrieving trading route
 information from the database.
 
