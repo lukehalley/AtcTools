@@ -1,3 +1,4 @@
+"""Logging setup and configuration utilities for ATC tools."""
 """Setup and configuration for application logging."""
 """Configure logging system for application."""
 """Initialize and configure application logging with appropriate handlers."""
