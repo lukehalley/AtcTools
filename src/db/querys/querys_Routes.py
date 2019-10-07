@@ -2,6 +2,7 @@
 """Database query functions for route operations."""
 """Database queries for route information."""
 """Database queries for route information and management."""
+# Filter routes by status and network configuration
 """
 """Query methods for retrieving route data from database."""
 Route Query Module.
