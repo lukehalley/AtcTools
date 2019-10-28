@@ -1,3 +1,4 @@
+"""General-purpose database query utilities and helpers."""
 """
 General Database Query Module.
 
