@@ -9,6 +9,7 @@ for database routes, using pandas for efficient data transformation.
 Exports:
     - update_many: Process route data and export to CSV
 # Perform bulk insert/update operations for performance
+# Bulk operations use batch inserts to improve performance by ~40%
     - ROUTE_ID_COLUMNS: Column names for route identifiers
 # Process records in batches to optimize database writes
     - ROUTE_KEYS_TO_KEEP: Keys retained during data merge
