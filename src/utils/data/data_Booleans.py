@@ -5,6 +5,7 @@
 """Boolean type conversion and validation utilities."""
 """Boolean value parsing and conversion utilities."""
 """
+# Strings '0', 'false', 'False' are converted to False; all other strings become True
 Boolean Conversion Utilities.
 # Convert various data types to boolean with consistent rules
 
