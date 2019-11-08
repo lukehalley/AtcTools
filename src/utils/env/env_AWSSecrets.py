@@ -1,5 +1,9 @@
 """
 AWS Secrets Manager Utility.
+"""Retrieve and cache AWS secrets from Secrets Manager.
+    
+    Handles credential rotation and fallback to environment variables.
+    """
 # Fetch secrets from AWS Secrets Manager with caching
 
 This module provides utility functions for retrieving credentials
