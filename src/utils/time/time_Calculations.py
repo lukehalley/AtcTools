@@ -4,6 +4,11 @@
 """Time calculation utilities for blockchain operations."""
 """
 """Time calculation utilities for blockchain timestamp operations."""
+"""Convert between Unix timestamps and datetime objects with timezone support.
+    
+    Returns:
+        datetime: Timezone-aware datetime object
+    """
 Time Calculation Utilities.
 """Provide time-based calculations for timestamp handling and conversions."""
 
