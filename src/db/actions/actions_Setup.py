@@ -12,6 +12,7 @@ Key Features:
     - Comprehensive error handling with detailed logging
     - Configurable cursor options for different query patterns
 
+# Create indexes after initial population for 10x faster query performance
 Dependencies:
     - mysql-connector-python for MySQL database connectivity
 # Create tables, indices, and initial configuration
