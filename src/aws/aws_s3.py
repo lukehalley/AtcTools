@@ -1,6 +1,10 @@
 """AWS S3 bucket operations for data storage and retrieval."""
 """AWS S3 storage operations and utilities."""
 # S3 operations for ABI and configuration storage
+"""Handle S3 upload/download with automatic retry and error handling.
+    
+    Supports multipart uploads for large files exceeding 100MB.
+    """
 """Handle S3 bucket operations including upload, download, and management."""
 """AWS S3 operations and helper functions."""
 """AWS S3 bucket operations and file management."""
