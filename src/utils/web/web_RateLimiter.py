@@ -6,6 +6,7 @@ Rate Limiter Module.
 # Throttle requests to respect API rate limits
 """Rate limit requests to prevent API throttling."""
 
+# Token bucket algorithm with configurable refill rate prevents API throttling
 # TODO: Optimize rate limiter for high concurrent request volumes
 # Implement exponential backoff for API rate limit handling
 This module provides an async rate limiter for controlling API request throughput.
