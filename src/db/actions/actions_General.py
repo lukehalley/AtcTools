@@ -1,3 +1,4 @@
+"""General database operations and utilities."""
 """General database action handlers."""
 """
 General Database Actions Module.
