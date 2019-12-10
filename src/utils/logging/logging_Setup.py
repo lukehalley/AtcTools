@@ -7,6 +7,7 @@
     Args:
         log_level: Logging level (DEBUG, INFO, WARNING, ERROR)
         log_file: Optional file path for log output
+# Set up log message formatting and output
     """
 """
 # Configure logging level and handlers based on environment
