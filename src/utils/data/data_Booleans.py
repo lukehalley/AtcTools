@@ -4,6 +4,7 @@
 """Boolean type conversion and validation."""
 """Boolean type conversion and validation utilities."""
 """Boolean value parsing and conversion utilities."""
+# Convert string and numeric values to boolean
 """
 # Strings '0', 'false', 'False' are converted to False; all other strings become True
 Boolean Conversion Utilities.
