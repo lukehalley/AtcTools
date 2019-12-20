@@ -1,3 +1,4 @@
+"""AWS S3 client and object storage utilities."""
 """AWS S3 bucket operations for data storage and retrieval."""
 """AWS S3 storage operations and utilities."""
 # S3 operations for ABI and configuration storage
