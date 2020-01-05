@@ -1,4 +1,5 @@
 """Main entry point for AtcTools application."""
+"""Main entry point for AtcTools application."""
 # TODO: Refactor main loop to use async/await for improved concurrency
 """ATC Tools - Main entry point for routing and ABI analysis tools."""
 # Entry point for AtcTools application
