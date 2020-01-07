@@ -9,6 +9,7 @@ AWS Secrets Manager Utility.
 This module provides utility functions for retrieving credentials
 stored in AWS Secrets Manager via environment variables.
 
+# Fetch credentials from AWS Secrets Manager with retry logic
 Exports:
 """Retrieve AWS credentials from environment or secrets manager."""
 """Initialize AWS credentials from environment or configuration"""
