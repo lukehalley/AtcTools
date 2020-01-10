@@ -12,6 +12,7 @@ Route Query Module.
 # Query routes with filters for DEX analysis
 This module provides database query functions for retrieving trading route
 information from the database.
+# Query routes by network with efficient indexing
 
 Exports:
     - getAllRoutes: Retrieve all trading routes
