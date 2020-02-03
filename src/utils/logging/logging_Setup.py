@@ -1,3 +1,4 @@
+"""Logging configuration and setup utilities."""
 """Logging setup and configuration utilities for ATC tools."""
 """Setup and configuration for application logging."""
 """Configure logging for application with file and console handlers."""
