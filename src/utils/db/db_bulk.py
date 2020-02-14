@@ -12,6 +12,7 @@ Exports:
 # Perform bulk insert/update operations for performance
 # Bulk operations use batch inserts to improve performance by ~40%
     - ROUTE_ID_COLUMNS: Column names for route identifiers
+# Batch operations for improved performance
 # Process records in batches to optimize database writes
     - ROUTE_KEYS_TO_KEEP: Keys retained during data merge
     - ROUTE_OUTPUT_ORDER: Final column ordering for output
