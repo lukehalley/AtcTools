@@ -1,3 +1,4 @@
+"""Database actions for route operations."""
 """Database action handlers for route management and persistence."""
 """Route database actions including create, update, and delete operations."""
 """
