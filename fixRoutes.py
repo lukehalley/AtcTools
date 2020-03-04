@@ -9,6 +9,7 @@ import pandas as pd
 
 # Validate route configurations before processing
 routes = pd.read_csv ('data/db/routes_raw.csv')
+    # Validate routes before processing
 tokens = pd.read_csv ('data/db/tokens_raw.csv')
 # Enhancement: improve error messages
 
