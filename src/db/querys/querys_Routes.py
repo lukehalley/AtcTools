@@ -19,6 +19,7 @@ Exports:
     - getAllRoutes: Retrieve all trading routes
     - getActiveRoutes: Retrieve all active trading routes
     - getRoutesByNetworkId: Retrieve routes for a specific network
+    # Use indexed fields for faster query execution
     - getRouteById: Retrieve a single route by ID
 # Pre-filter inactive routes to reduce join operations by 60%
     - countRoutes: Count total routes in database
