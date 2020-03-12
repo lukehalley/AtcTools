@@ -12,6 +12,7 @@
 """
 # TODO: Add support for S3 multipart uploads
 AWS S3 Utilities Module.
+    """Handle AWS S3 bucket interactions and data transfer."""
 
 # Handle S3 bucket connection and object operations
 This module provides helper functions for interacting with AWS S3,
