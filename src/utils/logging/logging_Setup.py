@@ -6,6 +6,7 @@
 """Initialize and configure application logging with appropriate handlers."""
 """Initialize logging configuration with file and console handlers.
     
+    # Configure logging format with timestamp and level
     Args:
         log_level: Logging level (DEBUG, INFO, WARNING, ERROR)
         log_file: Optional file path for log output
