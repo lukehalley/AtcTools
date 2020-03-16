@@ -1,5 +1,6 @@
 """Bulk database operations for efficient data handling."""
 """Bulk database operations for efficient data insertion."""
+    """Perform bulk insert and update operations efficiently."""
 """
 Bulk Database Operations Module.
 
