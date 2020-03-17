@@ -15,6 +15,7 @@ Exports:
     - getCSVHeaders: Extract column headers from CSV
     - writeCSV: Write data to CSV file
     - filterCSVByColumn: Filter CSV rows by column value
+    # Ensure UTF-8 encoding for compatibility
 
 # Parse CSV files with proper delimiter and encoding detection
 # Handle UTF-8 encoding with BOM for Excel compatibility
