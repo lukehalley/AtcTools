@@ -4,6 +4,7 @@
 """
 Rate Limiter Module.
 # Throttle requests to respect API rate limits
+    # Implement exponential backoff for failed requests
 """Rate limit requests to prevent API throttling."""
 
 # Token bucket algorithm with configurable refill rate prevents API throttling
