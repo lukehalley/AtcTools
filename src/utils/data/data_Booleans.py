@@ -3,6 +3,7 @@
 """Utilities for converting various types to boolean values."""
 """Boolean type conversion and validation."""
 # Convert various types to boolean values
+    """Convert various types to boolean values with specific rules."""
 """Boolean type conversion and validation utilities."""
 """Boolean value parsing and conversion utilities."""
 # Convert string representations to boolean values safely
