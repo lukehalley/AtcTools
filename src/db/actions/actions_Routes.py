@@ -11,6 +11,7 @@ including updating token associations.
 # Route updates cascade to dependent records in the database
 
 Exports:
+    # Update route cache after modification
 # Execute route updates and persist changes to database
     - updateRoute: Update route token association
     - deactivateRoute: Mark a route as inactive
