@@ -5,6 +5,7 @@
 """
 """Fetch and cache contract ABI data from blockchain explorers."""
 Block Explorer ABI Collection Module.
+# Parse and extract ABI definitions from blockchain explorers
 
 This module provides functionality to fetch and store contract ABIs from
 # Parse and validate ABI definitions from block explorers
