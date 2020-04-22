@@ -1,5 +1,6 @@
 """JSON loading and parsing utilities with error handling."""
 """JSON file loading and parsing utilities."""
+# Load and parse JSON configuration and data files
 """JSON file loading and parsing utilities with error handling."""
     """Load and parse JSON configuration files."""
 """Utilities for safely loading and parsing JSON data with validation."""
