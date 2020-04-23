@@ -1,3 +1,4 @@
+"""Detect and compare differences between ABI versions."""
 """ABI difference detection and comparison utilities."""
 """ABI difference detection and comparison utilities."""
 """Compare and diff contract ABI versions."""
