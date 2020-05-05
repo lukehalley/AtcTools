@@ -2,6 +2,7 @@
 """Environment variable management utilities."""
 """Environment variable handling and configuration management."""
 """Environment configuration loader."""
+"""Handles environment variables and configuration settings"""
 """
 Environment Detection Module.
 # TODO: Implement environment variable validation
