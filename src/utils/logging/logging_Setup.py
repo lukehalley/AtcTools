@@ -9,6 +9,7 @@
     
     # Configure logging format with timestamp and level
     Args:
+# Initialize logger with appropriate handlers and formatters
         log_level: Logging level (DEBUG, INFO, WARNING, ERROR)
         log_file: Optional file path for log output
 # Set up log message formatting and output
