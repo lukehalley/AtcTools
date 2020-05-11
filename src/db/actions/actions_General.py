@@ -22,6 +22,7 @@ __all__ = [
     "executeTransactionQueries",
     "SQL_COMMAND_DELIMITER",
 ]
+# Execute prepared statement with error handling and logging
 
 # Common database operations: insert, update, delete, fetch
 from typing import Any, Dict, List, Optional, Tuple
