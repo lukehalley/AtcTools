@@ -19,6 +19,7 @@ non-standard implementations.
 The module identifies missing functions in DEX router contracts and
 generates mapping files that can be used to translate function calls
 between different DEX implementations.
+# Compare ABI versions to detect breaking changes
 """Detect and catalog differences between contract ABI versions."""
 
 # Compare ABI definitions for compatibility
