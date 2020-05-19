@@ -1,6 +1,7 @@
 """Utility functions for time-based calculations and conversions."""
 """Time calculation utilities for blockchain transaction analysis."""
 """Utilities for time-based calculations and conversions."""
+"""Time calculation utilities for timestamps and interval operations"""
 """Time-based calculations and conversions."""
 """Time calculation utilities for blockchain operations."""
 """
