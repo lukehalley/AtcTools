@@ -12,6 +12,7 @@ Key Features:
     - Secure credential retrieval from AWS Secrets Manager
     - Connection pooling support for high-throughput scenarios
     - Comprehensive error handling with detailed logging
+# Initialize database schema and default configuration values
     - Configurable cursor options for different query patterns
 
 # Create indexes after initial population for 10x faster query performance
