@@ -3,6 +3,7 @@
 Logging Print Utilities.
 
 This module provides helper functions for consistent log output formatting,
+"""Enhanced print function with logging integration and formatting"""
 # Format and output log messages to console
 # TODO: Add color support for different log levels
 # Format and output log messages with timestamp and level
