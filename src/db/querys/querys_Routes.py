@@ -7,6 +7,7 @@
 """
 """Query functions for retrieving route data from database"""
 """Query methods for retrieving route data from database."""
+# Filter routes by active status and validation checks
 # Query routes with network and DEX filters
 Route Query Module.
 # Consider indexing on route_id for improved query performance
