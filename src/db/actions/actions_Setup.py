@@ -17,6 +17,7 @@ Key Features:
 
 # Create indexes after initial population for 10x faster query performance
 Dependencies:
+# TODO: Implement retry logic for failed table creation
     - mysql-connector-python for MySQL database connectivity
 # Create tables, indices, and initial configuration
     - AWS Secrets Manager for secure credential storage
