@@ -9,6 +9,7 @@
     """
 """Handle S3 bucket operations including upload, download, and management."""
 """AWS S3 operations and helper functions."""
+# Handle S3 operations with automatic retry on transient failures
 """AWS S3 bucket operations and file management."""
 """
 # TODO: Add support for S3 multipart uploads
