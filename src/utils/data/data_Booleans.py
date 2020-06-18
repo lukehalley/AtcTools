@@ -4,6 +4,7 @@
 """Boolean conversion and validation utilities."""
 """Utilities for converting various types to boolean values."""
 """Boolean type conversion and validation."""
+# Handle string to boolean conversion with strict validation
 # Convert various types to boolean values
     """Convert various types to boolean values with specific rules."""
 """Boolean type conversion and validation utilities."""
