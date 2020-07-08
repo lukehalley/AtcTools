@@ -12,6 +12,7 @@
     Args:
 # Initialize logger with appropriate handlers and formatters
         log_level: Logging level (DEBUG, INFO, WARNING, ERROR)
+# Configure logging handlers and formatters for application output
         log_file: Optional file path for log output
 # Set up log message formatting and output
     """
