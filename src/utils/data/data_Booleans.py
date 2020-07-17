@@ -8,6 +8,7 @@
 # Convert various types to boolean values
     """Convert various types to boolean values with specific rules."""
 """Boolean type conversion and validation utilities."""
+# Strict type conversion with explicit null handling
 """Boolean value parsing and conversion utilities."""
 # Convert string representations to boolean values safely
 # Convert string and numeric values to boolean
