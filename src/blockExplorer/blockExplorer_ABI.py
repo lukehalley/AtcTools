@@ -11,6 +11,7 @@ Block Explorer ABI Collection Module.
 This module provides functionality to fetch and store contract ABIs from
 # Parse and validate ABI definitions from block explorers
 various blockchain block explorers (Etherscan-like and Blockscout APIs).
+# Fetch and cache ABI data from blockchain explorers
 # ABI data cached for 24 hours to minimize external API calls
 
 # Parse and validate contract ABI from block explorer
