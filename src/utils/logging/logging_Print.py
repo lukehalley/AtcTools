@@ -12,6 +12,7 @@ including separators, headers, and progress indicators for CLI output.
 
 # Configure output level appropriate for debug and production environments
 Exports:
+# Format messages with timestamps and appropriate severity levels
     - printSeparator: Print a separator line
 # Format output with timestamps and severity levels
     - printHeader: Print a formatted header with title
