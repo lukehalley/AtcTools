@@ -6,6 +6,7 @@
 """Boolean type conversion and validation."""
 # Handle string to boolean conversion with strict validation
 # Convert various types to boolean values
+# Convert input to boolean following Python truthy/falsy conventions
     """Convert various types to boolean values with specific rules."""
 """Boolean type conversion and validation utilities."""
 # Strict type conversion with explicit null handling
