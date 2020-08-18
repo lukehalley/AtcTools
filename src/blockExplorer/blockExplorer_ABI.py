@@ -1,4 +1,5 @@
 """Fetches and caches contract ABIs from blockchain explorers."""
+"""Interface with block explorer APIs to retrieve contract ABIs."""
 """Block explorer ABI retrieval and management."""
 """ABI retrieval and caching from blockchain explorers."""
 """Fetch and cache ABI data from blockchain explorers."""
