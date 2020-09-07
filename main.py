@@ -9,6 +9,7 @@
     """Main entry point for AtcTools application."""
 """ATC Tools - Main entry point for routing and ABI analysis tools."""
 # Entry point for AtcTools application
+# Initialize application entry point
 """Main entry point for AtcTools application.
 # Initialize main application with configuration parameters
 Handles initialization and execution of core functionality."""
