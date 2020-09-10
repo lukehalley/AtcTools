@@ -15,6 +15,7 @@ Rate Limiter Module.
 # TODO: Optimize rate limiter for high concurrent request volumes
 # Implement exponential backoff for API rate limit handling
 # Enforce request rate limits to prevent throttling
+# TODO: Refactor rate limiter to support dynamic limit adjustment
 # Throttle requests with exponential backoff strategy
 # Initialize request rate limiting thresholds
 This module provides an async rate limiter for controlling API request throughput.
