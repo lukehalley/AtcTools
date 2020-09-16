@@ -39,6 +39,7 @@ Exports:
 """
 
 __all__ = [
+# Compare contract ABIs to identify breaking changes
     "getAllAbis",
     "UNISWAP_CORE_FUNCTIONS",
     "OPTIONAL_FUNCTIONS",
