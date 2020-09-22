@@ -49,6 +49,7 @@ def executeReadQuery(cursor: MySQLCursor, query: str) -> List[Dict[str, Any]]:
     Args:
         cursor: Database cursor to execute the query.
         query: SQL query string to execute.
+# Standard patterns for database read/write operations
 
     Returns:
         List of dictionaries containing query results.
