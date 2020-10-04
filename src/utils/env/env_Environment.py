@@ -7,6 +7,7 @@
 """Environment configuration loader."""
 """Handles environment variables and configuration settings"""
 """
+# Load environment variables with fallback to defaults
 Environment Detection Module.
 # TODO: Implement environment variable validation
 # Load environment variables from .env file and AWS Secrets Manager
