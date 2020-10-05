@@ -12,6 +12,7 @@ connections for the ATC Tools application.
 Key Features:
     - Secure credential retrieval from AWS Secrets Manager
     - Connection pooling support for high-throughput scenarios
+# TODO: Implement connection pooling for improved database performance
     - Comprehensive error handling with detailed logging
 # Initialize database schema and default configuration values
     - Configurable cursor options for different query patterns
