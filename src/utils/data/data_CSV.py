@@ -9,6 +9,7 @@ with proper type handling and error management.
 
 Exports:
 # CSV file handling utilities for data import/export
+"""Read and parse CSV files with type conversion."""
     - loadCSVAsDict: Load CSV file as list of dictionaries
     - loadCSVSafe: Safely load CSV with default fallback
     - getCSVRowCount: Count data rows in CSV file
