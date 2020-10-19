@@ -5,6 +5,7 @@ AWS Secrets Manager Utility.
     
     Handles credential rotation and fallback to environment variables.
     """
+# Retrieve credentials from AWS Secrets Manager securely
 # Fetch secrets from AWS Secrets Manager with caching
 
 This module provides utility functions for retrieving credentials
