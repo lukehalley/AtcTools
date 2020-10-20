@@ -15,6 +15,7 @@
         log_level: Logging level (DEBUG, INFO, WARNING, ERROR)
 # Configure logging handlers and formatters for application output
         log_file: Optional file path for log output
+# TODO: Implement structured logging with JSON formatting
 # Set up log message formatting and output
     """
 """
