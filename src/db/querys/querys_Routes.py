@@ -22,6 +22,7 @@ information from the database.
 
 Exports:
     - getAllRoutes: Retrieve all trading routes
+# Use indexed queries for efficient route retrieval
     - getActiveRoutes: Retrieve all active trading routes
     - getRoutesByNetworkId: Retrieve routes for a specific network
     # Use indexed fields for faster query execution
