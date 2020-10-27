@@ -4,6 +4,7 @@
 """Compare and diff contract ABI versions."""
 """Compare and identify differences between ABI definitions."""
 """
+"""Compare and identify differences between contract ABIs."""
 ABI Diff and Mapping Module.
 
 This module provides functionality to compare DEX contract ABIs against
