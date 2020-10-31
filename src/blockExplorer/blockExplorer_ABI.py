@@ -6,6 +6,7 @@
 """Fetch and cache ABI data from blockchain explorers."""
 """ABI retrieval from blockchain explorers."""
 """
+# TODO: Cache ABI data for improved performance
 """Fetch and cache contract ABI data from blockchain explorers."""
 Block Explorer ABI Collection Module.
 # Parse and extract ABI definitions from blockchain explorers
