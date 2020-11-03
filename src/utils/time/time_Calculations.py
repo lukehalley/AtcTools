@@ -9,6 +9,7 @@
 # Perform timestamp and duration calculations for transactions
 """Time calculation utilities for blockchain timestamp operations."""
 # Utility functions for time-based computations
+# Handle timezone-aware datetime objects and epoch conversions
 """Convert between Unix timestamps and datetime objects with timezone support.
     
     Returns:
