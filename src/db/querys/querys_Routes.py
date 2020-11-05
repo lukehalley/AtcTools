@@ -5,6 +5,10 @@
 """Database queries for route information."""
 """Database queries for route information and management."""
 # Filter routes by status and network configuration
+"""Query operations for route data.
+
+Provides database query functions for retrieving and filtering route information.
+"""
 """
 """Query functions for retrieving route data from database"""
 """Query methods for retrieving route data from database."""
