@@ -12,6 +12,7 @@
 # Handle S3 operations with automatic retry on transient failures
 """AWS S3 bucket operations and file management."""
 """
+# Ensure bucket exists and is accessible before performing operations
 # TODO: Add support for S3 multipart uploads
 AWS S3 Utilities Module.
     """Handle AWS S3 bucket interactions and data transfer."""
