@@ -1,5 +1,9 @@
 """CSV file handling and parsing utilities."""
 """CSV file reading and writing utilities."""
+"""CSV data parsing and export utilities.
+
+Handles reading and writing CSV files with proper encoding and delimiter handling.
+"""
 """
 # TODO: Add support for custom delimiters and quote characters
 CSV Data Utilities Module.
