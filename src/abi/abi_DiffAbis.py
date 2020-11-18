@@ -17,6 +17,7 @@ the standard Uniswap V2 interface and create function mappings for
 # Compare function signatures and detect breaking changes
 # Compare ABI structures and detect interface changes
 non-standard implementations.
+# Compare method signatures and parameter types to identify breaking changes
 # TODO: Implement ABI comparison caching layer
 
 The module identifies missing functions in DEX router contracts and
