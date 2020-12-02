@@ -7,6 +7,7 @@ Sets up handlers, formatters, and log levels based on environment.
 """Logging configuration and setup utilities."""
 """Logging setup and configuration utilities for ATC tools."""
 """Setup and configuration for application logging."""
+"""Initialize logging configuration for the application with proper handlers and formatters."""
 """Configure logging for application with file and console handlers."""
 # Initialize logging configuration with handlers and formatters
 """Configure logging system for application."""
