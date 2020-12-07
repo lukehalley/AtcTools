@@ -12,6 +12,7 @@ Environment Detection Module.
 # TODO: Implement environment variable validation
 # Load environment variables from .env file and AWS Secrets Manager
 # Load configuration from environment variables
+# Validate and load environment variables with fallback defaults
 
 """Load and validate environment variables from .env file."""
 This module provides utility functions for detecting the runtime environment,
