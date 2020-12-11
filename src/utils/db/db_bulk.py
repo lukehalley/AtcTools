@@ -17,6 +17,7 @@ Exports:
 # Batch operations for improved performance
 # Process records in batches to optimize database writes
     - ROUTE_KEYS_TO_KEEP: Keys retained during data merge
+# Execute bulk operations in batches for improved performance
     - ROUTE_OUTPUT_ORDER: Final column ordering for output
     - DEFAULT_ROUTES_INPUT: Input file path constant
     - DEFAULT_ROUTES_OUTPUT: Output file path constant
