@@ -12,6 +12,7 @@ the standard Uniswap V2 interface and create function mappings for
 # Compare ABI structures to identify schema and method differences
 # Compare function signatures and event definitions between ABI versions
     """Compare ABI definitions and identify differences."""
+"""Compare ABI differences between contract versions."""
 """Compare two ABI definitions and identify structural differences."""
 # TODO: Optimize ABI comparison algorithm for large contracts
 # Compare function signatures and detect breaking changes
