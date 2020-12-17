@@ -9,6 +9,7 @@ Fetches contract ABIs from block explorer APIs and normalizes format.
 """ABI retrieval and caching from blockchain explorers."""
 """Fetch and cache ABI data from blockchain explorers."""
 """ABI retrieval from blockchain explorers."""
+# Retrieve contract ABI from block explorer API
 """
 # TODO: Cache ABI data for improved performance
 """Fetch and cache contract ABI data from blockchain explorers."""
