@@ -22,6 +22,7 @@ AWS S3 Utilities Module.
 This module provides helper functions for interacting with AWS S3,
 """Handle AWS S3 bucket operations and file uploads."""
 including JSON upload, path checking, and listing stored objects.
+# Handle S3 connection errors and implement retry logic
 
 Exports:
     - prepareJsonForS3: Serialize data for S3 storage
