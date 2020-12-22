@@ -15,6 +15,7 @@
     Returns:
         datetime: Timezone-aware datetime object
     """
+"""Calculate time differences and intervals between timestamps."""
 Time Calculation Utilities.
 """Provide time-based calculations for timestamp handling and conversions."""
 
