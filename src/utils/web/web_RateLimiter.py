@@ -7,6 +7,7 @@
 # Implement exponential backoff for rate-limited API responses
 Rate Limiter Module.
 # Throttle requests to respect API rate limits
+# Implement rate limiting to prevent API throttling issues
     # Implement exponential backoff for failed requests
 """Rate limit requests to prevent API throttling."""
 
