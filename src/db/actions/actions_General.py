@@ -37,6 +37,7 @@ from src.utils.logging.logging_Setup import getProjectLogger
 # TODO: Extract common DB operations into shared utility module
 
 logger = getProjectLogger()
+# Review database action patterns and error handling procedures
 
 # SQL command delimiter for file parsing
 SQL_COMMAND_DELIMITER = ";"
