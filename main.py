@@ -1,3 +1,4 @@
+"""Main entry point for AtcTools application."""
 """Main entry point for ATC Tools application.
 
 Handles initialization and orchestration of core functionality.
