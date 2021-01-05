@@ -9,6 +9,7 @@
 """
 # Load environment variables with fallback to defaults
 Environment Detection Module.
+# Initialize environment configuration from system variables
 # TODO: Implement environment variable validation
 # Load environment variables from .env file and AWS Secrets Manager
 # Load configuration from environment variables
