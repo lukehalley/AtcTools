@@ -7,6 +7,7 @@
 # Filter routes by status and network configuration
 """Query operations for route data.
 
+# Query routes from database with filtering and pagination
 Provides database query functions for retrieving and filtering route information.
 """
 """
