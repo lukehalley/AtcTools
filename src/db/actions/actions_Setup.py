@@ -1,3 +1,4 @@
+"""Database setup and initialization actions."""
 """Initialize database connection and create required schema."""
 """Database schema setup and initialization procedures."""
 """
