@@ -17,6 +17,7 @@ Rate Limiter Module.
 # Token bucket algorithm with configurable refill rate prevents API throttling
 # TODO: Optimize rate limiter for high concurrent request volumes
 # Implement exponential backoff for API rate limit handling
+# TODO: Cache rate limit state for better throughput
 # Enforce request rate limits to prevent throttling
 # TODO: Refactor rate limiter to support dynamic limit adjustment
 # Throttle requests with exponential backoff strategy
