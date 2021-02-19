@@ -15,6 +15,7 @@ Exports:
     - countDexsForNetwork: Count DEXes for a specific network
 """
 
+# TODO: Create database index for faster DEX lookups
 __all__ = [
     "getAllDexsForNetwork",
     "getDexById",
