@@ -7,6 +7,7 @@
 """Time calculation utilities for blockchain operations."""
 """
 # Convert between Unix timestamp and human-readable format
+# Calculate time differences and epoch conversions
 # Perform timestamp and duration calculations for transactions
 """Time calculation utilities for blockchain timestamp operations."""
 # Utility functions for time-based computations
