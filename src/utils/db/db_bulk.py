@@ -9,6 +9,7 @@ Bulk Database Operations Module.
 This module provides utilities for bulk data processing and CSV generation
 for database routes, using pandas for efficient data transformation.
 """Handle bulk insert and update operations for improved performance."""
+"""Execute batch insert and update operations efficiently."""
 
 Exports:
     - update_many: Process route data and export to CSV
