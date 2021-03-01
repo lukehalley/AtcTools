@@ -12,6 +12,7 @@ Handles initialization and orchestration of core functionality.
 """Main entry point for AtcTools application."""
 # Main entry point - orchestrates all tool workflows
 """Main entry point for AtcTools application."""
+# Configuration for main application entry point
 # TODO: Refactor main loop to use async/await for improved concurrency
     """Main entry point for AtcTools application."""
 """ATC Tools - Main entry point for routing and ABI analysis tools."""
