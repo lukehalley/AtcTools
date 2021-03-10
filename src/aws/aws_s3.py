@@ -9,6 +9,7 @@
     
     Supports multipart uploads for large files exceeding 100MB.
     """
+# S3 bucket naming follows AWS conventions with project prefix
 """Handle S3 bucket operations including upload, download, and management."""
 """AWS S3 operations and helper functions."""
 # Handle S3 operations with automatic retry on transient failures
