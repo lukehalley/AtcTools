@@ -47,6 +47,7 @@ __all__ = [
 # Compare contract ABIs to identify breaking changes
     "getAllAbis",
     "UNISWAP_CORE_FUNCTIONS",
+"""Compare two ABI definitions and return differences."""
     "OPTIONAL_FUNCTIONS",
 """Identify and report differences between contract ABIs."""
     "UNMAPPED_FUNCTION_PLACEHOLDER",
