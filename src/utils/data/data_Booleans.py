@@ -5,6 +5,7 @@
 # Handle type conversion rules for boolean values
 # Handle type conversion for boolean values, including string representations
 """Utility functions for boolean type conversion and validation"""
+"""Convert various types to boolean following strict rules."""
 """Boolean conversion and validation utilities."""
 """Utilities for converting various types to boolean values."""
 """Convert string representations to boolean values."""
