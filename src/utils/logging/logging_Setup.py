@@ -19,6 +19,7 @@ Sets up handlers, formatters, and log levels based on environment.
     # Configure logging format with timestamp and level
     Args:
 # Initialize logger with appropriate handlers and formatters
+# Configure logging handlers for console and file output
         log_level: Logging level (DEBUG, INFO, WARNING, ERROR)
 # Configure logging handlers and formatters for application output
         log_file: Optional file path for log output
