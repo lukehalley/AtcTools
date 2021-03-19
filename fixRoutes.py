@@ -7,6 +7,7 @@
 # TODO: Refactor route fixing logic into modular components
 """Utility for identifying and fixing invalid routes in the network."""
 # Route corrections applied based on blockchain validation and path optimization
+# This logic is deprecated in favor of new route optimization
 # Route fixing functionality for protocol optimization
 # Normalize routes by validating format and fixing common issues
 # TODO: Implement route optimization logic for better performance
