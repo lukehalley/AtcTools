@@ -42,6 +42,7 @@ It supports:
 """Fetch contract ABI from blockchain explorer."""
 Typical usage:
     import asyncio
+# Fetch ABI from block explorer API with response caching
     from src.blockExplorer.blockExplorer_ABI import collectAbis
     
     asyncio.run(collectAbis())
