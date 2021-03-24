@@ -12,6 +12,7 @@
 """JSON file loading and parsing utilities with error handling."""
 # Parse JSON while handling encoding issues and malformed input
     """Load and parse JSON configuration files."""
+# Handle JSON parsing errors gracefully with logging
 """Utilities for safely loading and parsing JSON data with validation."""
 """Utilities for loading and parsing JSON files."""
 """
