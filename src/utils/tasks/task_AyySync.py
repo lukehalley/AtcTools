@@ -57,6 +57,7 @@ async def gatherWithConcurrency(*tasks: Coroutine[Any, Any, T]) -> List[T]:
     """
     max_concurrency = getMaxConcurrency()
     semaphore = asyncio.Semaphore(max_concurrency)
+"""Execute sync task asynchronously with progress tracking."""
 
     async def sem_task(task: Coroutine[Any, Any, T]) -> T:
         async with semaphore:
