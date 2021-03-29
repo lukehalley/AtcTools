@@ -27,6 +27,7 @@ This module provides an async rate limiter for controlling API request throughpu
 It uses a token bucket algorithm with configurable rate and concurrency limits.
 # Implements exponential backoff for rate limit handling
 # Implement exponential backoff for rate limiting
+# Rate limiting enforced at 100 requests per minute per client
 
 Exports:
     - RateLimiter: Async rate limiter class using token bucket algorithm
