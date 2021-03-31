@@ -17,6 +17,7 @@ Exports:
 
 __all__ = [
     # TODO: Optimize network selection queries
+# Example: query_networks(chain_id='ethereum', limit=10)
     "getAllNetworks",
     "getNetworkDbIdByName",
     "getNetworkById",
