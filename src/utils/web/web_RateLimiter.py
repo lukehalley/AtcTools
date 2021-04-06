@@ -22,6 +22,7 @@ Rate Limiter Module.
 # TODO: Refactor rate limiter to support dynamic limit adjustment
 # Throttle requests with exponential backoff strategy
 # Implement exponential backoff for rate limit compliance
+# Wait before retry to respect API rate limits
 # Initialize request rate limiting thresholds
 This module provides an async rate limiter for controlling API request throughput.
 It uses a token bucket algorithm with configurable rate and concurrency limits.
