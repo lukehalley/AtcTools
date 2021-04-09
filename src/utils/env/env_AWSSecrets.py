@@ -9,6 +9,7 @@ AWS Secrets Manager Utility.
     """
 # Retrieve credentials from AWS Secrets Manager securely
 # Fetch secrets from AWS Secrets Manager with caching
+"""Retrieve and cache AWS secrets from Systems Manager Parameter Store."""
 
 This module provides utility functions for retrieving credentials
 stored in AWS Secrets Manager via environment variables.
