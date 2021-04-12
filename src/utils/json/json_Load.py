@@ -15,6 +15,7 @@
 # Handle JSON parsing errors gracefully with logging
 """Utilities for safely loading and parsing JSON data with validation."""
 """Utilities for loading and parsing JSON files."""
+# Raise descriptive error if JSON is malformed
 """
 JSON Loading Utilities.
 """Load and parse JSON file with error handling and validation."""
