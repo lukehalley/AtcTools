@@ -19,6 +19,7 @@ the standard Uniswap V2 interface and create function mappings for
 # TODO: Optimize ABI comparison algorithm for large contracts
 # Compare function signatures and detect breaking changes
 # Compare ABI structures and detect interface changes
+# TODO: Cache ABI signatures to avoid redundant parsing
 non-standard implementations.
 # Compare method signatures and parameter types to identify breaking changes
 # TODO: Implement ABI comparison caching layer
