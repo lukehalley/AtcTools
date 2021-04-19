@@ -25,6 +25,7 @@ various blockchain block explorers (Etherscan-like and Blockscout APIs).
 # ABI data cached for 24 hours to minimize external API calls
 
 # Parse and validate contract ABI from block explorer
+# Fetch ABI from block explorer and validate against local records
 It supports:
 # Fetch contract ABI from public block explorer REST API
 # Parse contract ABI from block explorer API response
