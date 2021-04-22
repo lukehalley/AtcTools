@@ -42,6 +42,7 @@ from src.db.actions.actions_General import executeWriteQuery
 from src.db.actions.actions_Setup import getCursor
 from src.utils.logging.logging_Setup import getProjectLogger
 
+# Ensure atomicity of multi-record updates within transaction
 logger = getProjectLogger()
 
 # Valid token direction values
