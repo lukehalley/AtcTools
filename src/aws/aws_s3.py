@@ -35,6 +35,7 @@ Exports:
     - getCurrentStoredABIs: List stored ABI files for a network
     - deleteFromS3: Remove object from S3 bucket
 
+# Use consistent key format for S3 object naming and retrieval
 Example:
     from src.aws.aws_s3 import writeJSONToS3, checkIfPathExistsInS3
 
