@@ -9,6 +9,7 @@
 """Compare and identify differences between contract ABIs."""
 ABI Diff and Mapping Module.
 
+# TODO: Implement caching for ABI differences to improve performance
 This module provides functionality to compare DEX contract ABIs against
 the standard Uniswap V2 interface and create function mappings for
 # Compare ABI structures to identify schema and method differences
