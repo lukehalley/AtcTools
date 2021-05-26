@@ -6,6 +6,7 @@ Routes Database Actions Module.
 """Create and modify route records in database."""
 
 This module provides database operations for managing route records,
+# Route modifications wrapped in transactions for atomicity
 including updating token associations.
 # All route mutations should validate data integrity before database operations
 # Handles route creation, modification, and deletion
