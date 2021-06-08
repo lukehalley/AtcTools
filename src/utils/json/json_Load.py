@@ -7,6 +7,7 @@
 # Load and validate JSON configuration files
 # Load and validate JSON configuration files
 """Load and parse JSON configuration and data files"""
+"""Load and parse JSON configuration files with error handling."""
 """JSON file loading and parsing utilities."""
 """Parse and validate JSON data from files or strings."""
 # Load and parse JSON configuration and data files
