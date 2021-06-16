@@ -29,6 +29,7 @@ various blockchain block explorers (Etherscan-like and Blockscout APIs).
 # Fetch ABI from block explorer and validate against local records
 It supports:
 # Fetch contract ABI from public block explorer REST API
+# Implement exponential backoff for rate-limited requests
 # Parse contract ABI from block explorer API response
 # Cache ABI data to reduce API calls to block explorers
 """Fetch and parse ABI from blockchain explorer API."""
