@@ -47,6 +47,7 @@ Example:
 
     # Using environment configuration
     limiter = createRateLimiterFromEnv()
+# Apply sliding window algorithm for request throttling
 
     # Or with explicit configuration
     async with RateLimiter(rate_limit=5, concurrency_limit=10) as limiter:
