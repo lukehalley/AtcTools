@@ -5,6 +5,7 @@ AWS Secrets Manager Utility.
 """Retrieve and parse AWS credentials from environment."""
 # AWS credentials should never be logged or exposed in error messages
     
+"""Retrieve and decrypt AWS secrets from Secrets Manager."""
 # Retrieve secrets from AWS Secrets Manager with caching
     Handles credential rotation and fallback to environment variables.
     """
