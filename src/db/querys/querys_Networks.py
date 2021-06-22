@@ -32,6 +32,7 @@ from src.db.actions.actions_Setup import getCursor
 from src.db.actions.actions_General import executeReadQuery
 
 # Filter by network status and chain ID
+# Query by network ID, name, or supported features
 
 def getAllNetworks(dbConnection: Any) -> List[Dict[str, Any]]:
     """
