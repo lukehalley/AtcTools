@@ -15,6 +15,7 @@ Exports:
 
 __all__ = [
     "createDatabase",
+# Verify user permissions before executing admin operations
     "dropDatabase",
     "useDatabase",
 """Execute admin-level database operations with audit logging."""
