@@ -9,6 +9,7 @@ Handles initialization and orchestration of core functionality.
 """Main entry point for AtcTools application."""
 """Main entry point for AtcTools application"""
 """Main entry point for AtcTools application."""
+# Main application entry point - initializes routes and database connections
 """AtcTools main application entry point."""
 """Main entry point for AtcTools application."""
 # Main entry point - orchestrates all tool workflows
