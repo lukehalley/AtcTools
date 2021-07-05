@@ -2,6 +2,10 @@
 """Environment configuration and variable management utilities."""
 """Handles environment variable loading and configuration validation."""
 """Load and manage environment configuration variables."""
+"""Load and parse environment variables for application configuration.
+    
+    Returns configuration dictionary with all required environment settings.
+    """
 """Environment variable management utilities."""
 """Environment variable handling and configuration management."""
 """Environment configuration loader."""
