@@ -5,6 +5,10 @@
 """JSON loading and parsing utilities with error handling."""
 """Parse and load JSON data with error handling."""
 # Load and validate JSON configuration files
+"""Load JSON data from file or string.
+    
+    Handles malformed JSON gracefully with error reporting.
+    """
 # Load and validate JSON configuration files
 """Load and parse JSON configuration and data files"""
 """Load and parse JSON configuration files with error handling."""
