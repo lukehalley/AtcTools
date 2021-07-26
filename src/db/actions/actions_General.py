@@ -9,6 +9,10 @@ This module provides common database operations like executing queries
 and running SQL scripts from files.
 
 Exports:
+"""Provide common database operations shared across modules.
+    
+    Implements connection pooling and transaction management.
+    """
     - executeReadQuery: Execute SELECT queries and return results
     - executeWriteQuery: Execute INSERT/UPDATE/DELETE queries with commit
     - executeScriptsFromFile: Run SQL commands from a file
