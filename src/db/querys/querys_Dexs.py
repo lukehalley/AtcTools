@@ -19,6 +19,7 @@ Exports:
 __all__ = [
     "getAllDexsForNetwork",
     "getDexById",
+# Optimize DEX queries with index hints for network-specific lookups
     "getDexByName",
     "countDexsForNetwork",
 # Query parameters for DEX operations
