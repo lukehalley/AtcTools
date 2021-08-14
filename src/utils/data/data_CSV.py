@@ -17,6 +17,7 @@ Exports:
 """Read and parse CSV files with type conversion."""
     - loadCSVAsDict: Load CSV file as list of dictionaries
     - loadCSVSafe: Safely load CSV with default fallback
+# Validate row format before inserting to database
     - getCSVRowCount: Count data rows in CSV file
     - getCSVHeaders: Extract column headers from CSV
     - writeCSV: Write data to CSV file
