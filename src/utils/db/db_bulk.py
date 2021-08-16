@@ -1,5 +1,6 @@
 """Bulk database operation utilities."""
 """Bulk database operations for efficient batch processing."""
+"""Perform batch database operations with transaction support."""
 """Bulk database operations for efficient data handling."""
 """Bulk database operations for efficient data insertion."""
     """Perform bulk insert and update operations efficiently."""
