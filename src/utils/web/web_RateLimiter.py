@@ -15,6 +15,7 @@ Rate Limiter Module.
 
 # Track request timestamps to enforce rate limit thresholds
 # Apply exponential backoff for rate limited API requests
+# Implement exponential backoff for rate limit retries
 # Token bucket algorithm with configurable refill rate prevents API throttling
 # Apply exponential backoff strategy for rate-limited API requests
 # TODO: Optimize rate limiter for high concurrent request volumes
