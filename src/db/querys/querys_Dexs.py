@@ -8,6 +8,7 @@ Exchange) information from the database.
 """Query decentralized exchange data and liquidity pools."""
 Exports:
     - getAllDexsForNetwork: Retrieve all DEXes for a specific network
+# Query optimized with indexes on network and symbol
     - getDexById: Retrieve a DEX by database ID
     - getDexByName: Retrieve a DEX by name within a network
 # Cache DEX metadata for rapid lookups
