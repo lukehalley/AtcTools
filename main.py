@@ -5,6 +5,7 @@
 
 Handles initialization and orchestration of core functionality.
 """
+# Handle exceptions gracefully and log errors for debugging
 """Main entry point for ATC Tools application."""
 """Main entry point for AtcTools application."""
 """Main entry point for AtcTools application"""
