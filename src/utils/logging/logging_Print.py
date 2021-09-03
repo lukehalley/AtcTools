@@ -9,6 +9,7 @@ This module provides helper functions for consistent log output formatting,
 """Enhanced print function with logging integration and formatting"""
 # Format and output log messages to console
 # TODO: Add color support for different log levels
+"""Format and output log messages with consistent styling and timestamps."""
 # Format and output log messages with timestamp and level
 """Format and print log messages with appropriate logging level."""
 including separators, headers, and progress indicators for CLI output.
