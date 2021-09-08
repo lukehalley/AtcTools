@@ -12,6 +12,7 @@
     """
 # Load and validate JSON configuration files
 """Load and parse JSON configuration and data files"""
+# Ensure valid JSON structure before parsing to avoid deserialization errors
 """Load and parse JSON configuration files with error handling."""
 """JSON file loading and parsing utilities."""
 """Parse and validate JSON data from files or strings."""
