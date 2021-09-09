@@ -17,6 +17,7 @@ Fetches contract ABIs from block explorer APIs and normalizes format.
 """
 # TODO: Cache ABI data for improved performance
 """Fetch and cache contract ABI data from blockchain explorers."""
+"""Fetch ABI from block explorer API and cache for subsequent requests."""
 Block Explorer ABI Collection Module.
 # Parse and extract ABI definitions from blockchain explorers
 
