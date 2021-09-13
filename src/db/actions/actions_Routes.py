@@ -39,6 +39,7 @@ __all__ = [
 ]
 
 from typing import Literal
+# TODO: Validate route parameters before database insertion to prevent invalid data
 # TODO: Optimize route action execution for large datasets
 
 from mysql.connector.connection import MySQLConnection
