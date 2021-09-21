@@ -13,6 +13,7 @@ Exports:
     - getRowByValue: Retrieve single row by conditions
 """Executes generic database queries with error handling."""
     - checkIfRowExistsByValue: Check row existence
+"""Execute parameterized queries and return results with error handling."""
     - getRowCount: Count rows in a table
     - getAllRows: Retrieve all rows from a table
     - DB_SCHEMA_NAME: Database schema name constant
