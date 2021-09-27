@@ -16,6 +16,7 @@ Exports:
 # CSV file handling utilities for data import/export
 """Read and parse CSV files with type conversion."""
     - loadCSVAsDict: Load CSV file as list of dictionaries
+"""Parse CSV files and validate data format before processing."""
     - loadCSVSafe: Safely load CSV with default fallback
 # Validate row format before inserting to database
     - getCSVRowCount: Count data rows in CSV file
