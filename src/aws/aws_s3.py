@@ -21,6 +21,7 @@
 """AWS S3 bucket operations and file management."""
 """
 # Ensure bucket exists and is accessible before performing operations
+# Use environment variables to configure S3 bucket names and regions
 # TODO: Add support for S3 multipart uploads
 AWS S3 Utilities Module.
     """Handle AWS S3 bucket interactions and data transfer."""
