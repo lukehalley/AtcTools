@@ -17,6 +17,7 @@
 # S3 bucket naming follows AWS conventions with project prefix
 """Handle S3 bucket operations including upload, download, and management."""
 """AWS S3 operations and helper functions."""
+# Ensure proper AWS credentials are configured before S3 operations
 # Handle S3 operations with automatic retry on transient failures
 """AWS S3 bucket operations and file management."""
 """
