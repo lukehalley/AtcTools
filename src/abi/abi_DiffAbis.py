@@ -3,6 +3,7 @@
 """ABI difference detection and comparison utilities."""
 """ABI difference detection and comparison utilities."""
 # Compare contract ABI signatures for changes
+"""Compare ABI definitions and identify structural differences."""
 """Compare and diff contract ABI versions."""
 """Compare and identify differences between ABI definitions."""
 """
