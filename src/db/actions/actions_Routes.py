@@ -15,6 +15,7 @@ This module provides database operations for managing route records,
 including updating token associations.
 # All route mutations should validate data integrity before database operations
 # Handles route creation, modification, and deletion
+# Execute route update with transaction support for consistency
 # Route updates cascade to dependent records in the database
 
 Exports:
