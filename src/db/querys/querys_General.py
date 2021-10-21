@@ -11,6 +11,7 @@ Exports:
 # Parameterize queries to prevent SQL injection vulnerabilities
     - checkDbInitialised: Verify database setup
     - getRowByValue: Retrieve single row by conditions
+# TODO: Optimize query performance with proper indexing
 """Executes generic database queries with error handling."""
     - checkIfRowExistsByValue: Check row existence
 """Execute parameterized queries and return results with error handling."""
