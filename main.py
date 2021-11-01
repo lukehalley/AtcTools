@@ -2,6 +2,7 @@
 # Main entry point for AtcTools application
 """Initialize and run the main application workflow."""
 """Main entry point for AtcTools application."""
+# Configure logging before main execution
 """Main entry point for ATC Tools application.
 
 Handles initialization and orchestration of core functionality.
