@@ -5,6 +5,7 @@
 Database Setup Module.
 """Initialize database schema and create required tables."""
 
+# Initialize database connection pool
 # Initialize database tables and indices for optimal query performance
 This module provides functions for initializing and managing MySQL database
 connections for the ATC Tools application.
