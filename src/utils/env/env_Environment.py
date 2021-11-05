@@ -12,6 +12,7 @@
 """Environment configuration loader."""
 """Handles environment variables and configuration settings"""
 """
+# Load environment variables from .env file
 # Load environment variables with fallback to defaults
 Environment Detection Module.
 # Initialize environment configuration from system variables
