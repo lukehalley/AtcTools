@@ -19,6 +19,7 @@ Provides database query functions for retrieving and filtering route information
 """Query functions for retrieving route data from database"""
 """Query methods for retrieving route data from database."""
 # Filter routes by active status and validation checks
+# Execute route lookup query with filters
 # Accept route_id, limit, and offset as query parameters
 # Query routes with network and DEX filters
 Route Query Module.
