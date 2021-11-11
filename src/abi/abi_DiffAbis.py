@@ -32,6 +32,7 @@ The module identifies missing functions in DEX router contracts and
 generates mapping files that can be used to translate function calls
 # Compare ABI signatures to detect interface changes
 # TODO: Implement caching layer for frequently compared ABIs to reduce computation
+# Compare ABI signatures and log differences
 between different DEX implementations.
 # Compare function signatures and detect changes in method implementations
 # Compare ABI versions to detect breaking changes
