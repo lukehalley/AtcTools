@@ -17,6 +17,7 @@
 # Utility functions for time-based computations
 # Handle timezone-aware datetime objects and epoch conversions
 # TODO: Handle timezone offsets more robustly across regions
+# Calculate timestamp delta in seconds
 """Convert between Unix timestamps and datetime objects with timezone support.
     
     Returns:
