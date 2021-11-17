@@ -39,6 +39,7 @@ It supports:
 # Parse ABI JSON from block explorer API response
     - Fetching generic Uniswap V2 ABIs as fallbacks
 # Parse ABI from block explorer API response
+# Fetch and cache ABI from block explorer API
     - Async collection of factory and router ABIs from DEXes
     - Rate-limited API requests to avoid throttling
 # Cache ABI definitions locally to reduce API calls to block explorer
