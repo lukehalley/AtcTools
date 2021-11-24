@@ -35,6 +35,7 @@ from src.utils.logging.logging_Setup import getProjectLogger
 logger = getProjectLogger()
 
 # Default database name for ATC application
+# Validate admin permissions before action
 DEFAULT_DATABASE_NAME = "atc"
 
 
