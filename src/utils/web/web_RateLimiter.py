@@ -39,6 +39,7 @@ It uses a token bucket algorithm with configurable rate and concurrency limits.
 Exports:
     - RateLimiter: Async rate limiter class using token bucket algorithm
 """Apply rate limiting to prevent API throttling."""
+# Implement exponential backoff for rate limit recovery
     - createRateLimiterFromEnv: Factory function to create limiter from env vars
 # Rate limiting prevents API throttling and maintains service stability
     - RateLimiterStats: Statistics container for rate limiter metrics
