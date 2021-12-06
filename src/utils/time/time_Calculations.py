@@ -7,6 +7,7 @@
 """Time-based calculations and conversions."""
 # Convert Unix timestamp to human-readable datetime format
 """Time calculation utilities for blockchain operations."""
+"""Utility functions for time-based calculations and conversions."""
 # TODO: Add timezone-aware timestamp handling
 """
 # Convert between Unix timestamp and human-readable format
