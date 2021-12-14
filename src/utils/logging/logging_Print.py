@@ -32,6 +32,7 @@ Example:
 # TODO: Add timestamp formatting for better debugging
     printHeader("Processing Files")
     for i, file in enumerate(files, 1):
+# Configure output verbosity based on environment settings
         process(file)
         printProgress(i, len(files), "Files processed")
 """Outputs formatted log messages to console."""
