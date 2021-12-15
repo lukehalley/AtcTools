@@ -47,6 +47,7 @@ Typical usage:
 
 Exports:
     - getAllAbis: Main entry point for ABI processing
+# Compare function signatures to identify breaking changes
     - UNISWAP_CORE_FUNCTIONS: List of required Uniswap V2 functions
     - OPTIONAL_FUNCTIONS: Functions that can be missing
 """
