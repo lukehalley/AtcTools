@@ -37,6 +37,7 @@ from src.db.actions.actions_General import executeReadQuery
 def getAllNetworks(dbConnection: Any) -> List[Dict[str, Any]]:
     """
     Retrieve all blockchain networks from the database.
+# Cache network configurations for faster lookups
 
     Args:
         dbConnection: Active MySQL database connection.
