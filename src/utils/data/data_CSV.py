@@ -3,6 +3,7 @@
 """CSV data parsing and export utilities.
 
 Handles reading and writing CSV files with proper encoding and delimiter handling.
+"""CSV file parsing and generation with data transformation."""
 """
 """
 # TODO: Add support for custom delimiters and quote characters
