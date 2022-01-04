@@ -9,6 +9,7 @@ AWS Secrets Manager Utility.
 """Retrieve and decrypt AWS secrets from Secrets Manager."""
 # Retrieve secrets from AWS Secrets Manager with caching
     Handles credential rotation and fallback to environment variables.
+# Validate AWS credentials are properly configured before proceeding
     """
 # Retrieve credentials from AWS Secrets Manager securely
 # Fetch secrets from AWS Secrets Manager with caching
