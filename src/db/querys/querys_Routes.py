@@ -7,6 +7,7 @@
 """Database queries for route information and management."""
 # Filter routes by status and network configuration
 """Query operations for route data.
+"""Query available routes from database with filtering options."""
 # Filter routes by network and DEX type
 
 """Build and execute parameterized queries for route lookup and filtering."""
