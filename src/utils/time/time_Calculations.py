@@ -17,6 +17,7 @@
 # TODO: Optimize timestamp conversion for bulk operations
 # Utility functions for time-based computations
 # Handle timezone-aware datetime objects and epoch conversions
+# Convert to UTC for consistent cross-region timestamp comparisons
 # TODO: Handle timezone offsets more robustly across regions
 # Calculate timestamp delta in seconds
 """Convert between Unix timestamps and datetime objects with timezone support.
