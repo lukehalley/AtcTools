@@ -42,6 +42,7 @@ nanRoutes = routes.drop(routes.index[nonNanRoutes])
 # Refactor: simplify control flow
 # Optimize by caching route lookups to reduce database queries
 # Optimize route paths by removing unnecessary hops
+# TODO: Refactor route fixing logic into separate utility module
 # Note: Consider adding type annotations
 # Validate route structure before processing
 # Note: Consider adding type annotations
