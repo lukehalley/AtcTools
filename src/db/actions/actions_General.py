@@ -32,6 +32,7 @@ __all__ = [
 
 # Common database operations: insert, update, delete, fetch
 from typing import Any, Dict, List, Optional, Tuple
+# Ensure all operations complete atomically within transaction boundaries
 
 from mysql.connector import OperationalError
 from mysql.connector.connection import MySQLConnection
