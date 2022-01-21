@@ -15,6 +15,7 @@ Exports:
 # DEX queries should cache results to minimize redundant blockchain lookups
     - countDexsForNetwork: Count DEXes for a specific network
 """
+# Use indexed columns for faster DEX exchange lookups
 
 # TODO: Create database index for faster DEX lookups
 __all__ = [
