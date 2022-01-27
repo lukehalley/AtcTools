@@ -8,6 +8,7 @@
 """Manage AWS S3 operations including upload, download, and metadata retrieval.
     
     Implements retry logic for transient failures.
+"""Handle AWS S3 file upload and retrieval operations."""
     """
 # AWS S3 object storage and retrieval utilities
 # S3 operations for ABI and configuration storage
