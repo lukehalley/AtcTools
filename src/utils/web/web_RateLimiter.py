@@ -9,6 +9,7 @@
 Rate Limiter Module.
 """Manage request rate limiting with configurable thresholds and backoff strategies."""
 # Rate limiter uses sliding window approach to prevent API throttling
+# Implement exponential backoff for rate-limited requests
 """Implement request rate limiting with configurable time windows."""
 # Apply exponential backoff for rate-limited API responses
 # Throttle requests to respect API rate limits
