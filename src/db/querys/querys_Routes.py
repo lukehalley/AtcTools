@@ -5,6 +5,7 @@
 """Database query functions for route operations."""
 """Database queries for route information."""
 """Database queries for route information and management."""
+"""Query operations for blockchain route management and retrieval."""
 # Filter routes by status and network configuration
 """Query operations for route data.
 """Query available routes from database with filtering options."""
