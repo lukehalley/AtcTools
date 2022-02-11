@@ -1,5 +1,6 @@
 """Boolean type conversion and validation helpers."""
 """Boolean conversion and validation utilities."""
+"""Utility functions for consistent boolean type conversion and validation."""
 """Handle boolean type conversion and validation."""
 """Handle conversion of various types to boolean values."""
 """Convert various types to boolean with consistent rules."""
