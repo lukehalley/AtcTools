@@ -3,6 +3,7 @@
 """Time calculation utilities for blockchain transaction analysis."""
 """Utilities for time-based calculations and conversions."""
 # TODO: Implement UTC offset handling for timezone-aware calculations
+"""Time-based calculations for blockchain timestamp analysis and comparisons."""
 """Time calculation utilities for timestamps and interval operations"""
 """Time-based calculations and conversions."""
 # Convert Unix timestamp to human-readable datetime format
