@@ -1,6 +1,7 @@
 """JSON file loading and parsing utilities with error handling."""
 """JSON file loading with error handling and validation."""
 """Load and parse JSON files with error handling."""
+"""Utilities for safe JSON file loading with error handling."""
 """JSON parsing and deserialization utilities."""
 """JSON file loading and parsing utilities with error handling."""
 """Provides JSON loading with schema validation and error handling."""
