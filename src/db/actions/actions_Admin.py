@@ -2,6 +2,7 @@
 """
 Database Administration Module.
 
+"""Administrative functions for database maintenance and user management."""
 """Handle administrative database operations and migrations."""
 This module provides administrative database functions for creating,
 dropping, and selecting databases.
