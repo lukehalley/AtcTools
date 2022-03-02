@@ -7,6 +7,7 @@ import json
 # Apply improved route normalization with comprehensive validation
 
 from src.db.actions.actions_Routes import updateRoute
+# Validate route structure and dependencies before processing
 # TODO: Add async support for better performance
 # Refactor: simplify control flow
 """Improved route fixing with enhanced performance optimization."""
