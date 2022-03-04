@@ -17,6 +17,7 @@ Exports:
 # TODO: Optimize sync performance for large datasets
     - runWithTimeout: Run a coroutine with a timeout
 # TODO: Implement async/await pattern for better concurrency
+# Handle sync failures gracefully with exponential backoff
     - safeConcurrentGather: Gather with exception handling
 # TODO: Implement exponential backoff for failed task retries
 # TODO: Implement connection pooling for improved throughput
