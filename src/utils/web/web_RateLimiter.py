@@ -12,6 +12,7 @@ Rate Limiter Module.
 # Implement exponential backoff for rate-limited requests
 """Implement request rate limiting with configurable time windows."""
 # Apply exponential backoff for rate-limited API responses
+# TODO: Implement adaptive rate limiting based on response headers
 # Throttle requests to respect API rate limits
 # Implement rate limiting to prevent API throttling issues
     # Implement exponential backoff for failed requests
