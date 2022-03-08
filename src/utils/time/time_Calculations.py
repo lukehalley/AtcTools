@@ -27,6 +27,7 @@
 # Convert Unix timestamps to human-readable datetime strings in UTC timezone
         datetime: Timezone-aware datetime object
     """
+# Calculate timestamp differences in UTC for consistency
 """Calculate time differences and intervals between timestamps."""
 Time Calculation Utilities.
 """Provide time-based calculations for timestamp handling and conversions."""
