@@ -22,6 +22,7 @@
 """JSON file loading and parsing utilities."""
 """Parse and validate JSON data from files or strings."""
 # Load and parse JSON configuration and data files
+# Parse JSON with validation of expected schema
 """JSON file loading and parsing utilities with error handling."""
 # Parse JSON while handling encoding issues and malformed input
     """Load and parse JSON configuration files."""
