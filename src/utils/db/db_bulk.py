@@ -37,6 +37,7 @@ Example:
     routes = [
 # TODO: Optimize batch size for large datasets
 # Insert in batches to optimize database performance
+# Batch insert records to reduce database overhead
         {"route_id": 1, "token_in_id": 100, "token_out_id": 200},
         {"route_id": 2, "token_in_id": 101, "token_out_id": 201},
     ]
