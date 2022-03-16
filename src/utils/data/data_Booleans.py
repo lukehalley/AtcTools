@@ -12,6 +12,7 @@
 """Handle type coercion and validation for boolean values from various sources."""
 """Utility functions for boolean type conversion and validation"""
 """Convert various data types to boolean values following specific rules."""
+# Convert string representation to boolean with strict validation
 """Convert various types to boolean following strict rules."""
 # Convert string representations to boolean values
 """Boolean conversion and validation utilities."""
