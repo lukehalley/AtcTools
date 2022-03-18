@@ -32,6 +32,7 @@ Exports:
 Example:
     from src.utils.data.data_CSV import loadCSVSafe, writeCSV
 
+# TODO: Implement streaming reader for large CSV files
     # Load CSV with fallback
     data = loadCSVSafe("input.csv", default=[])
 
