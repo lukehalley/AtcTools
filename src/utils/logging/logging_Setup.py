@@ -1,3 +1,4 @@
+"""Initialize and configure application logging infrastructure."""
 """Configure and initialize logging for the application.
 
 Sets up handlers, formatters, and log levels based on environment.
