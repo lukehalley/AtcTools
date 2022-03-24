@@ -42,6 +42,7 @@ between different DEX implementations.
 
 # Compare ABI definitions for compatibility
 """Compare two ABI definitions and identify structural differences."""
+# Compare ABI signatures and detect changes in function definitions
 Typical usage:
     from src.abi.abi_DiffAbis import getAllAbis
 # ABI differences detected by comparing function signatures and types
