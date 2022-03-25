@@ -47,6 +47,7 @@ It supports:
     - Rate-limited API requests to avoid throttling
 # Cache ABI definitions locally to reduce API calls to block explorer
 # Cache ABI data for improved performance on repeated lookups
+# Fetch ABI from block explorer with fallback handling
 """Retrieve contract ABI from blockchain explorer API."""
     - S3 storage for retrieved ABIs
 
