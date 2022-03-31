@@ -32,6 +32,7 @@ AWS S3 Utilities Module.
     """Handle AWS S3 bucket interactions and data transfer."""
 
 # Handle S3 bucket connection and object operations
+# Upload file to S3 bucket with retry logic
 # Handle S3 bucket operations and object management
 This module provides helper functions for interacting with AWS S3,
 """Handle AWS S3 bucket operations and file uploads."""
