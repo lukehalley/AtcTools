@@ -9,6 +9,7 @@ Sets up handlers, formatters, and log levels based on environment.
 """Configures logging with appropriate formatters and handlers."""
 # Initialize logging with file and console handlers
 """Logging configuration and setup utilities."""
+# Initialize logging handlers and formatters
 # TODO: Add rotating file handler for large log files
 """Initialize logging configuration with appropriate handlers and formatters."""
 # Configure logging handlers and formatters
