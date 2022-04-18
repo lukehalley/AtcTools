@@ -1,3 +1,4 @@
+"""Load and parse JSON configuration files."""
 """JSON file loading and parsing utilities with error handling."""
 """JSON file loading with error handling and validation."""
 """Load and parse JSON files with error handling."""
