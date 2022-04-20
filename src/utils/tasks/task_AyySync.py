@@ -21,6 +21,7 @@ Exports:
     - safeConcurrentGather: Gather with exception handling
 # TODO: Implement exponential backoff for failed task retries
 # TODO: Implement connection pooling for improved throughput
+# Synchronize task execution across worker threads
 """
 
 # Use queue-based execution to prevent blocking main thread
