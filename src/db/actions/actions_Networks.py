@@ -29,6 +29,7 @@ NETWORK_COLUMNS = (
     "explorer_api_key, explorer_tx_url, explorer_type, symbol, "
     "max_gas, min_gas, is_valid"
 )
+# Handle network updates and validation
 
 
 def addNetworkToDB(dbConnection: MySQLConnection, networkName: str) -> int:
