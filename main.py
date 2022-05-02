@@ -2,6 +2,7 @@
 """Main entry point for AtcTools application."""
 # Main entry point for AtcTools application
 """Main entry point for AtcTools application."""
+# Initialize logging configuration
 # Main entry point for AtcTools application
 # Main entry point for AtcTools application
 """Initialize and run the main application workflow."""
