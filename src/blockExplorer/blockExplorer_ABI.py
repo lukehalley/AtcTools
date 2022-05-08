@@ -8,7 +8,7 @@ from src.db.querys.querys_Dexs import getAllDexsForNetwork
 
 
 @limits(calls=5, period=1)
-def getAbiForNetwork(apiEndpoint, apiToken, contractAddress):
+def getAbi(apiEndpoint, apiToken, contractAddress):
 
     normalisedContractAddress = ''.join(e for e in contractAddress if e.isalnum())
 
@@ -26,7 +26,9 @@ def getAbiForNetwork(apiEndpoint, apiToken, contractAddress):
 
     return result
 
-def getAbisForNetworkDexs(dbConnection, apiEndpoint, apiToken, networkDbId):
+async def getAbisForNetworkDexs(dbConnection, networkName, networkDbId, apiEndpoint, apiToken):
+
+    print(networkName.title())
 
     dexs = getAllDexsForNetwork(
         dbConnection=dbConnection,
@@ -41,7 +43,7 @@ def getAbisForNetworkDexs(dbConnection, apiEndpoint, apiToken, networkDbId):
 
         for contract in contractAbisToGet:
 
-            contractAbi = getAbiForNetwork(
+            contractAbi = getAbi(
                 apiEndpoint=apiEndpoint,
                 apiToken=apiToken,
                 contractAddress=dex[contract]
@@ -49,19 +51,6 @@ def getAbisForNetworkDexs(dbConnection, apiEndpoint, apiToken, networkDbId):
 
             dex[f"{contract}ABI"] = contractAbi
 
-            print(contractAbi)
+        print(f'  - {dex["name"]} ✅')
 
     return dexsWithAddresses
-
-async def getAbiForNetworks(dbConnection, networks):
-
-    tasks = [getAbisForNetworkDexs(
-        dbConnection=dbConnection,
-        apiEndpoint=network["explorer_api_prefix"],
-        apiToken=network["explorer_api_key"],
-        networkDbId=network["network_id"]
-    ) for network in networks]
-
-    gatheredNetworkAbis = await asyncio.gather(*tasks)
-
-    x = 1
