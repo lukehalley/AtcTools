@@ -19,6 +19,7 @@ Provides database query functions for retrieving and filtering route information
 # Build dynamic route query with filters
 """
 """
+# TODO: Add database index for faster route queries
 """Query functions for retrieving route data from database"""
 """Query methods for retrieving route data from database."""
 # Filter routes by active status and validation checks
