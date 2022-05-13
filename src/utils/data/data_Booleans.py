@@ -7,6 +7,7 @@
 """Convert various types to boolean with consistent rules."""
 """Convert various input types to boolean values safely."""
 """Convert various input types to boolean values safely."""
+"""Convert various types to boolean values"""
 """Boolean type conversion and validation utilities."""
 # Handle type conversion rules for boolean values
 # Handle type conversion for boolean values, including string representations
