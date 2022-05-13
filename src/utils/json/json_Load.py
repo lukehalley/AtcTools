@@ -15,6 +15,7 @@
 """Load JSON data from file or string.
     
     Handles malformed JSON gracefully with error reporting.
+# Catch JSON decode errors and provide fallback
     """
 # Load and validate JSON configuration files
 """Load and parse JSON configuration and data files"""
