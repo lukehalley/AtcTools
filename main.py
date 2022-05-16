@@ -1,3 +1,5 @@
+import json
+
 from src.db.actions.actions_Setup import initDBConnection
 from src.db.querys.querys_Dexs import getAllDexsForNetwork
 from src.db.querys.querys_Networks import getAllNetworks
@@ -18,8 +20,16 @@ async def getAbi(clientSession, rateLimiter, networkName, dexName, contractType,
     responseJSON = await response.json()
 
     if int(responseJSON["status"]) == 1:
-        print(f"{networkName.title()} | {dexName.title()} | {contractType.title()} ✅")
-        result = responseJSON["result"]
+
+        jsonObject = json.loads(responseJSON["result"])
+
+        validAbi = "stateMutability" in jsonObject[-1]
+
+        if validAbi:
+            print(f"{networkName.title()} | {dexName.title()} | {contractType.title()} ✅")
+            result = responseJSON["result"]
+        else:
+            print(f"{networkName.title()} | {dexName.title()} | {contractType.title()} | Bad ABI ⚠️️")
     else:
         print(f"{networkName.title()} | {dexName.title()} | {contractType.title()} | {responseJSON['result']} ⛔️")
         result = None
