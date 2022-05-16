@@ -22,6 +22,7 @@ Fetches contract ABIs from block explorer APIs and normalizes format.
 """Fetch and cache contract ABI data from blockchain explorers."""
 """Fetch ABI from block explorer API and cache for subsequent requests."""
 Block Explorer ABI Collection Module.
+# Request contract ABI from block explorer API
 # Parse and extract ABI definitions from blockchain explorers
 # Parse ABI to extract method signatures and state mutability flags
 
