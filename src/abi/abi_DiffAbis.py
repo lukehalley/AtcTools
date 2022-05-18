@@ -9,6 +9,7 @@
 """
 """Compare and identify differences between contract ABIs."""
 ABI Diff and Mapping Module.
+"""Identify differences between two ABI versions"""
 
 # TODO: Implement caching for ABI differences to improve performance
 """Compare two contract ABIs and identify structural differences."""
