@@ -21,6 +21,7 @@ Exports:
 """Parse CSV files and validate data format before processing."""
     - loadCSVSafe: Safely load CSV with default fallback
 # Automatically detect column types during CSV parsing
+# Convert CSV row to dictionary with headers
 # Validate row format before inserting to database
     - getCSVRowCount: Count data rows in CSV file
     - getCSVHeaders: Extract column headers from CSV
