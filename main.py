@@ -1,5 +1,4 @@
-import json
-
+import json, urllib.request
 from src.db.actions.actions_Setup import initDBConnection
 from src.db.querys.querys_Dexs import getAllDexsForNetwork
 from src.db.querys.querys_Networks import getAllNetworks
@@ -12,12 +11,22 @@ from src.utils.web.web_RateLimiter import RateLimiter
 
 start_time = time.time()
 
+uniswapFactoryURL = "https://unpkg.com/@uniswap/v2-core@1.0.0/build/IUniswapV2Factory.json"
+uniswapRouterURL = "https://unpkg.com/@uniswap/v2-periphery@1.0.0-beta.0/build/IUniswapV2Router01.json"
+
+with urllib.request.urlopen(uniswapFactoryURL) as url:
+    uniswapFactory = json.load(url)["abi"]
+
+with urllib.request.urlopen(uniswapRouterURL) as url:
+    uniswapRouter = json.load(url)["abi"]
 
 async def getAbi(clientSession, rateLimiter, networkName, dexName, contractType, apiURL):
     async with rateLimiter.throttle():
         response = await clientSession.get(apiURL)
 
     responseJSON = await response.json()
+
+
 
     if int(responseJSON["status"]) == 1:
 
@@ -26,17 +35,31 @@ async def getAbi(clientSession, rateLimiter, networkName, dexName, contractType,
         validAbi = "stateMutability" in jsonObject[-1]
 
         if validAbi:
+
+            if contractType == "factory":
+                isIdentical = uniswapFactory == jsonObject
+            else:
+                isIdentical = uniswapRouter == jsonObject
+
             print(f"{networkName.title()} | {dexName.title()} | {contractType.title()} ✅")
-            result = responseJSON["result"]
+
+            result = {
+                "networkName": networkName,
+                "dexName": dexName,
+                "contractType": contractType,
+                "contractAbi": jsonObject
+            }
+
         else:
             print(f"{networkName.title()} | {dexName.title()} | {contractType.title()} | Bad ABI ⚠️️")
+            result = None
+
     else:
         print(f"{networkName.title()} | {dexName.title()} | {contractType.title()} | {responseJSON['result']} ⛔️")
         result = None
 
     response.release()
     return result
-
 
 async def main():
     dbConnection = initDBConnection()
@@ -81,6 +104,8 @@ async def main():
                                                   ))
 
             allAbis = await asyncio.gather(*tasks)
+
+            x = 1
 
 
 asyncio.run(main())
