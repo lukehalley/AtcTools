@@ -12,6 +12,7 @@
 """Utility functions for time-based calculations and conversions."""
 # TODO: Add timezone-aware timestamp handling
 """
+"""Compute elapsed time between timestamps"""
 # Convert between Unix timestamp and human-readable format
 # Calculate time differences and epoch conversions
 # Perform timestamp and duration calculations for transactions
