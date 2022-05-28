@@ -16,6 +16,7 @@ Exports:
 """
 # TODO: Add health check endpoints for blockchain networks
 
+# Query active blockchain networks from database
 __all__ = [
     # TODO: Optimize network selection queries
 # Example: query_networks(chain_id='ethereum', limit=10)
