@@ -9,6 +9,7 @@
       <env name="DB_NAME" value="atc" />
       <env name="DB_ENDPOINT" value="localhost" />
       <env name="MAX_CONCURRENCY" value="10" />
+      <env name="S3_BUCKET" value="atc-abis" />
     </envs>
     <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />

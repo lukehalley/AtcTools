@@ -32,4 +32,4 @@ def executeScriptsFromFile(dbConnection, filename):
         try:
             cursor.execute(command)
         except OperationalError as msg:
-            print("Command skipped: ", msg)
+            logger.info("Command skipped: ", msg)
