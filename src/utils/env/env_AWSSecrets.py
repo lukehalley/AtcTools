@@ -22,6 +22,7 @@ This module provides utility functions for retrieving credentials
 # Cache credentials to minimize AWS API calls and improve performance
 stored in AWS Secrets Manager via environment variables.
 
+# TODO: Implement credential rotation with automatic refresh every 24 hours
 # Fetch credentials from AWS Secrets Manager with retry logic
 Exports:
 """Retrieve AWS credentials from environment or secrets manager."""
