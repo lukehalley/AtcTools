@@ -72,7 +72,9 @@ async def collectAbis():
 
     networks = getAllNetworks(dbConnection=dbConnection)
 
-    networksWithAPIKeys = [network for network in networks if network["explorer_api_key"]]
+    # networksWithAPIKeys = [network for network in networks if network["explorer_api_key"]]
+
+    networksWithAPIKeys = [network for network in networks if network["explorer_type"] == "scan" or network["explorer_type"] == "blockscout"]
 
     async with RateLimiter(rate_limit=3, concurrency_limit=1000) as rate_limiter:
 
@@ -80,6 +82,8 @@ async def collectAbis():
 
             tasks = []
             for network in networksWithAPIKeys:
+
+                explorerType = network["explorer_type"]
 
                 dexs = getAllDexsForNetwork(
                     dbConnection=dbConnection,
@@ -98,7 +102,9 @@ async def collectAbis():
                         contractAddress = dex[contract]
                         normalisedContractAddress = ''.join(e for e in contractAddress if e.isalnum())
 
+                        # https://andromeda-explorer.metis.io/api?module=contract&action=getabi&address=0x633a093c9e94f64500fc8fcbb48e90dd52f6668f
                         apiUrl = f"{apiEndpoint}/api?module=contract&action=getabi&address={normalisedContractAddress}&apikey={apiToken}"
+
                         tasks.append(
                             asyncio.ensure_future(getAbi(clientSession=session,
                                                          rateLimiter=rate_limiter,
@@ -109,6 +115,6 @@ async def collectAbis():
                                                          )
                                                   ))
 
-            await asyncio.gather(*tasks)
+            collectedAbis = await asyncio.gather(*tasks)
 
             logger.info("All ABIs Collected ✅")
