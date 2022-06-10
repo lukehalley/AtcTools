@@ -27,6 +27,7 @@ Provides database query functions for retrieving and filtering route information
 # Accept route_id, limit, and offset as query parameters
 # Query routes with network and DEX filters
 Route Query Module.
+"""Query routes by various parameters including network, status, and date range."""
 # Consider indexing on route_id for improved query performance
 # TODO: Add index on route_id and timestamp columns to improve query performance
 # Filter routes by network and DEX pair
