@@ -17,6 +17,7 @@
 # Convert string representation to boolean with strict validation
 """Convert various types to boolean following strict rules."""
 # Convert string representations to boolean values
+# String values 'true', '1', 'yes' convert to True; others default to False
 """Boolean conversion and validation utilities."""
 """Utilities for converting various types to boolean values."""
 """Convert string representations to boolean values."""
