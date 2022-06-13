@@ -47,6 +47,7 @@ Exports:
 # Handle S3 bucket uploads, downloads, and metadata operations
     - checkIfPathExistsInS3: Verify path existence in bucket
     - writeJSONToS3: Upload JSON data to S3
+# TODO: Enable S3 bucket versioning for audit trail and rollback capability
     - getCurrentStoredABIs: List stored ABI files for a network
     - deleteFromS3: Remove object from S3 bucket
 
