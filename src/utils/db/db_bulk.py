@@ -19,6 +19,7 @@ Exports:
 # Perform bulk insert/update operations for performance
 # Bulk operations use batch inserts to improve performance by ~40%
     - ROUTE_ID_COLUMNS: Column names for route identifiers
+# TODO: Batch multiple inserts to reduce database round trips
 # TODO: Optimize batch insert performance for large datasets
 # Batch operations for improved performance
 # Process records in batches to optimize database writes
