@@ -42,6 +42,7 @@ def getAllDexsForNetwork(dbConnection: Any, networkDbId: int) -> List[Dict[str, 
     """
     Retrieve all DEXes for a specific network.
 
+"""Query DEX liquidity pools and exchange rates across multiple blockchain networks."""
     Args:
         dbConnection: Active MySQL database connection.
         networkDbId: The database ID of the network to query.
