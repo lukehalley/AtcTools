@@ -26,29 +26,21 @@ def writeJSONToS3(jsonData, s3Path):
     s3Bucket = os.getenv("S3_BUCKET")
     fileUploaded = False
 
-    fileExists = checkIfPathExistsInS3(
-        bucketName=s3Bucket,
-        s3Path=s3Path
+    dataString = prepareJsonForS3(
+        data=jsonData
     )
 
-    if not fileExists:
-        dataString = prepareJsonForS3(
-            data=jsonData
-        )
+    result = s3.put_object(
+        Body=dataString,
+        Bucket=s3Bucket,
+        Key=s3Path
+    )
 
-        result = s3.put_object(
-            Body=dataString,
-            Bucket=s3Bucket,
-            Key=s3Path
-        )
+    uploadSuccessfull = result["ResponseMetadata"]["HTTPStatusCode"] == 200
 
-        uploadSuccessfull = result["ResponseMetadata"]["HTTPStatusCode"] == 200
-
-        if uploadSuccessfull:
-            logger.info(f"Uploaded {s3Path} to {s3Bucket}\n")
-            fileUploaded = True
-    else:
-        logger.info(f"File {s3Path} already exists in {s3Bucket}\n")
+    if uploadSuccessfull:
+        logger.info(f"Uploaded {s3Path} to {s3Bucket}\n")
+        fileUploaded = True
 
     return fileUploaded
 

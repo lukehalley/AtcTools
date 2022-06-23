@@ -11,6 +11,7 @@ from src.db.actions.actions_Dexs import updateDexFactoryS3Path
 from src.db.actions.actions_Setup import initDBConnection
 from src.db.querys.querys_Dexs import getAllDexsForNetwork
 from src.db.querys.querys_Networks import getAllNetworks
+from src.utils.data.data_Booleans import strToBool
 from src.utils.logging.logging_Setup import getProjectLogger
 from src.utils.web.web_RateLimiter import RateLimiter
 
@@ -28,62 +29,82 @@ def getUniswapGenericAbis():
 
     return uniswapFactory, uniswapRouter
 
-async def getAbi(clientSession, dbConnection, rateLimiter, networkName, dexDbId, dexName, contractType, apiURL):
+async def getAbi(clientSession, dbConnection, rateLimiter, networkName, dexDbId, dexName, contractType, apiUrl):
+
     async with rateLimiter.throttle():
-        response = await clientSession.get(apiURL)
+        apiResponse = await clientSession.get(apiUrl)
 
-    responseJSON = await response.json()
+    apiResponseJSON = await apiResponse.json()
 
-    if int(responseJSON["status"]) == 1:
+    x = 1
 
-        jsonObject = json.loads(responseJSON["result"])
+    result = apiResponseJSON["result"][0]
 
-        validAbi = "stateMutability" in jsonObject[-1]
+    contractValidated = "ContractName" in result and "ABI" in result
 
-        if validAbi:
+    try:
+        json.loads(result["ABI"])
+    except:
+        contractValidated = False
 
-            logger.info(f"{networkName.title()} | {dexName.title()} | {contractType.title()} ✅")
+    if int(apiResponseJSON["status"]) == 1 and contractValidated:
 
-            result = {
-                "networkName": networkName,
-                "dexName": dexName,
-                "contractType": contractType,
-                "contractAbi": jsonObject
-            }
+        if contractValidated:
 
-            s3Path = f"{networkName}/{dexName}/{contractType}.json"
+            abi = json.loads(result["ABI"])
+            contractName = result["ContractName"]
 
-            fileUploaded = writeJSONToS3(
-                jsonData=jsonObject,
-                s3Path=s3Path
-            )
+            validAbi = "stateMutability" in abi[-1]
 
-            if fileUploaded:
-                updateDexFactoryS3Path(
-                    dbConnection=dbConnection,
-                    dexDbId=dexDbId,
-                    contractType=contractType,
+            if validAbi:
+
+                logger.info(f"{networkName.title()} | {dexName.title()} | {contractName} | {contractType.title()} ✅")
+
+                result = {
+                    "networkName": networkName,
+                    "dexName": dexName,
+                    "contractType": contractType,
+                    "contractAbi": abi
+                }
+
+                s3Path = f"{networkName}/{dexName}/{contractType}.json"
+
+                fileUploaded = writeJSONToS3(
+                    jsonData=abi,
                     s3Path=s3Path
                 )
 
+                if fileUploaded:
+                    updateDexFactoryS3Path(
+                        dbConnection=dbConnection,
+                        dexDbId=dexDbId,
+                        contractType=contractType,
+                        s3Path=s3Path
+                    )
+
+            else:
+                logger.info(f"{networkName.title()} | {dexName.title()} | {contractType.title()} | Bad ABI ⚠️️")
+                result = None
+
         else:
-            logger.info(f"{networkName.title()} | {dexName.title()} | {contractType.title()} | Bad ABI ⚠️️")
+
+            logger.info(f"{networkName.title()} | {dexName.title()} | {contractType.title()} | Contract Not Verified ⛔️\n")
             result = None
 
     else:
 
-        errorMessage = responseJSON['result']
+        errorMessage = apiResponseJSON['result']
 
         if not errorMessage:
-            errorMessage = responseJSON["message"]
+            errorMessage = apiResponseJSON["message"]
 
             if not errorMessage:
                 errorMessage = "Unknown error!"
 
-        logger.info(f"{networkName.title()} | {dexName.title()} | {contractType.title()} | {errorMessage} ⛔️\n")
+        logger.info(f"{networkName.title()} | {dexName.title()} | {contractType.title()} | Contract Not Verified ⛔️\n")
         result = None
 
-    response.release()
+    apiResponse.release()
     return result
 
 async def collectAbis():
@@ -95,6 +116,7 @@ async def collectAbis():
     validNetworks = [network for network in networks if (network["explorer_type"] == "scan" or network["explorer_type"] == "blockscout") and network["explorer_api_prefix"]]
 
     s3Bucket = os.getenv("S3_BUCKET")
+    s3Overwrite = strToBool(os.getenv("S3_OVERWRITE"))
 
     async with RateLimiter(rate_limit=3, concurrency_limit=1000) as rate_limiter:
 
@@ -127,14 +149,16 @@ async def collectAbis():
 
                         predictedS3Key = f"{networkName}/{dexName}/{contract}.json"
 
-                        if not predictedS3Key in uploadedAbis:
+                        alreadyUploaded = predictedS3Key in uploadedAbis
+
+                        if alreadyUploaded or s3Overwrite:
 
                             apiEndpoint = network["explorer_api_prefix"]
                             apiToken = network["explorer_api_key"]
                             contractAddress = dex[contract]
                             normalisedContractAddress = ''.join(e for e in contractAddress if e.isalnum())
 
-                            apiUrl = f"{apiEndpoint}/api?module=contract&action=getabi&address={normalisedContractAddress}"
+                            apiUrl = f"{apiEndpoint}/api?module=contract&action=getsourcecode&address={normalisedContractAddress}"
 
                             if apiToken:
                                 apiUrl = f"{apiUrl}&apikey={apiToken}"
@@ -146,7 +170,7 @@ async def collectAbis():
                                                              networkName=networkName,
                                                              dexName=dexName,
                                                              dexDbId=dexDbId,
-                                                             apiURL=apiUrl,
+                                                             apiUrl=apiUrl,
                                                              contractType=contract
                                                              )
                                                       ))
