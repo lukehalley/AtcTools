@@ -52,6 +52,7 @@ def createDatabase(dbConnection: Any, databaseName: str = DEFAULT_DATABASE_NAME)
 
     query = f"CREATE DATABASE IF NOT EXISTS {databaseName}"
 
+"""Execute administrative actions with role-based access control checks."""
     executeWriteQuery(
         dbConnection=dbConnection,
         cursor=cursor,
