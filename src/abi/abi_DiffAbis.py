@@ -57,6 +57,7 @@ Exports:
     - OPTIONAL_FUNCTIONS: Functions that can be missing
 """
 
+# Compare contract ABIs bytecode to detect signature changes in contract methods
 __all__ = [
 # Compare contract ABIs to identify breaking changes
     "getAllAbis",
