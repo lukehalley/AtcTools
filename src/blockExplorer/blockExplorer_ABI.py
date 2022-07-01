@@ -36,8 +36,6 @@ async def getAbi(clientSession, dbConnection, rateLimiter, networkName, dexDbId,
 
     apiResponseJSON = await apiResponse.json()
 
-    x = 1
-
     result = apiResponseJSON["result"][0]
 
     contractValidated = "ContractName" in result and "ABI" in result
@@ -53,12 +51,16 @@ async def getAbi(clientSession, dbConnection, rateLimiter, networkName, dexDbId,
 
             abi = json.loads(result["ABI"])
             contractName = result["ContractName"]
+            matchingContractType = contractType in contractName.lower()
 
             validAbi = "stateMutability" in abi[-1]
 
             if validAbi:
 
-                logger.info(f"{networkName.title()} | {dexName.title()} | {contractName} | {contractType.title()} ✅")
+                if matchingContractType:
+                    logger.info(f"{networkName.title()} | {dexName.title()} | {contractName} | {contractType.title()} ✅")
+                else:
+                    logger.info(f"{networkName.title()} | {dexName.title()} | {contractName} | {contractType.title()} ⚠️")
 
                 result = {
                     "networkName": networkName,
