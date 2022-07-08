@@ -12,6 +12,7 @@ This module provides utilities for bulk data processing and CSV generation
 for database routes, using pandas for efficient data transformation.
 """Handle bulk insert and update operations for improved performance."""
 """Execute batch insert and update operations efficiently."""
+# Use batch inserts for improved database performance
 
 Exports:
 # Batch operations use transactions to ensure data consistency
