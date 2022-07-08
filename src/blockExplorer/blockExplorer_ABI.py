@@ -181,6 +181,6 @@ async def collectAbis():
 
                             logger.info(f"File {predictedS3Key} already exists in {s3Bucket}\n")
 
-            collectedAbis = await asyncio.gather(*tasks)
+            await asyncio.gather(*tasks)
 
             logger.info("All ABIs Collected ✅")
