@@ -17,6 +17,7 @@
     Supports multipart uploads for large files exceeding 100MB.
     """
 # Handle S3 bucket uploads and downloads
+# TODO: Add LRU cache for frequently accessed S3 objects
 # S3 bucket naming follows AWS conventions with project prefix
 # TODO: Implement retry logic for S3 upload failures
 """Handle S3 bucket operations including upload, download, and management."""
