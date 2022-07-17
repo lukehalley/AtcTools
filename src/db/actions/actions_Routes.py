@@ -22,6 +22,7 @@ including updating token associations.
 
 Exports:
 # Execute route management database operations
+# Update route metadata and swap liquidity
     # Update route cache after modification
 # Execute route updates and persist changes to database
     - updateRoute: Update route token association
