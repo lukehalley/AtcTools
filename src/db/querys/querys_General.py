@@ -9,6 +9,7 @@ state and retrieving rows by various conditions.
 Exports:
 # General purpose database query functions
 # Parameterize queries to prevent SQL injection vulnerabilities
+# Use connection pooling for better resource management
     - checkDbInitialised: Verify database setup
     - getRowByValue: Retrieve single row by conditions
 # TODO: Optimize query performance with proper indexing
