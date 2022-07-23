@@ -6,6 +6,6 @@ from src.utils.logging.logging_Setup import setupLogging
 
 setupLogging()
 
-getAllAbis()
-
 # asyncio.run(collectAbis())
+
+getAllAbis()

@@ -1,0 +1,76 @@
+from src.db.actions.actions_Routes import updateRoute
+from src.db.actions.actions_Setup import initDBConnection
+from src.utils.data.data_CSV import loadCSVAsDict
+from ducks import Dex
+
+# 2179
+from src.utils.db.db_bulk import update_many
+
+routesCSV = 'data/db/routes_raw_new.csv'
+routes = loadCSVAsDict(csvPath=routesCSV)
+
+tokensCSV = 'data/db/tokens_raw_new.csv'
+tokens = loadCSVAsDict(csvPath=tokensCSV)
+
+tokensIndex = {
+    'token_id': str,
+    'network_id': str,
+    'name': str,
+    'symbol': str,
+    'address': str,
+    'created_at': str,
+    'decimals': str
+}
+indexedTokens = Dex(tokens, tokensIndex)
+
+routesLen = len(routes)
+
+dbConnection = initDBConnection()
+
+def getTokenIds(routeDict):
+
+    routeIndex = routes.index(routeDict)
+
+    print("Collecting Routes: {}/{} [{}%]".format(routeIndex + 1, routesLen, (routeIndex + 1) / routesLen * 100))
+
+    networkId = routeDict["network_id"]
+    routeId = routeDict["route_id"]
+    tokenInAddress = routeDict["token_in_address"]
+    tokenInDetails = indexedTokens[{'network_id': networkId, 'address': tokenInAddress}]
+
+    updateDict = {}
+    updateDict["route_id"] = routeId
+
+    if tokenInDetails:
+
+        if len(tokenInDetails) > 1:
+            tokenInId = int(sorted(tokenInDetails, key=lambda tokenIn: tokenIn['token_id'])[0]["token_id"])
+        else:
+            tokenInId = int(tokenInDetails[0]["token_id"])
+
+        updateDict["token_in_id"] = tokenInId
+
+    tokenOutAddress = routeDict["token_out_address"]
+    tokenOutDetails = indexedTokens[{'network_id': networkId, 'address': tokenOutAddress}]
+
+    if tokenOutDetails:
+
+        if len(tokenInDetails) > 1:
+            tokenOutId = int(sorted(tokenOutDetails, key=lambda tokenOut: tokenOut['token_id'])[0]["token_id"])
+        else:
+            tokenOutId = int(tokenOutDetails[0]["token_id"])
+
+        updateDict["token_out_id"] = tokenOutId
+
+    if "token_in_id" in updateDict or "token_out_id" in updateDict:
+        return updateDict
+
+fixedRoutes = [getTokenIds(routeDict=route) for route in routes]
+
+update_many(
+    dbConnection=dbConnection,
+    data_list=fixedRoutes,
+    mysql_table="routes"
+)
+
+x = 1
