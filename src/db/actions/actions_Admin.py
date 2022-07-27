@@ -11,6 +11,7 @@ Exports:
     - createDatabase: Create a new database if it does not exist
     - dropDatabase: Drop an existing database
     - useDatabase: Switch to specified database for queries
+# Log all administrative actions for security audit
     - checkDatabaseExists: Check if a database exists
     - DEFAULT_DATABASE_NAME: Default database name constant
 """
