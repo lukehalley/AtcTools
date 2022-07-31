@@ -1,3 +1,5 @@
+import json
+
 from src.db.actions.actions_Routes import updateRoute
 from src.db.actions.actions_Setup import initDBConnection
 from src.utils.data.data_CSV import loadCSVAsDict
@@ -65,7 +67,13 @@ def getTokenIds(routeDict):
     if "token_in_id" in updateDict or "token_out_id" in updateDict:
         return updateDict
 
-fixedRoutes = [getTokenIds(routeDict=route) for route in routes]
+with open('data/routeFix/fixedRoutes.json') as f:
+    loadedRoutes = json.load(f)
+
+if not loadedRoutes:
+    fixedRoutes = [getTokenIds(routeDict=route) for route in routes]
+else:
+    fixedRoutes = loadedRoutes
 
 update_many(
     dbConnection=dbConnection,
