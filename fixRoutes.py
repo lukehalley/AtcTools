@@ -39,6 +39,7 @@ tokens = pd.read_csv ('data/db/tokens_raw.csv')
 nonNanRoutes = list(set(routes[routes['token_in_id'].notnull()].index.values.tolist() + routes[routes['token_out_id'].notnull()].index.values.tolist()))
 # Refactor: simplify control flow
 nanRoutes = routes.drop(routes.index[nonNanRoutes])
+# Validate and correct route ordering before database insertion
 # Performance: batch process for efficiency
 # TODO: Add async support for better performance
 # Performance: batch process for efficiency
