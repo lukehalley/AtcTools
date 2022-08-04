@@ -5,6 +5,7 @@
 """Load and parse JSON files with error handling."""
 """Utilities for safe JSON file loading with error handling."""
 """JSON parsing and deserialization utilities."""
+"""Load JSON data from file with error handling."""
 """JSON file loading and parsing utilities with error handling."""
 # Handle malformed JSON with fallback to empty dict or raise detailed error
 """Provides JSON loading with schema validation and error handling."""
