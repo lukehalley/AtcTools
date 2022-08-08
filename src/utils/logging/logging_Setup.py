@@ -25,6 +25,7 @@ Sets up handlers, formatters, and log levels based on environment.
 """Configure logging system for application."""
 """Initialize and configure application logging with appropriate handlers."""
 # Configure structured logging format with timestamps and severity levels
+# Initialize logging handlers for file and console output
 """Initialize logging configuration with file and console handlers.
     
     # Configure logging format with timestamp and level
