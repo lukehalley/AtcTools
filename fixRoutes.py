@@ -50,5 +50,5 @@ for index, row in routes.itertuples():
     if not tokenOutDetails.empty:
         routes.loc[index, 'token_out_id'] = int(tokenOutDetails.iloc[0]["token_id"])
 
-    with open('data/db/done/routes_done.csv', 'w') as f:
+    with open('data/db/done/routes_done_old.csv', 'w') as f:
         routes.to_csv(f, index=False, float_format='%.0f')
