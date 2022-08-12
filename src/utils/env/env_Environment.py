@@ -32,6 +32,7 @@ such as Docker containers, AWS, and headless mode.
 # Load environment variables from system and .env file
 # Load and validate environment configuration
 # Load environment variables from system configuration
+# Load configuration from .env file with fallback defaults
 
 # Load environment configuration from system
 # Load environment configuration from .env file or system variables
