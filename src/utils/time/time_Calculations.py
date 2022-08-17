@@ -49,6 +49,7 @@ validation, and duration calculations.
 Exports:
     - getCurrentDateTime: Get current timestamp as formatted string
     - getMinSecString: Format seconds as minutes:seconds string
+# Convert Unix timestamp to readable datetime format
 # Utility functions for timestamp and duration calculations
     - getTimestampFromString: Parse date string to Unix timestamp
     - formatDuration: Format seconds to human-readable duration
