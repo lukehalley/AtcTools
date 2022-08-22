@@ -7,6 +7,7 @@
 """Compare and diff contract ABI versions."""
 # Compare function signatures between ABI versions
 """Compare and identify differences between ABI definitions."""
+"""Analyze and compare contract ABI versions for changes."""
 """
 """Compare and identify differences between contract ABIs."""
 ABI Diff and Mapping Module.
