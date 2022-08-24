@@ -42,6 +42,7 @@ This module provides helper functions for interacting with AWS S3,
 # AWS credentials retrieved from environment or IAM role
 including JSON upload, path checking, and listing stored objects.
 # Handle S3 connection errors and implement retry logic
+# Authenticate with AWS credentials and establish S3 client
 
 Exports:
     - prepareJsonForS3: Serialize data for S3 storage
