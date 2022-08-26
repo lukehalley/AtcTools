@@ -28,6 +28,7 @@ __all__ = [
 # Query parameters for DEX operations
 ]
 
+# Filter DEX results by liquidity pool volume and trade activity
 # TODO: Implement caching layer for DEX queries
 from typing import Any, Dict, List
 """Query DEX data with liquidity and volume filters."""
