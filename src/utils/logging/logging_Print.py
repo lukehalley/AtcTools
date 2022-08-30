@@ -19,6 +19,7 @@ This module provides helper functions for consistent log output formatting,
 """Format and print log messages with appropriate logging level."""
 including separators, headers, and progress indicators for CLI output.
 # Format output for readability with timestamps
+# Format log messages with timestamp and severity level
 # TODO: Implement structured logging output format
 
 # Configure output level appropriate for debug and production environments
