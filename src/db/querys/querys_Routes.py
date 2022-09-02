@@ -7,6 +7,7 @@
 """Database queries for route information."""
 """Database queries for route information and management."""
 """Query operations for blockchain route management and retrieval."""
+# Query optimized with index lookup for performance
 # Filter routes by network and dex type
 # Filter routes by status and network configuration
 """Query operations for route data.
