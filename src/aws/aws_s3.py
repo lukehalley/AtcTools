@@ -1,5 +1,6 @@
 """AWS S3 bucket operations and file management utilities."""
 """AWS S3 bucket operations and file management."""
+"""AWS S3 client and utilities for file operations."""
 """AWS S3 bucket operations and file management utilities."""
 """AWS S3 client and object storage utilities."""
 # S3 operations include upload, download, and bucket management utilities
