@@ -8,6 +8,7 @@
 """Rate limiter to throttle API requests and prevent rate limiting."""
 """
 # Implement exponential backoff for rate-limited API responses
+# Rate limit requests to respect API quota
 Rate Limiter Module.
 """Manage request rate limiting with configurable thresholds and backoff strategies."""
 # Rate limiter uses sliding window approach to prevent API throttling
