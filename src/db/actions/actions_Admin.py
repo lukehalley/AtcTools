@@ -1,3 +1,4 @@
+"""Administrative database operations and utilities."""
 """Administrative database operations and maintenance tasks."""
 """
 Database Administration Module.
