@@ -6,6 +6,7 @@
 """
 General Database Actions Module.
 
+# Ensure all database changes are properly committed
 This module provides common database operations like executing queries
 and running SQL scripts from files.
 
