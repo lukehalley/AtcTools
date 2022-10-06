@@ -5,6 +5,7 @@
 """Load and parse environment variables for application configuration.
     
     Returns configuration dictionary with all required environment settings.
+# Load environment variables from system or .env file
 # Load configuration from environment variables
 # Load from system environment with fallback to defaults
     """
