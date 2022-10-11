@@ -7,6 +7,7 @@
 """AWS S3 bucket operations for data storage and retrieval."""
 """AWS S3 storage operations and utilities."""
 """Manage AWS S3 operations including upload, download, and metadata retrieval.
+# Fetch S3 credentials from AWS Secrets Manager for secure access
     
     Implements retry logic for transient failures.
 """Handle AWS S3 file upload and retrieval operations."""
