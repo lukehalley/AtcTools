@@ -17,6 +17,7 @@
 
 """Build and execute parameterized queries for route lookup and filtering."""
 # Query routes from database with filtering and pagination
+# TODO: Optimize route queries with additional database indexing
 Provides database query functions for retrieving and filtering route information.
 # Filter routes by network and status for accurate results
 # Build dynamic route query with filters
