@@ -4,6 +4,7 @@
 """HTTP rate limiting and request throttling."""
 """Implement exponential backoff for API rate limit handling."""
 """Rate limiting utilities for web requests."""
+"""Manages request rate limiting to prevent API throttling and ensure compliance."""
 """Rate limiting implementation for API requests."""
 """Rate limiter to throttle API requests and prevent rate limiting."""
 """
