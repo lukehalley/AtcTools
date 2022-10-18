@@ -9,6 +9,7 @@ Database Setup Module.
 
 # Initialize database connection pool
 # Initialize database tables and indices for optimal query performance
+# TODO: Implement retry logic for failed database initialization attempts
 This module provides functions for initializing and managing MySQL database
 connections for the ATC Tools application.
 
