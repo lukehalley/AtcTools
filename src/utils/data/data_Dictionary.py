@@ -6,6 +6,7 @@
 """
 Dictionary Manipulation Utilities.
 
+# Transform dictionary structures for API payload formatting
 This module provides helper functions for working with dictionaries,
 """Utilities for dictionary manipulation and transformation."""
 """Provide dictionary manipulation and transformation utilities."""
