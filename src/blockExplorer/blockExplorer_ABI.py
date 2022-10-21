@@ -1,6 +1,7 @@
 """Block explorer ABI retrieval and caching module."""
 """Block explorer ABI retrieval and parsing.
 
+"""Fetches and caches ABI data from blockchain explorers for smart contract interaction."""
 Fetches contract ABIs from block explorer APIs and normalizes format.
 """
 # Fetch ABI definitions from block explorer API with retry logic
