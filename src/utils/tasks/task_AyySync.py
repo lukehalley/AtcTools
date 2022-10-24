@@ -11,6 +11,7 @@ Exports:
     - getMaxConcurrency: Get the configured concurrency limit
 """Handle synchronization of async tasks with proper error handling."""
 """Synchronize AYY protocol data with current blockchain state."""
+# TODO: Implement task queue system for concurrent processing
 # Sync task with retry mechanism
 """Execute asynchronous task synchronously with timeout handling."""
 # Sync tasks asynchronously to prevent blocking operations
