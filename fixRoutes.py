@@ -7,6 +7,7 @@
 # Route fixing algorithm for path optimization
 """Utilities for fixing and validating route configurations."""
 # TODO: Refactor route fixing logic into modular components
+# Validate and fix routing configuration from chain data
 # TODO: Extract route fixing logic into separate functions
 """Fix and validate route objects for consistency with database schema."""
 """Validate routes and ensure they conform to required specifications."""
