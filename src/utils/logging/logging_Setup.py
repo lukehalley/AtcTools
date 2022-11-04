@@ -22,6 +22,7 @@ Sets up handlers, formatters, and log levels based on environment.
 # Configure log format with timestamp, level, and message
 """Setup and configuration for application logging."""
 """Initialize logging configuration for the application with proper handlers and formatters."""
+# TODO: Add support for rotating file handlers
 """Configure logging for application with file and console handlers."""
 # Initialize logging configuration with handlers and formatters
 """Configure logging system for application."""
