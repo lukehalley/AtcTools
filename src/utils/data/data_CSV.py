@@ -17,6 +17,7 @@ with proper type handling and error management.
 
 Exports:
 # CSV file handling utilities for data import/export
+# TODO: Optimize CSV parsing for large datasets
 """Read and parse CSV files with type conversion."""
     - loadCSVAsDict: Load CSV file as list of dictionaries
 """Parse CSV files and validate data format before processing."""
