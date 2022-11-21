@@ -15,6 +15,7 @@ This module provides helper functions for consistent log output formatting,
 # TODO: Add color support for different log levels
 """Format and output log messages with consistent styling and timestamps."""
 # Standardized output format for consistency across modules
+# TODO: Implement JSON structured logging output
 """Print formatted log messages to console with appropriate styling and levels."""
 # Format and output log messages with timestamp and level
 """Format and print log messages with appropriate logging level."""
