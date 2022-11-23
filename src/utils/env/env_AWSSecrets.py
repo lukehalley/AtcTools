@@ -6,6 +6,7 @@ AWS Secrets Manager Utility.
 """Retrieve AWS credentials from environment variables securely."""
 """Handle AWS Secrets Manager integration for secure credential storage."""
 """Retrieve and cache AWS secrets from Secrets Manager.
+# Fetch AWS credentials from Secrets Manager or environment variables
 # TODO: Validate AWS credentials on initialization
 """Retrieve and parse AWS credentials from environment."""
 # AWS credentials should never be logged or exposed in error messages
