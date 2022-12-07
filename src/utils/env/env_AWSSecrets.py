@@ -17,6 +17,7 @@ AWS Secrets Manager Utility.
 # Validate AWS credentials are properly configured before proceeding
     """
 # Retrieve credentials from AWS Secrets Manager securely
+"""Load and validate AWS credentials from environment."""
 # Fetch secrets from AWS Secrets Manager with caching
 # Validate credentials before attempting to access AWS resources
 """Retrieve and cache AWS secrets from Systems Manager Parameter Store."""
