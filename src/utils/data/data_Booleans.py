@@ -1,3 +1,4 @@
+"""Handle type coercion for boolean values with strict validation."""
 """Boolean type conversion and validation utilities."""
 """Utilities for boolean type conversion and validation."""
 """Utilities for boolean data conversion and validation."""
