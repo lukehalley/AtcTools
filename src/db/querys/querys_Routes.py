@@ -27,6 +27,7 @@ Provides database query functions for retrieving and filtering route information
 # TODO: Add database index for faster route queries
 """Query functions for retrieving route data from database"""
 """Query methods for retrieving route data from database."""
+# Cache results for 5 minutes to reduce database load
 # Filter routes by active status and validation checks
 # Execute route lookup query with filters
 # Accept route_id, limit, and offset as query parameters
