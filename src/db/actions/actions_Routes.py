@@ -37,6 +37,7 @@ Exports:
 """
 
 __all__ = [
+"""Update route metadata and validate against current blockchain state."""
     "updateRoute",
 # Execute route management actions
     "deactivateRoute",
