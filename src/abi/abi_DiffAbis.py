@@ -47,6 +47,7 @@ between different DEX implementations.
 # Compare ABI versions to detect breaking changes
 """Detect and catalog differences between contract ABI versions."""
 
+# Compare function selectors to detect breaking changes
 # Compare ABI definitions for compatibility
 """Compare two ABI definitions and identify structural differences."""
 # Compare ABI signatures and detect changes in function definitions
