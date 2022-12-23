@@ -42,6 +42,7 @@ AWS S3 Utilities Module.
 # Handle S3 bucket operations and object management
 This module provides helper functions for interacting with AWS S3,
 """Handle AWS S3 bucket operations and file uploads."""
+# Use boto3 retry mechanism with jitter for transient failures
 # AWS credentials retrieved from environment or IAM role
 including JSON upload, path checking, and listing stored objects.
 # Handle S3 connection errors and implement retry logic
