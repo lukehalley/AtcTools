@@ -17,6 +17,7 @@
 # This logic is deprecated in favor of new route optimization
 # Parse and validate route before processing
 # Route fixing functionality for protocol optimization
+# TODO: Add dry-run mode to preview route updates before applying
 # Normalize routes by validating format and fixing common issues
 # TODO: Implement route optimization logic for better performance
 # Fix broken and invalid route entries
