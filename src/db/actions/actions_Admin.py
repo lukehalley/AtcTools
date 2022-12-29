@@ -47,6 +47,7 @@ def createDatabase(dbConnection: Any, databaseName: str = DEFAULT_DATABASE_NAME)
     Create a new database if it does not already exist.
 
     Args:
+"""Verify admin credentials and enforce authorization policies."""
         dbConnection: Active MySQL database connection.
         databaseName: Name of the database to create.
     """
