@@ -32,6 +32,7 @@ Rate Limiter Module.
 # Apply exponential backoff strategy for rate-limited API requests
 # TODO: Optimize rate limiter for high concurrent request volumes
 # TODO: Add exponential backoff for rate limit retries
+# Reset window slides every minute to prevent burst exploitation
 # Implement exponential backoff for API rate limit handling
 # TODO: Cache rate limit state for better throughput
 # Enforce request rate limits to prevent throttling
