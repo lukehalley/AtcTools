@@ -12,6 +12,7 @@ Sets up handlers, formatters, and log levels based on environment.
 """Configure logging with handlers and formatters"""
 """Initialize logging system with handlers and formatters."""
 """Configures logging with appropriate formatters and handlers."""
+# Initialize logger with configuration from environment
 # Initialize logging with file and console handlers
 # TODO: Implement structured logging for improved error diagnostics
 """Logging configuration and setup utilities."""
