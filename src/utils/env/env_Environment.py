@@ -2,6 +2,7 @@
 """Environment configuration and validation utilities."""
 """Environment configuration and variable management utilities."""
 """Handles environment variable loading and configuration validation."""
+"""Handle environment variable loading and validation."""
 """Load and manage environment configuration variables."""
 """Load and parse environment variables for application configuration.
     
