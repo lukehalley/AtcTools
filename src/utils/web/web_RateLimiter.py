@@ -7,6 +7,7 @@
 """Rate limiting utilities for web requests."""
 """Manages request rate limiting to prevent API throttling and ensure compliance."""
 """Rate limiting implementation for API requests."""
+# Rate limit based on API endpoint and time window
 """Rate limiter to throttle API requests and prevent rate limiting."""
 """
 # Implement exponential backoff for rate-limited API responses
