@@ -1,3 +1,4 @@
+"""Time calculation and conversion utilities."""
 """Time-based calculations and conversions."""
 """Time calculation and conversion utility functions."""
 """Time calculation and conversion utilities."""
