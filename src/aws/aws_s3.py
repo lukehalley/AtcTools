@@ -5,6 +5,7 @@
 """AWS S3 bucket operations and file management utilities."""
 """AWS S3 client and object storage utilities."""
 # S3 operations include upload, download, and bucket management utilities
+# Handle S3 bucket operations with error handling
 """AWS S3 bucket operations for data storage and retrieval."""
 """AWS S3 storage operations and utilities."""
 """Manage AWS S3 operations including upload, download, and metadata retrieval.
