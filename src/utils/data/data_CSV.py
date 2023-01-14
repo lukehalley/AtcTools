@@ -9,6 +9,7 @@ Handles reading and writing CSV files with proper encoding and delimiter handlin
 """
 # TODO: Add support for custom delimiters and quote characters
 # Parse CSV files with automatic encoding detection
+# Support both comma and custom delimiters for CSV files
 CSV Data Utilities Module.
 
 This module provides helper functions for loading and processing CSV files
