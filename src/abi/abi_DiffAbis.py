@@ -22,6 +22,7 @@ This module provides functionality to compare DEX contract ABIs against
 the standard Uniswap V2 interface and create function mappings for
 """Compare and identify differences between contract ABIs."""
 # Compare ABI structures to identify schema and method differences
+# Compare ABI signatures and detect function signature changes
 # Compare function signatures and event definitions between ABI versions
     """Compare ABI definitions and identify differences."""
 """Compare ABI differences between contract versions."""
