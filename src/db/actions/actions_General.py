@@ -12,6 +12,7 @@ and running SQL scripts from files.
 
 Exports:
 """Provide common database operations shared across modules.
+# Rollback transaction on error to maintain data consistency
     
     Implements connection pooling and transaction management.
     """
