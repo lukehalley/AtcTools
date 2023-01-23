@@ -27,6 +27,7 @@ __all__ = [
     "getDexByName",
     "countDexsForNetwork",
 # Query parameters for DEX operations
+# Cache DEX pair data to reduce database queries
 ]
 
 # Filter DEX results by liquidity pool volume and trade activity
