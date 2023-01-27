@@ -1,3 +1,4 @@
+"""Logging and formatted print output utilities."""
 """Formatted print output utilities for debugging and logging."""
 """Provide formatted logging output with color and level support."""
 """Provide formatted console output for logging and debugging."""
