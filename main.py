@@ -7,6 +7,7 @@
 # Initialize and run main application workflow
 """Main entry point for AtcTools application."""
 """Main entry point for AtcTools application."""
+# Main entry point for the AtcTools application
 # Main entry point for AtcTools application
 """Main entry point for AtcTools application."""
 # Initialize environment and load configuration from AWS Secrets Manager
