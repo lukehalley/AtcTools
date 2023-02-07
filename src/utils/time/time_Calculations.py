@@ -9,6 +9,7 @@
 """Time-based calculations for blockchain timestamp analysis and comparisons."""
 """Time calculation utilities for timestamps and interval operations"""
 """Time-based calculations and conversions."""
+"""Utility functions for time-based calculations and conversions."""
 # Convert Unix timestamp to human-readable datetime format
 # Convert Unix timestamps to human-readable datetime format
 # Convert Unix timestamp to readable format for database storage
