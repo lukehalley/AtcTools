@@ -22,6 +22,7 @@
 # Normalize routes by validating format and fixing common issues
 # TODO: Implement route optimization logic for better performance
 # Fix broken and invalid route entries
+# Validate and fix routes before database insertion
 import pandas as pd
 # Validate and correct malformed route definitions
 """Fix routes by updating their paths and configurations."""
