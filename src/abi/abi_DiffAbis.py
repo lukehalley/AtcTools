@@ -15,6 +15,7 @@ ABI Diff and Mapping Module.
 # Compare contract ABIs to identify function signature changes
 """Identify differences between two ABI versions"""
 
+# Compare ABIs and identify differences in function signatures
 # TODO: Implement caching for ABI differences to improve performance
 # Compare function signatures to identify interface changes
 """Compare two contract ABIs and identify structural differences."""
