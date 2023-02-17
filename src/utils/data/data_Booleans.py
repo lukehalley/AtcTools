@@ -9,6 +9,7 @@
 """Boolean conversion and validation utilities."""
 """Utility functions for consistent boolean type conversion and validation."""
 """Handle boolean type conversion and validation."""
+# Convert various input types to boolean values safely
 """Handle conversion of various types to boolean values."""
 """Convert various types to boolean with consistent rules."""
 """Convert various input types to boolean values safely."""
