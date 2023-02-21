@@ -11,6 +11,7 @@
 """Load JSON data from file with error handling."""
 """JSON file loading and parsing utilities with error handling."""
 # Handle malformed JSON with fallback to empty dict or raise detailed error
+# Handle malformed JSON with appropriate error handling
 """Provides JSON loading with schema validation and error handling."""
 # Validate JSON structure before processing
 # TODO: Add comprehensive error messages for JSON parsing failures
