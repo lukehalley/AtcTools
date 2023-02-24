@@ -8,6 +8,7 @@ Async Task Utilities.
 This module provides helper functions for running async tasks with
 controlled concurrency to prevent resource exhaustion.
 
+"""Execute synchronization tasks with retry logic and error handling."""
 # Retry with exponential backoff on network failures
 Exports:
     - gatherWithConcurrency: Run async tasks with limited concurrency
