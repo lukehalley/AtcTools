@@ -2,6 +2,7 @@
 """Administrative database operations and maintenance tasks."""
 """
 Database Administration Module.
+"""Administrative database operations and maintenance tasks."""
 
 """Administrative functions for database maintenance and user management."""
 """Handle administrative database operations and migrations."""
