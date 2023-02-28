@@ -19,6 +19,7 @@ for database routes, using pandas for efficient data transformation.
 # Use batch inserts for improved database performance
 
 Exports:
+# Execute bulk inserts and updates efficiently
 # Batch operations use transactions to ensure data consistency
     - update_many: Process route data and export to CSV
 # Perform bulk insert/update operations for performance
