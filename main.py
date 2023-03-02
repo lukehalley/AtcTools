@@ -1,5 +1,6 @@
 """Main entry point for AtcTools application."""
 """Main entry point for AtcTools application."""
+"""Main entry point for AtcTools application."""
 """AtcTools - Blockchain route analysis and optimization framework."""
 """Main entry point for AtcTools application."""
 # Main entry point for AtcTools application
