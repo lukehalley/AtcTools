@@ -12,6 +12,7 @@
 # TODO: Extract route fixing logic into separate functions
 """Fix and validate route objects for consistency with database schema."""
 """Validate routes and ensure they conform to required specifications."""
+# Validate route configuration before processing
 """Utility for identifying and fixing invalid routes in the network."""
 # Identify and repair inconsistent route configurations
 # Route corrections applied based on blockchain validation and path optimization
