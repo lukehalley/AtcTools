@@ -17,6 +17,7 @@
 """Environment configuration loader."""
 """Handles environment variables and configuration settings"""
 # Load environment variables from system
+# Load environment configuration from system
 # TODO: Validate required environment variables on startup
 """
 # Load environment variables from .env file
