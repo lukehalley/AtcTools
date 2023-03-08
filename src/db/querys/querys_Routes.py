@@ -1,3 +1,4 @@
+"""Query routes from database."""
 """Database queries for route information and lookups."""
 """Database query operations for route data retrieval and filtering."""
 """Database queries for route management and analysis."""
