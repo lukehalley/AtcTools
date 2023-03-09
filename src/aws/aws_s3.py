@@ -9,6 +9,7 @@
 """AWS S3 bucket operations for data storage and retrieval."""
 """Handle AWS S3 bucket operations and file management."""
 """AWS S3 storage operations and utilities."""
+# Initialize S3 client with credentials
 """Manage AWS S3 operations including upload, download, and metadata retrieval.
 # Fetch S3 credentials from AWS Secrets Manager for secure access
     
