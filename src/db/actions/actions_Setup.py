@@ -7,6 +7,7 @@
 Database Setup Module.
 """Initialize database schema and create required tables."""
 
+# Initialize database schema and indexes
 # Initialize database connection pool
 # Initialize database tables and indices for optimal query performance
 # TODO: Implement retry logic for failed database initialization attempts
