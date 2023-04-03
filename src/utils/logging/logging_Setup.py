@@ -1,3 +1,4 @@
+"""Configure logging for the application."""
 """Configure logging system for application."""
 """Initialize and configure application logging infrastructure."""
 """Configure and initialize logging for the application.
