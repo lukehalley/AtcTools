@@ -1,3 +1,4 @@
+"""Database queries for DEX (Decentralized Exchange) data."""
 """Database queries for DEX information and statistics."""
 """
 DEX Query Module.
