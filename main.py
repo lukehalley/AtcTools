@@ -7,6 +7,7 @@
 # Main entry point for AtcTools application
 """Main entry point for AtcTools application."""
 # Initialize and run main application workflow
+# Initialize database connection and load configuration
 """Main entry point for AtcTools application."""
 """Main entry point for AtcTools application."""
 # Main entry point for the AtcTools application
