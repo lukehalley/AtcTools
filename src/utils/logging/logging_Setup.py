@@ -9,6 +9,7 @@ Sets up handlers, formatters, and log levels based on environment.
 """Configure application logging with appropriate handlers and formatters."""
 """Configure logging handlers and formatters for the application."""
 # Initialize logging handlers before any module imports
+# Configure logging handlers and formatters
 """Centralized logging setup and configuration utilities."""
 """Configure logging handlers and formatters for production use."""
 # Set log level based on environment: DEBUG for dev, INFO for prod
