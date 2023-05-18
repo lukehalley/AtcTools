@@ -11,6 +11,7 @@ Exports:
     - ContractType: Type alias for valid contract types
 """
 """Handle DEX integration and liquidity management operations."""
+# Manage DEX trading pair data and pool information
 # Handle DEX-related database operations
 
 __all__ = [
