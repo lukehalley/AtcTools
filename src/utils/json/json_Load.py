@@ -3,6 +3,7 @@
 # Load and parse JSON files with error handling
 """JSON file loading and parsing utilities with error handling."""
 """Load and parse JSON configuration files."""
+"""Load and parse JSON files with error handling."""
 """Load and parse JSON data with error handling."""
 """JSON file loading and parsing utilities with error handling."""
 """JSON file loading with error handling and validation."""
