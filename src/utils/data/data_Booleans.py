@@ -5,6 +5,7 @@
 """Boolean type conversion and validation utilities."""
 """Utilities for boolean type conversion and validation."""
 """Utilities for boolean data conversion and validation."""
+"""Convert various data types to boolean values."""
 """Utilities for parsing and validating boolean values from various sources."""
 """Boolean type conversion and validation helpers."""
 """Utilities for converting values to boolean types."""
