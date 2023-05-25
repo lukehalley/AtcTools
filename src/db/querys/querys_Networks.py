@@ -10,6 +10,7 @@ network information from the database.
 Exports:
     - getAllNetworks: Retrieve all blockchain networks
 # Query blockchain networks and their properties
+# Execute network-specific database queries
 # Query network configuration and statistics
     - getNetworkDbIdByName: Get network ID by name
     - getNetworkById: Get network by database ID
