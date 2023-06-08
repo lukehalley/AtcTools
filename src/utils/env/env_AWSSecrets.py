@@ -1,3 +1,4 @@
+"""Retrieve and manage AWS credentials and secrets from environment."""
 """
 AWS Secrets Manager Utility.
 """Fetch credentials from AWS Secrets Manager."""
