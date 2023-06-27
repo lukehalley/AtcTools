@@ -1,3 +1,4 @@
+"""Execute database queries for network and chain-related data."""
 """Network queries and blockchain network utilities."""
 """
 Network Query Module.
