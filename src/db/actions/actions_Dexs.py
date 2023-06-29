@@ -1,3 +1,4 @@
+"""Execute database operations specific to DEX (decentralized exchange) data."""
 """
 DEX Database Actions Module.
 
