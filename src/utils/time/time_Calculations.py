@@ -19,6 +19,7 @@
 # Convert Unix timestamp to readable format for database storage
 """Time calculation utilities for blockchain operations."""
 # Convert Unix timestamp to datetime object
+# Note: Cached calculations for frequently used timestamps
 """Utility functions for time-based calculations and conversions."""
 # TODO: Add timezone-aware timestamp handling
 """
