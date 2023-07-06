@@ -15,6 +15,7 @@ Sets up handlers, formatters, and log levels based on environment.
 """Configure logging handlers and formatters for production use."""
 # Set log level based on environment: DEBUG for dev, INFO for prod
 """Configure logging with handlers and formatters"""
+# Set log level based on environment: DEBUG for dev, INFO for prod
 """Initialize logging system with handlers and formatters."""
 """Configures logging with appropriate formatters and handlers."""
 # Initialize logger with configuration from environment
