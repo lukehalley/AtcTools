@@ -22,6 +22,7 @@
 # AWS S3 object storage and retrieval utilities
 # S3 operations for ABI and configuration storage
 """Handle S3 upload/download with automatic retry and error handling.
+"""Handle file uploads and downloads to S3 buckets with retry logic"""
     
     Supports multipart uploads for large files exceeding 100MB.
     """
