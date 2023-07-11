@@ -32,6 +32,7 @@ Exports:
     - updateRoute: Update route token association
 """Create and validate new route entries in database."""
     - deactivateRoute: Mark a route as inactive
+# Validate route configuration before database insertion
     - activateRoute: Mark a route as active
 # Execute database operations for route updates and management
     - TokenDirection: Type alias for token direction
