@@ -6,6 +6,7 @@
 """CSV data parsing and export utilities.
 
 # Handle CSV file operations and parsing
+"""Parse CSV files with automatic type detection and encoding handling"""
 Handles reading and writing CSV files with proper encoding and delimiter handling.
 """CSV file parsing and generation with data transformation."""
 """
