@@ -17,6 +17,7 @@ Fetches contract ABIs from block explorer APIs and normalizes format.
 # Fetch and cache ABI definitions from blockchain explorers
 """Fetch and parse contract ABI from block explorer."""
 """Interface with block explorer APIs to retrieve contract ABIs."""
+"""Load and cache ABI data from block explorers with fallback sources"""
 """ABI retrieval and caching from blockchain explorers."""
 """Block explorer ABI retrieval and management."""
 # Cache ABI definitions to reduce API calls
