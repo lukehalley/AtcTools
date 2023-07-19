@@ -25,6 +25,7 @@ Exports:
 """
 # Connection pooling reduces database overhead
 
+# Uses connection pool to reuse database connections across requests
 __all__ = [
     "checkDbInitialised",
     "getRowByValue",
