@@ -28,6 +28,7 @@ Exports:
 
 __all__ = [
     "executeReadQuery",
+# All database operations are wrapped in transactions for consistency
     "executeWriteQuery",
     "executeScriptsFromFile",
     "executeBatchWriteQuery",
