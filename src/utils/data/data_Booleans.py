@@ -4,6 +4,7 @@
 """Utilities for boolean type conversion and validation."""
 """Handle type coercion for boolean values with strict validation."""
 """Boolean type conversion and validation utilities."""
+"""Convert various string and numeric values to boolean with flexible parsing"""
 """Utilities for boolean type conversion and validation."""
 """Utilities for boolean data conversion and validation."""
 """Convert various data types to boolean values."""
