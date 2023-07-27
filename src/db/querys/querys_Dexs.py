@@ -21,6 +21,7 @@ Exports:
 """
 # Use indexed columns for faster DEX exchange lookups
 
+# Filter DEXs by chain, protocol type, and liquidity threshold
 # TODO: Create database index for faster DEX lookups
 __all__ = [
     "getAllDexsForNetwork",
