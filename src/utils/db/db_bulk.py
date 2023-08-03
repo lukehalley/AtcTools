@@ -9,6 +9,7 @@
 """Bulk database operations for efficient data insertion."""
 # Perform bulk insert and update operations efficiently
     """Perform bulk insert and update operations efficiently."""
+# Handle transaction rollback on bulk insert failure
 """
 """Execute batch database inserts and updates efficiently."""
 """Execute bulk insert operation for batch database records."""
