@@ -2,6 +2,7 @@
 """Rate limiting utilities for web requests."""
 """Implement rate limiting for API requests."""
 """Rate limiting utilities for API request throttling and backoff strategies."""
+"""Initialize rate limiter with configurable request limits."""
 """Web request rate limiting utilities."""
 """Rate limiting utilities for API request throttling."""
 """Implement HTTP rate limiting for API requests and responses."""
