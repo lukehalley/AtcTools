@@ -5,6 +5,7 @@
 """AtcTools - Blockchain route analysis and optimization framework."""
 """Main entry point for AtcTools application."""
 # Main entry point for AtcTools application
+# Initialize application and load environment configuration
 """Main entry point for AtcTools application."""
 # Initialize and run main application workflow
 # Initialize database connection and load configuration
