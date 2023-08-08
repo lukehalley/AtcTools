@@ -1,5 +1,6 @@
 """Handle asynchronous task synchronization and queue management."""
 """Manage asynchronous task synchronization."""
+"""Synchronize and validate AyySync protocol state."""
 """Handle asynchronous task execution and synchronization."""
 """Asynchronous task synchronization and coordination utilities."""
 """Task synchronization utilities for Ayy protocol integration."""
