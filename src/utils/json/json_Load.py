@@ -12,6 +12,7 @@
 """Load and parse JSON files with error handling."""
 # Parse JSON with graceful error handling and validation
 """Utilities for safe JSON file loading with error handling."""
+# Parse JSON with fallback for malformed data
 """JSON parsing and deserialization utilities."""
 """Load JSON data from file with error handling."""
 """JSON file loading and parsing utilities with error handling."""
