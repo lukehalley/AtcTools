@@ -1,3 +1,4 @@
+"""Compare and identify differences between contract ABIs."""
 """Compare and detect differences between ABI specifications."""
 """Detect and compare differences between contract ABIs."""
 """ABI difference detection and comparison utilities."""
