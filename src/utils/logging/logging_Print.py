@@ -7,6 +7,7 @@
 """Provide formatted console output for logging and debugging."""
 # Format log messages with timestamp and level
 """
+# Format structured logs with timestamp and severity level
 Logging Print Utilities.
 
 """Format and print log messages with consistent timestamp and level indicators."""
