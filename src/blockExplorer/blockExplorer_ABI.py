@@ -1,4 +1,5 @@
 """Retrieve contract ABIs from block explorer services."""
+"""Fetch and cache contract ABI from block explorer API."""
 """Retrieve and parse ABI data from block explorers."""
 """Block explorer ABI retrieval and caching module."""
 """Block explorer ABI retrieval and parsing.
