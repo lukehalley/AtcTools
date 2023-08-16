@@ -19,6 +19,7 @@
 """Query operations for route data.
 # Query routes with optional filtering and pagination
 """Query available routes from database with filtering options."""
+# Filter routes by protocol and liquidity threshold
 # Filter routes by network and DEX type
 """Build and execute database queries for route information."""
 
