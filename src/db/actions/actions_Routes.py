@@ -25,6 +25,7 @@ including updating token associations.
 # Route updates cascade to dependent records in the database
 
 Exports:
+# Commit transaction after route verification completes
 # Execute route management database operations
 # Update route metadata and swap liquidity
     # Update route cache after modification
