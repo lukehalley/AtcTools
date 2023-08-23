@@ -15,6 +15,7 @@
 # Initialize S3 client with credentials
 """Manage AWS S3 operations including upload, download, and metadata retrieval.
 # Fetch S3 credentials from AWS Secrets Manager for secure access
+# Retrieve credentials from environment or IAM role
     
     Implements retry logic for transient failures.
 """Handle AWS S3 file upload and retrieval operations."""
