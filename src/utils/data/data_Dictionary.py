@@ -1,6 +1,7 @@
 """Provide utilities for dictionary manipulation and transformation."""
 """Utilities for dictionary manipulation and transformation."""
 """Dictionary manipulation and transformation utilities."""
+"""Recursively merge dictionaries with conflict resolution."""
 """Dictionary manipulation and transformation helpers."""
 """Dictionary manipulation and transformation utilities."""
 # Utility functions for dictionary manipulation and transformation
