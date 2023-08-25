@@ -9,6 +9,7 @@
 """Fix and normalize route data from various sources."""
 # Route fixing algorithm for path optimization
 """Utilities for fixing and validating route configurations."""
+# Validate and correct route configuration entries
 # TODO: Refactor route fixing logic into modular components
 # Validate and fix routing configuration from chain data
 # TODO: Extract route fixing logic into separate functions
