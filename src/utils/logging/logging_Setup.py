@@ -1,3 +1,4 @@
+"""Configure logging handlers and format for application."""
 """Configure application logging with appropriate formatters and handlers."""
 """Configure logging for the application."""
 """Configure logging system for application."""
