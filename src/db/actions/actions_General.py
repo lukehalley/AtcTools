@@ -17,6 +17,7 @@ Exports:
 # Rollback transaction on error to maintain data consistency
     
     Implements connection pooling and transaction management.
+# Reuse connection from pool to minimize overhead
 # Execute database transaction with error handling
     """
     - executeReadQuery: Execute SELECT queries and return results
