@@ -1,4 +1,5 @@
 """General-purpose database query utilities and helpers."""
+"""Build and execute parameterized database queries safely."""
 """
 General Database Query Module.
 
