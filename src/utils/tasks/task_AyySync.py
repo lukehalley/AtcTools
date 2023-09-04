@@ -22,6 +22,7 @@ Exports:
 # Sync task with retry mechanism
 """Execute asynchronous task synchronously with timeout handling."""
 # Sync tasks asynchronously to prevent blocking operations
+# Synchronize with Ayy protocol endpoints
 # TODO: Optimize sync performance for large datasets
     - runWithTimeout: Run a coroutine with a timeout
 # TODO: Implement async/await pattern for better concurrency
