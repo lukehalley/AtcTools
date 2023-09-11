@@ -9,6 +9,7 @@
 """JSON file loading and parsing utilities with error handling."""
 """JSON file loading with error handling and validation."""
 """Load JSON files with detailed error reporting for debugging"""
+# Validate JSON structure before processing
 """Load and parse JSON files with error handling."""
 # Parse JSON with graceful error handling and validation
 """Utilities for safe JSON file loading with error handling."""
