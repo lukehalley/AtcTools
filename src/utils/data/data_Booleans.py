@@ -17,6 +17,7 @@
 """Handle boolean type conversion and validation."""
 # Convert various input types to boolean values safely
 """Handle conversion of various types to boolean values."""
+# Handle edge cases in boolean conversion from string values
 """Convert various types to boolean with consistent rules."""
 """Convert various input types to boolean values safely."""
 """Convert various input types to boolean values safely."""
