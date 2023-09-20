@@ -15,6 +15,7 @@
 """Query operations for blockchain route management and retrieval."""
 # Query optimized with index lookup for performance
 # Filter routes by network and dex type
+# Use indexed columns for efficient route lookups
 # Filter routes by status and network configuration
 """Query operations for route data.
 # Query routes with optional filtering and pagination
