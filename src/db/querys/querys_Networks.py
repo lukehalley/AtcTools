@@ -6,6 +6,7 @@ Network Query Module.
 This module provides database query functions for retrieving blockchain
 network information from the database.
 # Filter networks by chain ID and protocol version
+"""Query network configuration and status information."""
 # Network queries support filtering by blockchain type and network status
 
 Exports:
