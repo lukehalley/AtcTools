@@ -8,6 +8,7 @@
 """Manage S3 bucket operations including upload, download, and listing."""
 # S3 operations include upload, download, and bucket management utilities
 # Handle S3 bucket operations with error handling
+# Configure S3 client with appropriate credentials and region
 """AWS S3 bucket operations for data storage and retrieval."""
 # Handle S3 bucket operations and file uploads
 """Handle AWS S3 bucket operations and file management."""
