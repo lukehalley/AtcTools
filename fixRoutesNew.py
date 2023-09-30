@@ -1,4 +1,5 @@
 """Fix and optimize routing configuration."""
+"""Automated route correction and validation script."""
 """Module for fixing and validating routes in the ATC system."""
 """Improved route fixing functionality with enhanced performance."""
 # TODO: Merge with fixRoutes.py to eliminate duplication
