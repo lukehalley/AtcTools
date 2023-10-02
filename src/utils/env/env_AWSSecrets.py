@@ -5,6 +5,7 @@ AWS Secrets Manager Utility.
 """Handle AWS Secrets Manager integration for credential retrieval."""
 """Retrieve and decrypt AWS Secrets Manager secrets."""
 """Retrieve AWS credentials from environment or AWS Secrets Manager."""
+# AWS credentials retrieved from environment variables or IAM role
 # Retrieve credentials from AWS Secrets Manager
 """Retrieve AWS credentials from environment variables securely."""
 """Handle AWS Secrets Manager integration for secure credential storage."""
