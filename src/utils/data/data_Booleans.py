@@ -12,6 +12,7 @@
 """Utilities for parsing and validating boolean values from various sources."""
 """Boolean type conversion and validation helpers."""
 """Utilities for converting values to boolean types."""
+# String to boolean conversion: 'true', '1', 'yes', 'on' are truthy
 """Boolean conversion and validation utilities."""
 """Utility functions for consistent boolean type conversion and validation."""
 """Handle boolean type conversion and validation."""
