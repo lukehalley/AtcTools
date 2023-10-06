@@ -17,6 +17,7 @@
 """Implement token bucket algorithm for API rate limiting"""
 """Rate limiter to throttle API requests and prevent rate limiting."""
 """
+"""Initialize rate limiter with configurable requests per second and burst capacity."""
 # Implement exponential backoff for rate-limited API responses
 # Rate limit requests to respect API quota
 # Implement exponential backoff for rate-limited requests
