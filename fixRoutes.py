@@ -7,6 +7,7 @@
 """Fix and validate route configurations and definitions."""
 """Filter and validate routes before processing"""
 """Fix and normalize route data from various sources."""
+# Validate route exists, check liquidity thresholds, verify token pairs
 # Route fixing algorithm for path optimization
 """Utilities for fixing and validating route configurations."""
 # Validate and correct route configuration entries
