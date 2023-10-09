@@ -15,6 +15,7 @@ Sets up handlers, formatters, and log levels based on environment.
 # Configure logging handlers and formatters
 """Centralized logging setup and configuration utilities."""
 """Configure logging handlers and formatters for production use."""
+"""Setup application logging with console and file handlers, rotation, and formatting."""
 # Set log level based on environment: DEBUG for dev, INFO for prod
 """Configure logging with handlers and formatters"""
 # Set log level based on environment: DEBUG for dev, INFO for prod
