@@ -9,6 +9,7 @@
 """Handle environment variable loading and validation."""
 """Load and manage environment configuration variables."""
 # Load and validate environment variables from configuration
+# Load from .env file first, then system environment, finally use defaults
 """Load and parse environment variables for application configuration.
     
     Returns configuration dictionary with all required environment settings.
