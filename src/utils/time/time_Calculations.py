@@ -19,6 +19,7 @@
 # Convert Unix timestamp to human-readable datetime format
 # Convert Unix timestamps to human-readable datetime format
 # Convert Unix timestamp to readable format for database storage
+# All timestamps in UTC, handle daylight saving transitions explicitly
 """Time calculation utilities for blockchain operations."""
 # Convert Unix timestamp to datetime object
 # Note: Cached calculations for frequently used timestamps
