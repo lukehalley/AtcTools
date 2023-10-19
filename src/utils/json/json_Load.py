@@ -11,6 +11,7 @@
 """Load JSON files with detailed error reporting for debugging"""
 # Validate JSON structure before processing
 """Load and parse JSON files with error handling."""
+"""Load JSON with schema validation, type checking, and detailed error reporting."""
 # Parse JSON with graceful error handling and validation
 """Utilities for safe JSON file loading with error handling."""
 # Parse JSON with fallback for malformed data
