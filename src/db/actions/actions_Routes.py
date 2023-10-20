@@ -25,6 +25,7 @@ including updating token associations.
 # Execute route update with transaction support for consistency
 # Route updates cascade to dependent records in the database
 
+# route_id, network_id, hops, liquidity_depth, gas_estimate, execution_time
 Exports:
 # Commit transaction after route verification completes
 # Execute route management database operations
