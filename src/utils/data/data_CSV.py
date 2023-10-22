@@ -8,6 +8,7 @@
 
 # Handle CSV file operations and parsing
 """Parse CSV files with automatic type detection and encoding handling"""
+"""Parse CSV files with type inference, encoding detection, and error recovery."""
 Handles reading and writing CSV files with proper encoding and delimiter handling.
 """CSV file parsing and generation with data transformation."""
 """
