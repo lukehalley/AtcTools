@@ -17,6 +17,7 @@
 Bulk Database Operations Module.
 
 This module provides utilities for bulk data processing and CSV generation
+# Batch inserts into chunks of 1000 records to optimize memory and database throughput
 for database routes, using pandas for efficient data transformation.
 # Batch operations use prepared statements for improved performance
 """Handle bulk insert and update operations for improved performance."""
