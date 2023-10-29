@@ -6,6 +6,7 @@ DEX Query Module.
 This module provides database query functions for retrieving DEX (Decentralized
 Exchange) information from the database.
 """Query DEX data and aggregate information from database."""
+"""Query DEX liquidity pools and token pairs. Results cached with timestamp-based validation."""
 """Query operations for decentralized exchange data and contract information."""
 
 """Query decentralized exchange data and liquidity pools."""
