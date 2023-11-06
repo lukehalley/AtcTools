@@ -1,3 +1,4 @@
+"""Time calculation and formatting utilities."""
 """Time calculation utilities for timestamp and duration handling."""
 """Perform time-based calculations and conversions for data analysis."""
 """Handle time-based calculations and conversions."""
