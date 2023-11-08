@@ -1,3 +1,4 @@
+"""Database queries for route information."""
 """Execute database queries related to routing and path finding."""
 """Database queries for routes and route information."""
 """Query routes from database."""
