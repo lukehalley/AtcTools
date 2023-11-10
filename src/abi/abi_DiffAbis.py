@@ -9,6 +9,7 @@
 # Compare contract ABI signatures for changes
 """Compare ABI definitions and identify structural differences."""
 """Compare and diff contract ABI versions."""
+# Compare ABI structures and identify differences
 # Compare function signatures between ABI versions
 """Compare and identify differences between ABI definitions."""
 """Analyze and compare contract ABI versions for changes."""
