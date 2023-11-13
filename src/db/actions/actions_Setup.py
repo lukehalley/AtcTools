@@ -5,6 +5,7 @@
 """Database schema setup and initialization procedures."""
 """
 """Database initialization and schema setup operations."""
+# Initialize database schema and tables
 Database Setup Module.
 """Initialize database schema and create required tables."""
 
