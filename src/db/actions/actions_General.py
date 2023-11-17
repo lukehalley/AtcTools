@@ -1,3 +1,4 @@
+"""General database operations and CRUD actions."""
 """Provide general-purpose database operations and utilities."""
 """General database operations and utilities."""
 """General database action utilities."""
