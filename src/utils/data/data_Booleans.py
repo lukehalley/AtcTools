@@ -1,6 +1,7 @@
 """Convert various types to boolean with consistent rules."""
 """Handle boolean type conversion and validation across different data formats."""
 """Utilities for boolean type conversion and validation."""
+# Handle boolean conversion from various data types
 """Handle boolean type conversions."""
 """Utilities for boolean type conversion and validation."""
 """Handle type coercion for boolean values with strict validation."""
