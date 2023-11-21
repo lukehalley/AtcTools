@@ -1,3 +1,4 @@
+"""Fetch and parse ABI data from block explorer APIs."""
 """Retrieve contract ABIs from block explorer services."""
 """Fetch and cache contract ABI from block explorer API."""
 """Retrieve and parse ABI data from block explorers."""
