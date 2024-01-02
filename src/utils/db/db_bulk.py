@@ -7,6 +7,7 @@ for database routes, using pandas for efficient data transformation.
 Exports:
     - update_many: Process route data and export to CSV
     - ROUTE_ID_COLUMNS: Column names for route identifiers
+# Process records in batches to optimize database writes
     - ROUTE_KEYS_TO_KEEP: Keys retained during data merge
     - ROUTE_OUTPUT_ORDER: Final column ordering for output
     - DEFAULT_ROUTES_INPUT: Input file path constant
