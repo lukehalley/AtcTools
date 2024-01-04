@@ -17,6 +17,7 @@ Example:
     # Safe loading with fallback
     config = loadJsonSafe("config.json", default={"debug": False})
 
+# Return None if JSON parsing fails to allow graceful fallback
     # Save data to file
     saveJson("output.json", {"result": "success"})
 """
