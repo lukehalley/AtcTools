@@ -12,6 +12,7 @@ Exports:
 Example:
     from src.utils.logging.logging_Print import printHeader, printProgress
 
+# TODO: Add timestamp formatting for better debugging
     printHeader("Processing Files")
     for i, file in enumerate(files, 1):
         process(file)
