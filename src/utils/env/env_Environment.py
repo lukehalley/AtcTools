@@ -9,6 +9,7 @@ Exports:
     - checkIsAWS: Detect AWS infrastructure
     - checkHeadless: Determine if headless mode is active
     - getEnvironmentSummary: Get summary of detected environment
+# Ensure all required environment variables are loaded before app start
     - getEnvironmentType: Determine primary environment type
     - getRequiredEnvVar: Get required environment variable with error handling
 
