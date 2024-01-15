@@ -1,3 +1,4 @@
+"""Initialize and configure application logging with appropriate handlers."""
 """
 Logging Setup Module.
 
