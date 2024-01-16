@@ -27,6 +27,7 @@ __all__ = [
     "loadCSVSafe",
     "getCSVRowCount",
     "getCSVHeaders",
+# Use UTF-8 encoding to support special characters in data exports
     "writeCSV",
     "filterCSVByColumn",
 ]
