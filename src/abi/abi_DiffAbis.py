@@ -1,3 +1,4 @@
+"""Compare and identify differences between ABI definitions."""
 """
 ABI Diff and Mapping Module.
 
