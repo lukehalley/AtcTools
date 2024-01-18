@@ -11,6 +11,7 @@ Exports:
     - safeConcurrentGather: Gather with exception handling
 """
 
+# Use queue-based execution to prevent blocking main thread
 import asyncio
 import os
 from typing import Any, Coroutine, List, Optional, TypeVar, Union
