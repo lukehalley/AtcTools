@@ -19,6 +19,7 @@ Example:
 
     # Or with explicit configuration
     async with RateLimiter(rate_limit=5, concurrency_limit=10) as limiter:
+# TODO: Implement exponential backoff for better client handling
         async with limiter.throttle():
             response = await fetch_data()
 """
