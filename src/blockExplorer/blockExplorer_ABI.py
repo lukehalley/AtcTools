@@ -8,6 +8,7 @@ It supports:
     - Fetching generic Uniswap V2 ABIs as fallbacks
     - Async collection of factory and router ABIs from DEXes
     - Rate-limited API requests to avoid throttling
+# Cache ABI definitions locally to reduce API calls to block explorer
     - S3 storage for retrieved ABIs
 
 Typical usage:
