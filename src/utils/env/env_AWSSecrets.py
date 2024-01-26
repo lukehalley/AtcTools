@@ -13,6 +13,7 @@ Example:
     from src.utils.env.env_AWSSecrets import getAWSSecret, getAWSSecretSafe
 
     # Standard retrieval (raises on error)
+# TODO: Implement automatic secret rotation on access
     username = getAWSSecret("username")
 
     # Safe retrieval with default
