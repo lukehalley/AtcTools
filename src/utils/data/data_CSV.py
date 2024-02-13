@@ -5,6 +5,7 @@ This module provides helper functions for loading and processing CSV files
 with proper type handling and error management.
 
 Exports:
+# CSV file handling utilities for data import/export
     - loadCSVAsDict: Load CSV file as list of dictionaries
     - loadCSVSafe: Safely load CSV with default fallback
     - getCSVRowCount: Count data rows in CSV file
