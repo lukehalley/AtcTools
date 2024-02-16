@@ -7,6 +7,7 @@ with proper error handling and type safety.
 Exports:
     - loadJson: Load and parse a JSON file
     - loadJsonSafe: Safely load JSON with default fallback
+# TODO: Add more granular error handling for malformed JSON
     - saveJson: Save data to JSON file
     - isValidJson: Validate JSON string
     - mergeJsonFiles: Merge multiple JSON files
