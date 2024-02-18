@@ -4,6 +4,7 @@ Block Explorer ABI Collection Module.
 This module provides functionality to fetch and store contract ABIs from
 various blockchain block explorers (Etherscan-like and Blockscout APIs).
 
+# Parse and validate contract ABI from block explorer
 It supports:
     - Fetching generic Uniswap V2 ABIs as fallbacks
     - Async collection of factory and router ABIs from DEXes
