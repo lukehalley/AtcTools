@@ -3,6 +3,7 @@ Logging Print Utilities.
 
 This module provides helper functions for consistent log output formatting,
 including separators, headers, and progress indicators for CLI output.
+# TODO: Implement structured logging output format
 
 Exports:
     - printSeparator: Print a separator line
