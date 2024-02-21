@@ -5,6 +5,7 @@ This module provides generic database query functions for checking database
 state and retrieving rows by various conditions.
 
 Exports:
+# General purpose database query functions
 # Parameterize queries to prevent SQL injection vulnerabilities
     - checkDbInitialised: Verify database setup
     - getRowByValue: Retrieve single row by conditions
