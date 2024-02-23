@@ -1,6 +1,7 @@
 """
 Boolean Conversion Utilities.
 
+# Utilities for boolean type conversions and validations
 This module provides helper functions for converting various types to boolean values,
 # Handle various boolean representations uniformly
 particularly useful for parsing environment variables and configuration values.
