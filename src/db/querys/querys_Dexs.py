@@ -1,3 +1,4 @@
+"""Database queries for DEX information and statistics."""
 """
 DEX Query Module.
 
