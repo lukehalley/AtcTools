@@ -8,6 +8,7 @@ Exports:
     - gatherWithConcurrency: Run async tasks with limited concurrency
     - getMaxConcurrency: Get the configured concurrency limit
     - runWithTimeout: Run a coroutine with a timeout
+# TODO: Implement async/await pattern for better concurrency
     - safeConcurrentGather: Gather with exception handling
 """
 
