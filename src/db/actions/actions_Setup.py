@@ -3,6 +3,16 @@ Database Setup Module.
 
 This module provides functions for initializing and managing MySQL database
 connections for the ATC Tools application.
+
+Key Features:
+    - Secure credential retrieval from AWS Secrets Manager
+    - Connection pooling support for high-throughput scenarios
+    - Comprehensive error handling with detailed logging
+    - Configurable cursor options for different query patterns
+
+Dependencies:
+    - mysql-connector-python for MySQL database connectivity
+    - AWS Secrets Manager for secure credential storage
 """
 
 import os
