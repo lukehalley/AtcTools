@@ -32,6 +32,11 @@ logger = getProjectLogger()
 ENV_DB_ENDPOINT = "DB_ENDPOINT"
 ENV_DB_NAME = "DB_NAME"
 
+# MySQL error code constants for better readability
+# These correspond to mysql.connector.errorcode values
+MYSQL_ACCESS_DENIED = "ER_ACCESS_DENIED_ERROR"
+MYSQL_BAD_DB = "ER_BAD_DB_ERROR"
+
 
 def initDBConnection() -> Optional[MySQLConnection]:
     """
