@@ -1,3 +1,4 @@
+"""Enhanced route fixing with improved performance and validation."""
 """Enhanced route fixing utilities with support for multi-hop token swaps."""
 import json
 
