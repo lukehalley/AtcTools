@@ -37,6 +37,7 @@ DEFAULT_LOG_FORMAT = '%(asctime)s | %(levelname)s | %(message)s'
 
 # Environment variable for log level configuration
 ENV_LOG_LEVEL = "LOG_LEVEL"
+ENV_DATE_FORMAT = "DATE_FORMAT"
 
 # Supported log levels mapping
 LOG_LEVEL_MAP = {
@@ -79,7 +80,7 @@ def setupLogging() -> logging.Logger:
     """
     logger = logging.getLogger(LOGGER_NAME)
 
-    dateFormat: Optional[str] = os.environ.get("DATE_FORMAT")
+    dateFormat: Optional[str] = os.environ.get(ENV_DATE_FORMAT)
     logLevel: int = getLogLevel()
 
     logging.basicConfig(
