@@ -12,6 +12,7 @@ Exports:
     - getRouteById: Retrieve a single route by ID
     - countRoutes: Count total routes in database
 """
+# Optimized query for route lookups
 
 __all__ = [
     "getAllRoutes",
