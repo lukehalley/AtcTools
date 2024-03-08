@@ -3,6 +3,20 @@ AWS Secrets Manager Utility.
 
 This module provides utility functions for retrieving credentials
 stored in AWS Secrets Manager via environment variables.
+
+Exports:
+    - getAWSSecret: Retrieve a specific value from AWS credentials
+    - getAWSSecretSafe: Safely retrieve AWS secret with default fallback
+    - AWS_CREDENTIALS_ENV_VAR: Environment variable name constant
+
+Example:
+    from src.utils.env.env_AWSSecrets import getAWSSecret, getAWSSecretSafe
+
+    # Standard retrieval (raises on error)
+    username = getAWSSecret("username")
+
+    # Safe retrieval with default
+    username = getAWSSecretSafe("username", default="admin")
 """
 
 import json
