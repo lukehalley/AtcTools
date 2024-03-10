@@ -1,3 +1,4 @@
+"""Rate limiting utilities for web requests."""
 """Rate limiting implementation for API requests."""
 """
 Rate Limiter Module.
