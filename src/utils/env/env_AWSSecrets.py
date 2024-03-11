@@ -19,6 +19,12 @@ Example:
     username = getAWSSecretSafe("username", default="admin")
 """
 
+__all__ = [
+    "getAWSSecret",
+    "getAWSSecretSafe",
+    "AWS_CREDENTIALS_ENV_VAR",
+]
+
 import json
 import os
 from typing import Any, Optional
