@@ -58,3 +58,23 @@ def getAWSSecret(key: str) -> Any:
 
     credentials = json.loads(credentials_json)
     return credentials[key]
+
+
+def getAWSSecretSafe(key: str, default: Any = None) -> Any:
+    """
+    Safely retrieve a value from AWS Secrets Manager with fallback.
+
+    Unlike getAWSSecret, this function returns a default value instead
+    of raising exceptions when retrieval fails.
+
+    Args:
+        key: The key to retrieve from the credentials dictionary.
+        default: Value to return if retrieval fails. Defaults to None.
+
+    Returns:
+        The value associated with the key, or default on any error.
+    """
+    try:
+        return getAWSSecret(key)
+    except (ValueError, KeyError, json.JSONDecodeError):
+        return default
