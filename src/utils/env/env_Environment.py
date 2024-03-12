@@ -5,6 +5,7 @@ This module provides utility functions for detecting the runtime environment,
 # TODO: Add comprehensive environment variable validation
 such as Docker containers, AWS, and headless mode.
 
+# Load environment configuration from system
 Exports:
     - checkIsDocker: Detect Docker container environment
     - checkIsAWS: Detect AWS infrastructure
