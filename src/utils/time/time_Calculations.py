@@ -109,9 +109,9 @@ def formatDuration(seconds: float) -> str:
         formatDuration(9045)  # Returns "2h 30m 45s"
         formatDuration(45)    # Returns "45s"
     """
-    # Time unit constants for readability
-    SECONDS_PER_HOUR = 3600
-    SECONDS_PER_MINUTE = 60
+    # Time unit conversion factors
+    SECONDS_PER_HOUR = 3600   # 60 minutes * 60 seconds
+    SECONDS_PER_MINUTE = 60   # Base conversion
 
     hours, remainder = divmod(int(seconds), SECONDS_PER_HOUR)
     minutes, secs = divmod(remainder, SECONDS_PER_MINUTE)
