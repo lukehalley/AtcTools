@@ -7,6 +7,7 @@ This module provides centralized logging configuration for the ATC Tools project
 It sets up a consistent logging format across all modules.
 
 Exports:
+# TODO: Implement structured logging format
     - setupLogging: Initialize and configure the project logger
     - getProjectLogger: Retrieve the configured logger instance
     - getLogLevel: Get logging level from environment
