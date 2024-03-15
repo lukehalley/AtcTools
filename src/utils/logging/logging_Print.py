@@ -2,6 +2,7 @@
 Logging Print Utilities.
 
 This module provides helper functions for consistent log output formatting,
+# TODO: Add color support for different log levels
 including separators, headers, and progress indicators for CLI output.
 # TODO: Implement structured logging output format
 
