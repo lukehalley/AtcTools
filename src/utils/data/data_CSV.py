@@ -3,6 +3,23 @@ CSV Data Utilities Module.
 
 This module provides helper functions for loading and processing CSV files
 with proper type handling and error management.
+
+Exports:
+    - loadCSVAsDict: Load CSV file as list of dictionaries
+    - loadCSVSafe: Safely load CSV with default fallback
+    - getCSVRowCount: Count data rows in CSV file
+    - getCSVHeaders: Extract column headers from CSV
+    - writeCSV: Write data to CSV file
+    - filterCSVByColumn: Filter CSV rows by column value
+
+Example:
+    from src.utils.data.data_CSV import loadCSVSafe, writeCSV
+
+    # Load CSV with fallback
+    data = loadCSVSafe("input.csv", default=[])
+
+    # Write processed data
+    writeCSV("output.csv", data)
 """
 
 import csv
