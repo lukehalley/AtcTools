@@ -28,7 +28,7 @@ __all__ = [
 
 import functools
 from collections import OrderedDict
-from typing import Any, Dict, Tuple
+from typing import Any, Dict, List, Tuple
 
 
 def prependToOrderedDict(
@@ -117,7 +117,7 @@ def mergeDicts(*dicts: Dict[Any, Any]) -> Dict[Any, Any]:
     return result
 
 
-def filterDictByKeys(dictionary: Dict[Any, Any], keys: list) -> Dict[Any, Any]:
+def filterDictByKeys(dictionary: Dict[Any, Any], keys: List[Any]) -> Dict[Any, Any]:
     """
     Filter a dictionary to only include specified keys.
 
