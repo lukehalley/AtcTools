@@ -32,6 +32,8 @@ __all__ = [
     "FALSY_VALUES",
 ]
 
+# Note: distutils.util.strtobool is deprecated in Python 3.12+
+# Consider migrating to a custom implementation using TRUTHY_VALUES/FALSY_VALUES
 from distutils.util import strtobool
 from typing import Optional, Union
 
