@@ -10,7 +10,20 @@ Exports:
     - checkIfRowExistsByValue: Check row existence
     - getRowCount: Count rows in a table
     - getAllRows: Retrieve all rows from a table
+    - DB_SCHEMA_NAME: Database schema name constant
+    - REQUIRED_TABLES: Required tables for initialization check
 """
+
+__all__ = [
+    "checkDbInitialised",
+    "getRowByValue",
+    "checkIfRowExistsByValue",
+    "getRowCount",
+    "getAllRows",
+    "DB_SCHEMA_NAME",
+    "REQUIRED_TABLES",
+    "MIN_REQUIRED_TABLE_COUNT",
+]
 
 from typing import Any, Dict, List, Optional
 
