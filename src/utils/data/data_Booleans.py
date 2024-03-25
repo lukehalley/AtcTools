@@ -1,3 +1,4 @@
+"""Boolean value parsing and conversion utilities."""
 """
 Boolean Conversion Utilities.
 
