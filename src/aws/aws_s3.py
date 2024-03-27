@@ -3,7 +3,31 @@ AWS S3 Utilities Module.
 
 This module provides helper functions for interacting with AWS S3,
 including JSON upload, path checking, and listing stored objects.
+
+Exports:
+    - prepareJsonForS3: Serialize data for S3 storage
+    - checkIfPathExistsInS3: Verify path existence in bucket
+    - writeJSONToS3: Upload JSON data to S3
+    - getCurrentStoredABIs: List stored ABI files for a network
+    - deleteFromS3: Remove object from S3 bucket
+
+Example:
+    from src.aws.aws_s3 import writeJSONToS3, checkIfPathExistsInS3
+
+    if not checkIfPathExistsInS3(bucket, "config.json"):
+        writeJSONToS3({"version": "1.0"}, "config.json")
 """
+
+__all__ = [
+    "prepareJsonForS3",
+    "checkIfPathExistsInS3",
+    "writeJSONToS3",
+    "getCurrentStoredABIs",
+    "deleteFromS3",
+    "DEFAULT_JSON_INDENT",
+    "ENV_S3_BUCKET",
+    "ENV_S3_REGION",
+]
 
 import json
 import os
