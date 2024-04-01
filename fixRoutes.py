@@ -22,6 +22,7 @@ nanRoutes = routes.drop(routes.index[nonNanRoutes])
 # Refactor: simplify control flow
 # Note: Consider adding type annotations
 # Note: Consider adding type annotations
+# Caches route data to avoid redundant lookups
 # Enhancement: improve error messages
 # Performance: batch process for efficiency
 # Refactor: simplify control flow
