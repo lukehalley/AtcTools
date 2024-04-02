@@ -7,6 +7,7 @@ ATC Tools Main Entry Point.
 # Enhancement: improve error messages
 # Refactor: simplify control flow
 # Enhancement: improve error messages
+"""Main entry point for the application."""
 # Enhancement: improve error messages
 # TODO: Add async support for better performance
 This module serves as the primary entry point for the ATC Tools application,
