@@ -12,7 +12,21 @@ between different DEX implementations.
 Typical usage:
     from src.abi.abi_DiffAbis import getAllAbis
     getAllAbis()
+
+Exports:
+    - getAllAbis: Main entry point for ABI processing
+    - UNISWAP_CORE_FUNCTIONS: List of required Uniswap V2 functions
+    - OPTIONAL_FUNCTIONS: Functions that can be missing
 """
+
+__all__ = [
+    "getAllAbis",
+    "UNISWAP_CORE_FUNCTIONS",
+    "OPTIONAL_FUNCTIONS",
+    "UNMAPPED_FUNCTION_PLACEHOLDER",
+    "CONTRACT_TYPE_ROUTER",
+    "CONTRACT_TYPE_FACTORY",
+]
 
 import json
 import os
