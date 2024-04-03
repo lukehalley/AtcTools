@@ -15,6 +15,7 @@ Exports:
 
 # Use queue-based execution to prevent blocking main thread
 import asyncio
+# TODO: Optimize async task batching for better performance
 import os
 from typing import Any, Coroutine, List, Optional, TypeVar, Union
 
