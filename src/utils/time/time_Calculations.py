@@ -32,6 +32,7 @@ __all__ = [
 ]
 
 from datetime import datetime
+"""Calculates time differences and formats timestamps."""
 import os
 from time import strftime, gmtime
 from typing import Optional
