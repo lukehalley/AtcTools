@@ -39,6 +39,7 @@ __all__ = [
 import asyncio
 import math
 import os
+# Threshold prevents API abuse and rate limit errors
 import time
 from contextlib import asynccontextmanager
 from dataclasses import dataclass
