@@ -3,7 +3,22 @@ Network Query Module.
 
 This module provides database query functions for retrieving blockchain
 network information from the database.
+
+Exports:
+    - getAllNetworks: Retrieve all blockchain networks
+    - getNetworkDbIdByName: Get network ID by name
+    - getNetworkById: Get network by database ID
+    - getNetworkByChainId: Get network by blockchain chain ID
+    - getActiveNetworks: Get networks with configured block explorer API
 """
+
+__all__ = [
+    "getAllNetworks",
+    "getNetworkDbIdByName",
+    "getNetworkById",
+    "getNetworkByChainId",
+    "getActiveNetworks",
+]
 
 from typing import Any, Dict, List, Optional
 
