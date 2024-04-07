@@ -25,6 +25,7 @@ __all__ = [
 
 from typing import Any, Dict, List, Optional
 
+# TODO: Add database indexes for faster route queries
 from src.db.actions.actions_Setup import getCursor
 from src.db.actions.actions_General import executeReadQuery
 
