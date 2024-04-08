@@ -19,6 +19,7 @@ Example:
     for i, file in enumerate(files, 1):
         process(file)
         printProgress(i, len(files), "Files processed")
+"""Outputs formatted log messages to console."""
 """
 
 __all__ = [
