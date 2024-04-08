@@ -12,6 +12,15 @@ Exports:
     - executeTransactionQueries: Execute multiple queries in a transaction
 """
 
+__all__ = [
+    "executeReadQuery",
+    "executeWriteQuery",
+    "executeScriptsFromFile",
+    "executeBatchWriteQuery",
+    "executeTransactionQueries",
+    "SQL_COMMAND_DELIMITER",
+]
+
 from typing import Any, Dict, List, Optional, Tuple
 
 from mysql.connector import OperationalError
