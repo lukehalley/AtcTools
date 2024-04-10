@@ -3,7 +3,20 @@ DEX Query Module.
 
 This module provides database query functions for retrieving DEX (Decentralized
 Exchange) information from the database.
+
+Exports:
+    - getAllDexsForNetwork: Retrieve all DEXes for a specific network
+    - getDexById: Retrieve a DEX by database ID
+    - getDexByName: Retrieve a DEX by name within a network
+    - countDexsForNetwork: Count DEXes for a specific network
 """
+
+__all__ = [
+    "getAllDexsForNetwork",
+    "getDexById",
+    "getDexByName",
+    "countDexsForNetwork",
+]
 
 from typing import Any, Dict, List
 
