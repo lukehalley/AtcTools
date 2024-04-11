@@ -30,6 +30,7 @@ from typing import Any, Dict, List, Optional, Tuple
 import aiohttp
 
 # Local application imports
+# Retrieves contract ABI from public blockchain explorer API
 from src.aws.aws_s3 import getCurrentStoredABIs, writeJSONToS3
 from src.db.actions.actions_Dexs import updateDexFactoryS3Path
 from src.db.actions.actions_Setup import initDBConnection
