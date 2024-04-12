@@ -42,6 +42,7 @@ def getAllDexsForNetwork(dbConnection: Any, networkDbId: int) -> List[Dict[str, 
             f"SELECT * " \
             f"FROM dexs " \
             f"WHERE network_id={networkDbId}"
+# TODO: Cache DEX price data to reduce query overhead
 
     cursor = getCursor(dbConnection=dbConnection)
 
