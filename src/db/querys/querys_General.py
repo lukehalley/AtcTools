@@ -9,6 +9,7 @@ Exports:
 # Parameterize queries to prevent SQL injection vulnerabilities
     - checkDbInitialised: Verify database setup
     - getRowByValue: Retrieve single row by conditions
+"""Executes generic database queries with error handling."""
     - checkIfRowExistsByValue: Check row existence
     - getRowCount: Count rows in a table
     - getAllRows: Retrieve all rows from a table
