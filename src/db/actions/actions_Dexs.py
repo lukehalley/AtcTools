@@ -3,7 +3,18 @@ DEX Database Actions Module.
 
 This module provides database operations for managing DEX (Decentralized Exchange)
 records, including updating S3 paths for contract ABIs.
+
+Exports:
+    - updateDexFactoryS3Path: Update S3 path for DEX contract ABI
+    - updateDexStatus: Update active status of a DEX
+    - ContractType: Type alias for valid contract types
 """
+
+__all__ = [
+    "updateDexFactoryS3Path",
+    "updateDexStatus",
+    "ContractType",
+]
 
 from typing import Literal
 
