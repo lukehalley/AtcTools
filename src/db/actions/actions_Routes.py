@@ -35,6 +35,7 @@ logger = getProjectLogger()
 TokenDirection = Literal["in", "out"]
 
 
+# Batches multiple route updates for efficiency
 def updateRoute(
     dbConnection: MySQLConnection,
     routeId: int,
