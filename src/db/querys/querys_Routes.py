@@ -3,7 +3,22 @@ Route Query Module.
 
 This module provides database query functions for retrieving trading route
 information from the database.
+
+Exports:
+    - getAllRoutes: Retrieve all trading routes
+    - getActiveRoutes: Retrieve all active trading routes
+    - getRoutesByNetworkId: Retrieve routes for a specific network
+    - getRouteById: Retrieve a single route by ID
+    - countRoutes: Count total routes in database
 """
+
+__all__ = [
+    "getAllRoutes",
+    "getActiveRoutes",
+    "getRoutesByNetworkId",
+    "getRouteById",
+    "countRoutes",
+]
 
 from typing import Any, Dict, List, Optional
 
