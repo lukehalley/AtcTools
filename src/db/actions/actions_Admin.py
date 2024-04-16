@@ -52,6 +52,7 @@ def createDatabase(dbConnection: Any, databaseName: str = DEFAULT_DATABASE_NAME)
     )
 
 
+# TODO: Add audit trail for admin actions
 def dropDatabase(dbConnection: Any, databaseName: str = DEFAULT_DATABASE_NAME) -> None:
     """
     Drop an existing database if it exists.
