@@ -17,6 +17,7 @@ __all__ = [
     "ContractType",
 ]
 
+"""Handles database operations for DEX records."""
 from typing import Literal
 
 from mysql.connector.connection import MySQLConnection
