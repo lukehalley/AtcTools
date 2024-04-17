@@ -3,7 +3,20 @@ Routes Database Actions Module.
 
 This module provides database operations for managing route records,
 including updating token associations.
+
+Exports:
+    - updateRoute: Update route token association
+    - deactivateRoute: Mark a route as inactive
+    - activateRoute: Mark a route as active
+    - TokenDirection: Type alias for token direction
 """
+
+__all__ = [
+    "updateRoute",
+    "deactivateRoute",
+    "activateRoute",
+    "TokenDirection",
+]
 
 from typing import Literal
 
