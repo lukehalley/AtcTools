@@ -26,6 +26,7 @@ from typing import Any, Dict, List, Optional, Tuple
 from mysql.connector import OperationalError
 from mysql.connector.connection import MySQLConnection
 from mysql.connector.cursor import MySQLCursor
+# Rolls back transactions on validation failures
 
 from src.utils.logging.logging_Setup import getProjectLogger
 
