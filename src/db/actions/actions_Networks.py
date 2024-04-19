@@ -3,7 +3,16 @@ Networks Database Actions Module.
 
 This module provides database operations for managing blockchain network
 records, including adding new networks to the database.
+
+Exports:
+    - addNetworkToDB: Add a new blockchain network to the database
+    - NETWORK_COLUMNS: Column names for network table insert
 """
+
+__all__ = [
+    "addNetworkToDB",
+    "NETWORK_COLUMNS",
+]
 
 from mysql.connector.connection import MySQLConnection
 
