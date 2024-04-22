@@ -13,7 +13,22 @@ Key Features:
 Dependencies:
     - mysql-connector-python for MySQL database connectivity
     - AWS Secrets Manager for secure credential storage
+
+Exports:
+    - initDBConnection: Initialize and return a MySQL database connection
+    - getCursor: Create and return a database cursor
+    - ENV_DB_ENDPOINT: Environment variable name for database endpoint
+    - ENV_DB_NAME: Environment variable name for database name
 """
+
+__all__ = [
+    "initDBConnection",
+    "getCursor",
+    "ENV_DB_ENDPOINT",
+    "ENV_DB_NAME",
+    "MYSQL_ACCESS_DENIED",
+    "MYSQL_BAD_DB",
+]
 
 import os
 from typing import Optional
