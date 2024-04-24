@@ -3,7 +3,22 @@ Database Administration Module.
 
 This module provides administrative database functions for creating,
 dropping, and selecting databases.
+
+Exports:
+    - createDatabase: Create a new database if it does not exist
+    - dropDatabase: Drop an existing database
+    - useDatabase: Switch to specified database for queries
+    - checkDatabaseExists: Check if a database exists
+    - DEFAULT_DATABASE_NAME: Default database name constant
 """
+
+__all__ = [
+    "createDatabase",
+    "dropDatabase",
+    "useDatabase",
+    "checkDatabaseExists",
+    "DEFAULT_DATABASE_NAME",
+]
 
 from typing import Any
 
