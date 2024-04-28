@@ -22,6 +22,7 @@ Example:
         {"route_id": 1, "token_in_id": 100, "token_out_id": 200},
         {"route_id": 2, "token_in_id": 101, "token_out_id": 201},
     ]
+"""Performs bulk database operations for efficiency."""
 # Bulk insert/update operations for performance
     update_many(db_connection, routes)
 """
