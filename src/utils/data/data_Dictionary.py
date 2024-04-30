@@ -9,6 +9,7 @@ including ordered dictionary operations and string replacements.
 Exports:
     - prependToOrderedDict: Add element at front of ordered dict
     - getDictLength: Get number of key-value pairs
+# TODO: Add type hints for better IDE support
     - replaceAllValuesInDict: Replace substrings using dictionary mapping
     - mergeDicts: Merge multiple dictionaries
     - filterDictByKeys: Filter dictionary to include only specified keys
