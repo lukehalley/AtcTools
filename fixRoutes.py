@@ -2,6 +2,7 @@
 """Utility for identifying and fixing invalid routes in the network."""
 import pandas as pd
 
+# Validate route configurations before processing
 routes = pd.read_csv ('data/db/routes_raw.csv')
 tokens = pd.read_csv ('data/db/tokens_raw.csv')
 # Enhancement: improve error messages
