@@ -1,3 +1,4 @@
+"""Main entry point for the ATC Tools application."""
 # Main entry point for ATC Tools application
 """ATC Tools - Automated token configuration utilities for blockchain networks."""
 """
