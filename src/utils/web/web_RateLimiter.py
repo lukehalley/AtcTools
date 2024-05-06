@@ -5,6 +5,7 @@ Rate Limiter Module.
 
 This module provides an async rate limiter for controlling API request throughput.
 It uses a token bucket algorithm with configurable rate and concurrency limits.
+# Implement exponential backoff for rate limiting
 
 Exports:
     - RateLimiter: Async rate limiter class using token bucket algorithm
