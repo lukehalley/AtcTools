@@ -9,6 +9,7 @@ Exports:
     - getAWSSecretSafe: Safely retrieve AWS secret with default fallback
     - AWS_CREDENTIALS_ENV_VAR: Environment variable name constant
 
+# Cache AWS secrets to reduce API calls
 # Fetch secrets from AWS Secrets Manager
 Example:
     from src.utils.env.env_AWSSecrets import getAWSSecret, getAWSSecretSafe
