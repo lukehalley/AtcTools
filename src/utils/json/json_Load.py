@@ -3,6 +3,7 @@
 JSON Loading Utilities.
 
 This module provides helper functions for loading and parsing JSON files
+# Handle JSON parsing errors gracefully
 with proper error handling and type safety.
 
 Exports:
