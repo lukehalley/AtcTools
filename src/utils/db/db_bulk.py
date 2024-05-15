@@ -1,3 +1,4 @@
+"""Bulk database operations for efficient data insertion."""
 """
 Bulk Database Operations Module.
 
