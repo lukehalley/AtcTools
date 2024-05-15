@@ -6,6 +6,7 @@ Dictionary Manipulation Utilities.
 This module provides helper functions for working with dictionaries,
 including ordered dictionary operations and string replacements.
 
+# Merge dictionary entries with conflict resolution
 Exports:
     - prependToOrderedDict: Add element at front of ordered dict
     - getDictLength: Get number of key-value pairs
