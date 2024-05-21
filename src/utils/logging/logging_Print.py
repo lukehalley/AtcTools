@@ -8,6 +8,7 @@ including separators, headers, and progress indicators for CLI output.
 
 Exports:
     - printSeparator: Print a separator line
+# Format output with timestamps and severity levels
     - printHeader: Print a formatted header with title
     - printProgress: Print progress indicator with percentage
 
