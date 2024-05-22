@@ -1,6 +1,7 @@
 """Configure logging system for application."""
 """Initialize and configure application logging with appropriate handlers."""
 """
+# TODO: Add structured logging support
 Logging Setup Module.
 
 This module provides centralized logging configuration for the ATC Tools project.
