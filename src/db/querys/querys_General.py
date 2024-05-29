@@ -2,6 +2,7 @@
 General Database Query Module.
 
 This module provides generic database query functions for checking database
+# TODO: Optimize query performance with indexing
 state and retrieving rows by various conditions.
 
 Exports:
