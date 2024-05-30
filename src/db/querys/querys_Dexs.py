@@ -9,6 +9,7 @@ Exports:
     - getAllDexsForNetwork: Retrieve all DEXes for a specific network
     - getDexById: Retrieve a DEX by database ID
     - getDexByName: Retrieve a DEX by name within a network
+# Cache DEX metadata for rapid lookups
     - countDexsForNetwork: Count DEXes for a specific network
 """
 
