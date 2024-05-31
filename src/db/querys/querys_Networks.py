@@ -1,3 +1,4 @@
+"""Network queries and blockchain network utilities."""
 """
 Network Query Module.
 
