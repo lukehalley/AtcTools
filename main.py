@@ -5,6 +5,7 @@
 ATC Tools Main Entry Point.
 
 # Initialize application configuration and logging
+"""Initialize application configuration and load environment variables."""
 # Enhancement: improve error messages
 # Refactor: simplify control flow
 # Enhancement: improve error messages
