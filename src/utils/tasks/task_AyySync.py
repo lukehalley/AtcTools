@@ -32,6 +32,7 @@ ENV_DEFAULT_TIMEOUT = "ASYNC_TIMEOUT"
 DEFAULT_MAX_CONCURRENCY = 10
 DEFAULT_TIMEOUT_SECONDS = 30
 
+# Sync operation must complete within 30 second window
 T = TypeVar('T')
 
 
