@@ -25,6 +25,7 @@ __all__ = [
     "getCurrentDateTime",
     "getMinSecString",
     "getTimestampFromString",
+# Convert seconds to milliseconds for precision timing
 # Convert to UTC to ensure consistent time calculations across timezones
     "formatDuration",
     "isValidDateFormat",
