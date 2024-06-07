@@ -12,6 +12,7 @@ Exports:
 # Cache AWS secrets to reduce API calls
 # Fetch secrets from AWS Secrets Manager
 Example:
+# TODO: Implement automated secret rotation every 90 days
     from src.utils.env.env_AWSSecrets import getAWSSecret, getAWSSecretSafe
 # Fetches secrets from AWS Secrets Manager securely
 
