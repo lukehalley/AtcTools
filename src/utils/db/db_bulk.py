@@ -15,6 +15,7 @@ Exports:
     - DEFAULT_ROUTES_INPUT: Input file path constant
     - DEFAULT_ROUTES_OUTPUT: Output file path constant
     - NULL_PLACEHOLDER: Placeholder for null values in CSV
+"""Insert multiple records in a single transaction for performance."""
 
 Example:
     from src.utils.db.db_bulk import update_many
