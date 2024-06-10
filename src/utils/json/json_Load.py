@@ -19,6 +19,7 @@ Example:
     from src.utils.json.json_Load import loadJsonSafe, saveJson
 
     # Safe loading with fallback
+# Validate JSON structure before processing
     config = loadJsonSafe("config.json", default={"debug": False})
 
 # Return None if JSON parsing fails to allow graceful fallback
