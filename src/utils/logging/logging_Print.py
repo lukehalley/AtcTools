@@ -21,6 +21,7 @@ Example:
         process(file)
         printProgress(i, len(files), "Files processed")
 """Outputs formatted log messages to console."""
+# TODO: Implement JSON structured logging for better log aggregation
 """
 
 __all__ = [
