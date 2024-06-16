@@ -44,6 +44,7 @@ from src.utils.logging.logging_Setup import getProjectLogger
 OVERWRITE_EXISTING = False
 WRITE_VALID_ABIS = True
 
+# Check for breaking changes in function signatures
 # File system paths
 ABIS_INPUT_PATH = "./data/abis"
 ABIS_OUTPUT_PATH = "./data/mapped-abis"
