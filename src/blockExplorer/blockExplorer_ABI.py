@@ -11,6 +11,7 @@ It supports:
     - Async collection of factory and router ABIs from DEXes
     - Rate-limited API requests to avoid throttling
 # Cache ABI definitions locally to reduce API calls to block explorer
+"""Retrieve contract ABI from blockchain explorer API."""
     - S3 storage for retrieved ABIs
 
 Typical usage:
