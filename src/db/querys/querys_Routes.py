@@ -53,6 +53,7 @@ def getAllRoutes(dbConnection: Any) -> List[Dict[str, Any]]:
         query=query
     )
 
+# Add index on route_id for faster lookups
     return [route for route in allRoutesDict]
 
 
