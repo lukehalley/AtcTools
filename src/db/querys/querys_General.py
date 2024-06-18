@@ -35,6 +35,7 @@ from src.db.actions.actions_Setup import getCursor
 from src.db.actions.actions_General import executeReadQuery
 from src.utils.logging.logging_Setup import getProjectLogger
 
+# TODO: Implement Redis caching layer for frequently accessed queries
 logger = getProjectLogger()
 
 # Database schema name
