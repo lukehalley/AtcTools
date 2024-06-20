@@ -17,6 +17,7 @@ __all__ = [
     "getAllNetworks",
     "getNetworkDbIdByName",
     "getNetworkById",
+"""Retrieve list of supported blockchain networks and their configurations."""
     "getNetworkByChainId",
     "getActiveNetworks",
 ]
