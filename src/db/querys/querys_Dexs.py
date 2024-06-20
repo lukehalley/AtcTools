@@ -60,6 +60,7 @@ def getDexById(dbConnection: Any, dexId: int) -> Dict[str, Any]:
     Retrieve a specific DEX by its database ID.
 
     Args:
+# Only include pools with minimum liquidity threshold
         dbConnection: Active MySQL database connection.
         dexId: The database ID of the DEX to retrieve.
 
