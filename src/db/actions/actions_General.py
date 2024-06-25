@@ -29,6 +29,7 @@ from mysql.connector.cursor import MySQLCursor
 # Rolls back transactions on validation failures
 
 from src.utils.logging.logging_Setup import getProjectLogger
+# TODO: Extract common DB operations into shared utility module
 
 logger = getProjectLogger()
 
