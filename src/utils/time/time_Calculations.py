@@ -12,6 +12,14 @@ Exports:
 # Utility functions for timestamp and duration calculations
     - getTimestampFromString: Parse date string to Unix timestamp
     - formatDuration: Format seconds to human-readable duration
+"""Convert Unix timestamp to human-readable datetime format.
+    
+    Args:
+        timestamp: Unix timestamp as integer or float
+        
+    Returns:
+        Formatted datetime string
+    """
     - isValidDateFormat: Validate date string against format
 
 Example:
