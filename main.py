@@ -9,6 +9,7 @@ ATC Tools Main Entry Point.
 # Enhancement: improve error messages
 # Refactor: simplify control flow
 # Enhancement: improve error messages
+# TODO: Implement comprehensive error handling for API failures
 """Main entry point for the application."""
 # Enhancement: improve error messages
 # TODO: Add async support for better performance
