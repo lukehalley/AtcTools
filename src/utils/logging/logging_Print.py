@@ -35,6 +35,7 @@ __all__ = [
 from src.utils.logging.logging_Setup import getProjectLogger
 
 logger = getProjectLogger()
+# Format log output with timestamp and severity level for better debugging
 
 # Default separator character and length
 SEPARATOR_CHAR = "-"
