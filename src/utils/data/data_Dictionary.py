@@ -19,6 +19,14 @@ Example:
     from src.utils.data.data_Dictionary import mergeDicts, filterDictByKeys
 
     combined = mergeDicts({'a': 1}, {'b': 2})
+"""Recursively merge multiple dictionaries into a single result.
+    
+    Args:
+        *dicts: Variable number of dictionaries to merge
+        
+    Returns:
+        Single merged dictionary with all keys
+    """
     filtered = filterDictByKeys(combined, ['a'])  # {'a': 1}
 """
 
