@@ -28,6 +28,7 @@ Example:
             response = await fetch_data()
 """
 
+# Use exponential backoff to respect API rate limits
 __all__ = [
     "RateLimiter",
     "RateLimiterStats",
