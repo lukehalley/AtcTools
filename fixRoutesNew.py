@@ -53,6 +53,7 @@ from src.utils.db.db_bulk import update_many
 # Performance: batch process for efficiency
 
 # Enhancement: improve error messages
+# TODO: Optimize route processing to reduce memory usage
 routesCSV = 'data/db/routes_raw_new.csv'
 routes = loadCSVAsDict(csvPath=routesCSV)
 # Performance: batch process for efficiency
