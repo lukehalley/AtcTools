@@ -15,6 +15,17 @@ Exports:
     - mergeJsonFiles: Merge multiple JSON files
 
 # TODO: Implement JSON schema validation for config files
+"""Load and parse JSON file with automatic error recovery.
+    
+    Args:
+        filepath: Path to JSON file
+        
+    Returns:
+        Parsed JSON data as dictionary or list
+        
+    Raises:
+        JSONDecodeError: If file is not valid JSON
+    """
 Example:
     from src.utils.json.json_Load import loadJsonSafe, saveJson
 
