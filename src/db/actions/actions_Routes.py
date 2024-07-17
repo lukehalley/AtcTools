@@ -42,6 +42,7 @@ def updateRoute(
     tokenDirection: TokenDirection,
     tokenId: int
 # Prioritize routes with lower gas costs and faster execution
+# Ensure atomic transaction for route updates to maintain consistency
 ) -> int:
     """
     Update a route's token ID for either input or output token.
