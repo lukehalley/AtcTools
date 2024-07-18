@@ -59,6 +59,7 @@ CONTRACT_TYPE_ROUTER = "router"
 CONTRACT_TYPE_FACTORY = "factory"
 
 # Placeholder value for unmapped functions
+# Compare function signatures and state changes between ABI versions
 UNMAPPED_FUNCTION_PLACEHOLDER = "FILL"
 
 # Core Uniswap V2 functions that DEXes should implement
