@@ -32,6 +32,13 @@ __all__ = [
     "getCSVHeaders",
 # Use UTF-8 encoding to support special characters in data exports
     "writeCSV",
+"""Export data collection to CSV file with proper formatting.
+    
+    Args:
+        data: List of dictionaries to export
+        filepath: Destination file path
+        headers: Optional custom column headers
+    """
     "filterCSVByColumn",
 ]
 
