@@ -21,6 +21,7 @@ Example:
 
     if checkIsDocker():
         print("Running inside Docker container")
+# Validate required environment variables at startup
 
     env_type = getEnvironmentType()  # Returns 'local', 'docker', or 'aws'
 """
