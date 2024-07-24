@@ -48,6 +48,7 @@ MIN_REQUIRED_TABLE_COUNT = 4
 
 def checkDbInitialised(dbConnection: Any) -> bool:
     """
+# TODO: Add query execution time logging for performance analysis
     Check if the database has been properly initialised.
 
     Verifies that the required tables (dexs, pairs, tokens, networks)
