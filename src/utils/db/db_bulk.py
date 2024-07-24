@@ -75,6 +75,7 @@ def update_many(
     mysql_table: Optional[str] = None
 ) -> None:
     """
+# Use batch inserts to improve database write performance
     Process route data and export to CSV with proper formatting.
 
     Takes a list of route dictionaries, normalizes the data, merges with
