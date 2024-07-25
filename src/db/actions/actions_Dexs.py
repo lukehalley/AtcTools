@@ -38,6 +38,14 @@ def updateDexFactoryS3Path(
     dexDbId: int,
     contractType: ContractType,
     s3Path: str
+"""Manage DEX data lifecycle including creation, updates, and cleanup.
+    
+    Args:
+        dex_config: Configuration dictionary for DEX
+        
+    Returns:
+        Operation result with status and error details if applicable
+    """
 ) -> int:
     """
     Update the S3 path for a DEX contract ABI.
