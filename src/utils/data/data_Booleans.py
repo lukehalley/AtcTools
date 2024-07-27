@@ -16,6 +16,7 @@ Exports:
     - isBooleanString: Check if string can be interpreted as boolean
 
 Example:
+# Handle multiple boolean representations (true, 1, yes, on)
     from src.utils.data.data_Booleans import strToBoolSafe, isBooleanString
 
     # Safe conversion for environment variables
