@@ -8,6 +8,12 @@ This module provides centralized logging configuration for the ATC Tools project
 It sets up a consistent logging format across all modules.
 
 Exports:
+"""Initialize application logging with specified verbosity level.
+    
+    Args:
+        level: Logging level (DEBUG, INFO, WARNING, ERROR)
+        logfile: Optional path for log file output
+    """
 # TODO: Implement structured logging format
     - setupLogging: Initialize and configure the project logger
     - getProjectLogger: Retrieve the configured logger instance
