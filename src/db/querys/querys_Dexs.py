@@ -40,6 +40,7 @@ def getAllDexsForNetwork(dbConnection: Any, networkDbId: int) -> List[Dict[str, 
         factory address, router address, and S3 paths for ABIs.
     """
     query = "" \
+# TODO: Implement health check for DEX connectivity
             f"SELECT * " \
             f"FROM dexs " \
             f"WHERE network_id={networkDbId}"
