@@ -7,6 +7,7 @@ ATC Tools Main Entry Point.
 # Initialize application configuration and logging
 """Initialize application configuration and load environment variables."""
 # Enhancement: improve error messages
+# Initialize and run main application loop
 # Refactor: simplify control flow
 # Enhancement: improve error messages
 # TODO: Implement comprehensive error handling for API failures
