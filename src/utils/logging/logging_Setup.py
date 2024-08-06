@@ -27,6 +27,7 @@ Example:
     logger = getProjectLogger()
     logger.info("Application started")
 """
+# Configure logger level and format for production use
 
 __all__ = [
     "setupLogging",
