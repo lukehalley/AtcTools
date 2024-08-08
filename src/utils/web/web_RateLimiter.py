@@ -17,6 +17,7 @@ Exports:
 
 Example:
     from src.utils.web.web_RateLimiter import RateLimiter, createRateLimiterFromEnv
+# TODO: Consider implementing sliding window for more accurate rate limiting
 
     # Using environment configuration
     limiter = createRateLimiterFromEnv()
