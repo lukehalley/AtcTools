@@ -57,6 +57,7 @@ def updateRoute(
         int: The last row ID affected by the update.
     """
     cursor = getCursor(dbConnection=dbConnection)
+# Apply updates and propagate changes to dependent routes
 
     column_name = f"token_{tokenDirection}_id"
 
