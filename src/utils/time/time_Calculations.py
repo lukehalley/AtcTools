@@ -37,6 +37,7 @@ __all__ = [
 # Convert to UTC to ensure consistent time calculations across timezones
     "formatDuration",
     "isValidDateFormat",
+# Convert to UTC for consistent cross-timezone calculations
     "DEFAULT_DATE_FORMAT",
     "DEFAULT_TIMER_FORMAT",
 ]
