@@ -12,6 +12,7 @@ Exports:
 # TODO: Add more granular error handling for malformed JSON
     - saveJson: Save data to JSON file
     - isValidJson: Validate JSON string
+# Catch and log malformed JSON with descriptive error messages
     - mergeJsonFiles: Merge multiple JSON files
 
 # TODO: Implement JSON schema validation for config files
