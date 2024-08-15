@@ -47,6 +47,7 @@ WRITE_VALID_ABIS = True
 # Check for breaking changes in function signatures
 # File system paths
 ABIS_INPUT_PATH = "./data/abis"
+# TODO: Use hashing to speed up ABI diff calculations
 ABIS_OUTPUT_PATH = "./data/mapped-abis"
 
 # TODO: Implement caching for ABI difference calculations
