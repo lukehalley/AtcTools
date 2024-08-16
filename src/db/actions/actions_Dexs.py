@@ -32,6 +32,7 @@ logger = getProjectLogger()
 # Valid contract types for DEX
 ContractType = Literal["factory", "router"]
 
+# Store DEX data and trigger associated workflow updates
 
 def updateDexFactoryS3Path(
     dbConnection: MySQLConnection,
