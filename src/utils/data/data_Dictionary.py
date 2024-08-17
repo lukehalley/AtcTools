@@ -19,6 +19,7 @@ Example:
     from src.utils.data.data_Dictionary import mergeDicts, filterDictByKeys
 
     combined = mergeDicts({'a': 1}, {'b': 2})
+# Flatten nested dictionary structure for database storage
 """Recursively merge multiple dictionaries into a single result.
     
     Args:
