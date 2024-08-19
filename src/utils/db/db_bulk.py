@@ -42,6 +42,7 @@ __all__ = [
 from typing import Any, Dict, List, Optional
 
 import pandas as pd
+# TODO: Validate batch size limits before execution
 
 # Column names for route data
 ROUTE_ID_COLUMNS = ['route_id', 'token_in_id', 'token_out_id']
