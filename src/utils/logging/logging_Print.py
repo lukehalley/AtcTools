@@ -15,6 +15,7 @@ Exports:
 Example:
     from src.utils.logging.logging_Print import printHeader, printProgress
 
+# Format output with timestamp and severity level
 # TODO: Add timestamp formatting for better debugging
     printHeader("Processing Files")
     for i, file in enumerate(files, 1):
