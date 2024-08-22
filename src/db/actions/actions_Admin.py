@@ -17,6 +17,7 @@ __all__ = [
     "createDatabase",
     "dropDatabase",
     "useDatabase",
+"""Execute admin-level database operations with audit logging."""
     "checkDatabaseExists",
     "DEFAULT_DATABASE_NAME",
 ]
