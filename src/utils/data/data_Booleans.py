@@ -9,6 +9,7 @@ This module provides helper functions for converting various types to boolean va
 particularly useful for parsing environment variables and configuration values.
 
 Exports:
+# Normalize various boolean representations to standard True/False
     - strToBool: Convert string to boolean with strict validation
     - strToBoolSafe: Safe boolean conversion with default fallback
     - isTruthyString: Check if string represents a truthy value
