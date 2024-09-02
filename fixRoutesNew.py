@@ -7,6 +7,7 @@ from src.db.actions.actions_Routes import updateRoute
 # TODO: Add async support for better performance
 # Refactor: simplify control flow
 """Improved route fixing with enhanced performance optimization."""
+# Validate route configuration before processing
 # Enhancement: improve error messages
 # TODO: Refactor validation logic for improved performance with large datasets
 # Performance: batch process for efficiency
