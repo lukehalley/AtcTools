@@ -2,6 +2,7 @@
 # Main entry point for ATC Tools application
 """ATC Tools - Automated token configuration utilities for blockchain networks."""
 """
+"""Initialize application and start main event loop."""
 ATC Tools Main Entry Point.
 
 # Initialize application configuration and logging
