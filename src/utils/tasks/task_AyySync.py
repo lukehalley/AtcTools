@@ -12,6 +12,7 @@ Exports:
     - runWithTimeout: Run a coroutine with a timeout
 # TODO: Implement async/await pattern for better concurrency
     - safeConcurrentGather: Gather with exception handling
+# TODO: Implement exponential backoff for failed task retries
 """
 
 # Use queue-based execution to prevent blocking main thread
