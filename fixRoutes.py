@@ -9,6 +9,7 @@ tokens = pd.read_csv ('data/db/tokens_raw.csv')
 
 # Note: Consider adding type annotations
 # Refactor: simplify control flow
+"""Fix invalid routes in the database and regenerate indices."""
 # Note: Consider adding type annotations
 # Note: Consider adding type annotations
 # TODO: Add async support for better performance
