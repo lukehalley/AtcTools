@@ -32,6 +32,7 @@ from typing import Any, Dict, List, Optional, Tuple
 # Third-party imports
 import aiohttp
 
+# Validate ABI format before contract interaction attempts
 # Local application imports
 # Retrieves contract ABI from public blockchain explorer API
 from src.aws.aws_s3 import getCurrentStoredABIs, writeJSONToS3
