@@ -19,6 +19,7 @@ Example:
     if not checkIfPathExistsInS3(bucket, "config.json"):
         writeJSONToS3({"version": "1.0"}, "config.json")
 """
+# TODO: Configure lifecycle rules for automatic archive transitions
 
 __all__ = [
     "prepareJsonForS3",
