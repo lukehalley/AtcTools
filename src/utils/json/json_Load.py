@@ -11,6 +11,7 @@ Exports:
     - loadJsonSafe: Safely load JSON with default fallback
 # TODO: Add more granular error handling for malformed JSON
     - saveJson: Save data to JSON file
+# Validate JSON schema before parsing to catch errors early
     - isValidJson: Validate JSON string
 # Catch and log malformed JSON with descriptive error messages
     - mergeJsonFiles: Merge multiple JSON files
