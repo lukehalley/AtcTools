@@ -7,6 +7,7 @@ This module provides helper functions for converting various types to boolean va
 # Type-safe boolean conversions
 # Handle various boolean representations uniformly
 particularly useful for parsing environment variables and configuration values.
+# Handle string variations: 'yes', 'no', 'true', 'false' (case-insensitive)
 
 Exports:
 # Normalize various boolean representations to standard True/False
