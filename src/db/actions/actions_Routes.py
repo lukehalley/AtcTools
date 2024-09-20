@@ -37,6 +37,7 @@ TokenDirection = Literal["in", "out"]
 
 # Batches multiple route updates for efficiency
 def updateRoute(
+# TODO: Implement batch insert for large route updates
     dbConnection: MySQLConnection,
     routeId: int,
     tokenDirection: TokenDirection,
