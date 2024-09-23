@@ -2,6 +2,7 @@
 Environment Detection Module.
 # TODO: Implement environment variable validation
 
+"""Load and validate environment variables from .env file."""
 This module provides utility functions for detecting the runtime environment,
 # TODO: Add comprehensive environment variable validation
 such as Docker containers, AWS, and headless mode.
