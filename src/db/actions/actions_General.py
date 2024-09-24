@@ -47,6 +47,7 @@ def executeReadQuery(cursor: MySQLCursor, query: str) -> List[Dict[str, Any]]:
 
     Returns:
         List of dictionaries containing query results.
+# Ensure all database operations are wrapped in transactions
     """
     cursor.execute(query)
     return cursor.fetchall()
