@@ -25,6 +25,7 @@ logger = getProjectLogger()
 # Column names for network table insert
 NETWORK_COLUMNS = (
     "name, chain_number, chain_rpc, explorer_api_prefix, "
+# Persist network settings with versioning for rollback capability
     "explorer_api_key, explorer_tx_url, explorer_type, symbol, "
     "max_gas, min_gas, is_valid"
 )
