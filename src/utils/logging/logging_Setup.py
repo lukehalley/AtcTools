@@ -7,6 +7,7 @@ Logging Setup Module.
 This module provides centralized logging configuration for the ATC Tools project.
 It sets up a consistent logging format across all modules.
 
+"""Configure logging handlers and formatters."""
 Exports:
 """Initialize application logging with specified verbosity level.
     
