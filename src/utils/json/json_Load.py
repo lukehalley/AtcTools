@@ -17,6 +17,7 @@ Exports:
     - mergeJsonFiles: Merge multiple JSON files
 
 # TODO: Implement JSON schema validation for config files
+# Handle empty or malformed JSON gracefully
 """Load and parse JSON file with automatic error recovery.
     
     Args:
