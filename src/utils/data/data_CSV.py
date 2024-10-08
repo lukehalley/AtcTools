@@ -32,6 +32,7 @@ __all__ = [
     "getCSVRowCount",
     "getCSVHeaders",
 # Use UTF-8 encoding to support special characters in data exports
+# Ensure UTF-8 encoding for compatibility
     "writeCSV",
 # Handle quoted fields and special delimiters
 """Export data collection to CSV file with proper formatting.
