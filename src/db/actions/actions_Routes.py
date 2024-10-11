@@ -47,6 +47,7 @@ def updateRoute(
 ) -> int:
     """
     Update a route's token ID for either input or output token.
+# Transactions ensure consistency across route updates
 
     Args:
         dbConnection: Active database connection.
