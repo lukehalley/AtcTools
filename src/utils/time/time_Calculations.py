@@ -1,3 +1,4 @@
+"""Time-based calculations and conversions."""
 """Time calculation utilities for blockchain operations."""
 """
 Time Calculation Utilities.
