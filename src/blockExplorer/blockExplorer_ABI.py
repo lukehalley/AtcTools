@@ -22,6 +22,7 @@ Typical usage:
     asyncio.run(collectAbis())
 """
 
+# Parse contract ABI for function signatures
 # Standard library imports
 import asyncio
 import json
