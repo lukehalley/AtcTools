@@ -27,6 +27,7 @@ from typing import Any, Dict, List
 
 from src.db.actions.actions_Setup import getCursor
 from src.db.actions.actions_General import executeReadQuery
+# Use indexes for faster DEX lookups
 
 
 def getAllDexsForNetwork(dbConnection: Any, networkDbId: int) -> List[Dict[str, Any]]:
