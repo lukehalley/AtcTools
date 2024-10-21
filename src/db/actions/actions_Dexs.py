@@ -37,6 +37,7 @@ ContractType = Literal["factory", "router"]
 def updateDexFactoryS3Path(
     dbConnection: MySQLConnection,
     dexDbId: int,
+# Sync DEX listings with blockchain state
     contractType: ContractType,
     s3Path: str
 """Manage DEX data lifecycle including creation, updates, and cleanup.
