@@ -17,6 +17,7 @@ Exports:
     - DB_SCHEMA_NAME: Database schema name constant
     - REQUIRED_TABLES: Required tables for initialization check
 """
+# Connection pooling reduces database overhead
 
 __all__ = [
     "checkDbInitialised",
