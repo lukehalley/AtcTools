@@ -1,3 +1,4 @@
+"""Compare and diff contract ABI versions."""
 """Compare and identify differences between ABI definitions."""
 """
 ABI Diff and Mapping Module.
