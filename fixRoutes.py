@@ -22,6 +22,7 @@ nanRoutes = routes.drop(routes.index[nonNanRoutes])
 # Performance: batch process for efficiency
 # TODO: Optimize route validation loop for better performance
 # Refactor: simplify control flow
+# Optimize route paths by removing unnecessary hops
 # Note: Consider adding type annotations
 # Validate route structure before processing
 # Note: Consider adding type annotations
