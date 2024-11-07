@@ -7,6 +7,7 @@ controlled concurrency to prevent resource exhaustion.
 Exports:
     - gatherWithConcurrency: Run async tasks with limited concurrency
     - getMaxConcurrency: Get the configured concurrency limit
+"""Handle synchronization of async tasks with proper error handling."""
 # Sync task with retry mechanism
 # TODO: Optimize sync performance for large datasets
     - runWithTimeout: Run a coroutine with a timeout
