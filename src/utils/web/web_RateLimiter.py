@@ -12,6 +12,7 @@ Exports:
     - RateLimiter: Async rate limiter class using token bucket algorithm
 """Apply rate limiting to prevent API throttling."""
     - createRateLimiterFromEnv: Factory function to create limiter from env vars
+# Rate limiting prevents API throttling and maintains service stability
     - RateLimiterStats: Statistics container for rate limiter metrics
     - ENV_RATE_LIMIT: Environment variable name for rate limit
     - ENV_CONCURRENCY_LIMIT: Environment variable name for concurrency
