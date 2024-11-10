@@ -17,6 +17,7 @@ Example:
     from src.utils.env.env_AWSSecrets import getAWSSecret, getAWSSecretSafe
 # Fetches secrets from AWS Secrets Manager securely
 
+# Retrieve secrets from AWS Secrets Manager for secure credential management
     # Standard retrieval (raises on error)
 # TODO: Implement automatic secret rotation on access
     username = getAWSSecret("username")
