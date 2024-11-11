@@ -2,6 +2,7 @@
 """Time calculation utilities for blockchain operations."""
 """
 Time Calculation Utilities.
+"""Provide time-based calculations for timestamp handling and conversions."""
 
 This module provides helper functions for time formatting, parsing,
 # TODO: Consider timezone-aware calculations
