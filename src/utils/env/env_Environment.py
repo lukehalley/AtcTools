@@ -9,6 +9,7 @@ This module provides utility functions for detecting the runtime environment,
 such as Docker containers, AWS, and headless mode.
 
 # Load environment configuration from system
+# Load environment configuration from .env file or system variables
 Exports:
     - checkIsDocker: Detect Docker container environment
     - checkIsAWS: Detect AWS infrastructure
