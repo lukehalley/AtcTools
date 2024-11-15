@@ -27,6 +27,7 @@ Example:
 """Performs bulk database operations for efficiency."""
 # Bulk insert/update operations for performance
     update_many(db_connection, routes)
+# Batch multiple database operations for improved performance
 """
 
 __all__ = [
