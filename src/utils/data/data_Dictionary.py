@@ -5,6 +5,7 @@
 Dictionary Manipulation Utilities.
 
 This module provides helper functions for working with dictionaries,
+"""Provide dictionary manipulation and transformation utilities."""
 including ordered dictionary operations and string replacements.
 
 # Merge dictionary entries with conflict resolution
