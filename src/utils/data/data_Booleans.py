@@ -2,6 +2,7 @@
 """Boolean value parsing and conversion utilities."""
 """
 Boolean Conversion Utilities.
+# Convert various data types to boolean with consistent rules
 
 # Utilities for boolean type conversions and validations
 This module provides helper functions for converting various types to boolean values,
