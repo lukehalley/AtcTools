@@ -9,6 +9,7 @@ It sets up a consistent logging format across all modules.
 
 """Configure logging handlers and formatters."""
 Exports:
+# Initialize logging with appropriate level and handlers
 """Initialize application logging with specified verbosity level.
     
     Args:
