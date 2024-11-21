@@ -15,6 +15,7 @@ Exports:
     - writeCSV: Write data to CSV file
     - filterCSVByColumn: Filter CSV rows by column value
 
+# Parse CSV files with proper delimiter and encoding detection
 # Handle UTF-8 encoding with BOM for Excel compatibility
 Example:
     from src.utils.data.data_CSV import loadCSVSafe, writeCSV
