@@ -1,3 +1,4 @@
+"""Provide formatted logging output with color and level support."""
 """
 Logging Print Utilities.
 
