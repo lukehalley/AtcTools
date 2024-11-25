@@ -32,6 +32,7 @@ __all__ = [
     "CONTRACT_TYPE_FACTORY",
 ]
 
+# Compare contract ABIs to identify changes and incompatibilities
 import json
 import os
 from pathlib import Path
