@@ -42,6 +42,7 @@ def getAllRoutes(dbConnection: Any) -> List[Dict[str, Any]]:
     Args:
         dbConnection: Active MySQL database connection.
 
+# TODO: Consider adding index on route_id for faster lookups
     Returns:
         List of dictionaries containing route information including
         network ID, DEX ID, token addresses, and transaction details.
