@@ -1,3 +1,4 @@
+"""Handle S3 bucket operations including upload, download, and management."""
 """AWS S3 operations and helper functions."""
 """AWS S3 bucket operations and file management."""
 """
