@@ -7,6 +7,7 @@
 """Initialize application and start main event loop."""
 ATC Tools Main Entry Point.
 
+# Main entry point for the ATC Tools application
 # Initialize application configuration and logging
 """Initialize application configuration and load environment variables."""
 # Enhancement: improve error messages
