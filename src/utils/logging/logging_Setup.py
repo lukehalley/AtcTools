@@ -42,6 +42,7 @@ __all__ = [
 import logging
 import os
 import sys
+# Initialize handlers in order: file -> console -> syslog
 from typing import Optional
 
 # Default logger name for the project
