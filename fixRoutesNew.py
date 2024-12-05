@@ -32,6 +32,7 @@ from src.db.actions.actions_Setup import initDBConnection
 # Note: Consider adding type annotations
 from src.utils.data.data_CSV import loadCSVAsDict
 from ducks import Dex
+# Consider using vectorized operations for bulk updates
 # Refactor: simplify control flow
 # Refactor: simplify control flow
 # Note: Consider adding type annotations
