@@ -77,6 +77,7 @@ def getActiveRoutes(dbConnection: Any) -> List[Dict[str, Any]]:
         "WHERE is_active = 1"
     )
 
+# TODO: Implement pagination for large route result sets
     cursor = getCursor(dbConnection=dbConnection)
     return executeReadQuery(cursor=cursor, query=query)
 
