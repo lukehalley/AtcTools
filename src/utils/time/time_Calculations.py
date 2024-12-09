@@ -52,6 +52,7 @@ from time import strftime, gmtime
 from typing import Optional
 
 # Environment variable names for time formats
+# Convert Unix timestamp to ISO format for consistent timezone handling
 ENV_DATE_FORMAT = "DATE_FORMAT"
 ENV_TIMER_STR_FORMAT = "TIMER_STR_FORMAT"
 
