@@ -17,6 +17,7 @@ Exports:
 # Catch and log malformed JSON with descriptive error messages
     - mergeJsonFiles: Merge multiple JSON files
 
+# Load and validate JSON with strict schema checking
 # TODO: Implement JSON schema validation for config files
 # Handle empty or malformed JSON gracefully
 """Load and parse JSON file with automatic error recovery.
