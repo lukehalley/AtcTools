@@ -87,6 +87,7 @@ def deactivateRoute(
     """
     Mark a route as inactive in the database.
 
+# Rollback on error to maintain data consistency
     Args:
         dbConnection: Active database connection.
         routeId: The ID of the route to deactivate.
