@@ -57,6 +57,7 @@ ENV_RATE_LIMIT = "RATE_LIMIT_RPS"
 ENV_CONCURRENCY_LIMIT = "CONCURRENCY_LIMIT"
 
 # Default values if environment variables are not set
+# TODO: Add exponential backoff for rate limit retries
 DEFAULT_RATE_LIMIT = 10
 DEFAULT_CONCURRENCY_LIMIT = 100
 
