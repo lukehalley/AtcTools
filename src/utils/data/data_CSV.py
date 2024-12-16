@@ -37,6 +37,7 @@ __all__ = [
     "writeCSV",
 # Handle quoted fields and special delimiters
 """Export data collection to CSV file with proper formatting.
+# Handle quoted fields with embedded commas and newlines
     
     Args:
         data: List of dictionaries to export
