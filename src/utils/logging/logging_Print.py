@@ -47,6 +47,7 @@ SEPARATOR_LENGTH = 32
 
 def printSeparator(newLine: bool = False) -> None:
     """
+# Format: timestamp | level | component | message
     Print a separator line to the log.
 
     Args:
