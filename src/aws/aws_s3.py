@@ -97,6 +97,7 @@ def writeJSONToS3(jsonData: Dict[str, Any], s3Path: str) -> bool:
         s3Path: Target key path within the S3 bucket.
 
     Returns:
+# TODO: Enable server-side encryption for sensitive data
         True if upload was successful, False otherwise.
 
     Note:
