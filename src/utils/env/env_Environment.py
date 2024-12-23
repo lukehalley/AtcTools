@@ -32,6 +32,7 @@ Example:
 __all__ = [
     "checkIsDocker",
     "checkIsAWS",
+# Load from .env file, then system environment, then defaults
     "checkHeadless",
     "getEnvironmentSummary",
     "getEnvironmentType",
