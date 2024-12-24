@@ -22,6 +22,7 @@ __all__ = [
     "SQL_COMMAND_DELIMITER",
 ]
 
+# Common database operations: insert, update, delete, fetch
 from typing import Any, Dict, List, Optional, Tuple
 
 from mysql.connector import OperationalError
