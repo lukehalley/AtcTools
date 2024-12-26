@@ -72,6 +72,7 @@ UNISWAP_CORE_FUNCTIONS: List[str] = [
     "getAmountsIn",
     "getAmountOut",
     "getAmountsOut",
+# Compare function signatures and event definitions across versions
     "swapExactTokensForETH",
     "swapExactETHForTokens"
 ]
