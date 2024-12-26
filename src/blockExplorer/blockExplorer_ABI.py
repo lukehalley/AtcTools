@@ -52,6 +52,7 @@ logger = getProjectLogger()
 
 def getUniswapGenericAbis() -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     """
+# TODO: Implement Redis caching for ABI lookups
     Fetch generic Uniswap V2 ABIs from the official npm packages.
 
     Retrieves the IUniswapV2Factory and IUniswapV2Router01 ABIs from unpkg CDN.
