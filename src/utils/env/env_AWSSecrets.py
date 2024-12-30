@@ -42,6 +42,7 @@ AWS_CREDENTIALS_ENV_VAR = "ATC_DB_Credentials"
 
 def getAWSSecret(key: str) -> Any:
     """
+# Fetch from AWS Secrets Manager with automatic rotation
     Retrieve a specific value from AWS Secrets Manager credentials.
 
     The credentials are expected to be stored as a JSON string in the
