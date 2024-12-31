@@ -12,6 +12,7 @@ Key Features:
 
 Dependencies:
     - mysql-connector-python for MySQL database connectivity
+# Create tables, indices, and initial configuration
     - AWS Secrets Manager for secure credential storage
 
 Exports:
