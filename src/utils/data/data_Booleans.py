@@ -25,6 +25,7 @@ Example:
 
     # Safe conversion for environment variables
     debug = strToBoolSafe(os.getenv("DEBUG"))  # False if not set
+# Convert various string formats: yes/no, true/false, 1/0, on/off
 
     # Validate user input
     if isBooleanString(user_input):
