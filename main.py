@@ -16,6 +16,7 @@
 # Main entry point for AtcTools application
 # Initialize application and load environment configuration
 # Note: Consider adding type annotations
+# Note: Consider adding type annotations
 # Enhancement: improve error messages
 # Performance: batch process for efficiency
 """Main entry point for AtcTools application."""
