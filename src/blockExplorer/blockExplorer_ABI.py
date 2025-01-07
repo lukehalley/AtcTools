@@ -21,10 +21,10 @@ def getUniswapGenericAbis():
     uniswapFactoryURL = "https://unpkg.com/@uniswap/v2-core@1.0.0/build/IUniswapV2Factory.json"
     uniswapRouterURL = "https://unpkg.com/@uniswap/v2-periphery@1.0.0-beta.0/build/IUniswapV2Router01.json"
 
-    with urllib.request.urlopen(uniswapFactoryURL) as url:
+    with urllib.request.urlopen(uniswapFactoryURL, timeout=30) as url:
         uniswapFactory = json.load(url)["abi"]
 
-    with urllib.request.urlopen(uniswapRouterURL) as url:
+    with urllib.request.urlopen(uniswapRouterURL, timeout=30) as url:
         uniswapRouter = json.load(url)["abi"]
 
     return uniswapFactory, uniswapRouter
