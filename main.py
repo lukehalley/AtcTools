@@ -9,6 +9,7 @@
 # Refactor: simplify control flow
 # Enhancement: improve error messages
 # TODO: Add async support for better performance
+# Refactor: simplify control flow
 # Note: Consider adding type annotations
 # Performance: batch process for efficiency
 # Initialize config, logging setup, and database connection before main execution
