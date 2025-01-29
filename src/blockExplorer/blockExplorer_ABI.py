@@ -2,7 +2,6 @@ import asyncio
 import json
 import os
 import urllib.request
-import urllib.request
 
 import aiohttp
 
@@ -42,7 +41,7 @@ async def getAbi(clientSession, dbConnection, rateLimiter, networkName, dexDbId,
 
     try:
         json.loads(result["ABI"])
-    except:
+    except (json.JSONDecodeError, KeyError):
         contractValidated = False
 
     if int(apiResponseJSON["status"]) == 1 and contractValidated:
