@@ -14,7 +14,7 @@ def getId(tokenIn, tokenOut):
 
     dfLen = len(routes.index)
 
-    print("Row: {}/{} [{}%]".format(index + 1, dfLen, (index + 1) / dfLen * 100))
+    print(f"Row: {index + 1}/{dfLen} [{(index + 1) / dfLen * 100}%]")
 
     networkId = row["network_id"]
     tokenInAddress = row["token_in_address"]
@@ -34,7 +34,7 @@ for index, row in routes.itertuples():
 
     dfLen = len(routes.index)
 
-    print("Row: {}/{} [{}%]".format(index + 1, dfLen, (index + 1) / dfLen * 100))
+    print(f"Row: {index + 1}/{dfLen} [{(index + 1) / dfLen * 100}%]")
 
     networkId = row["network_id"]
     tokenInAddress = row["token_in_address"]
@@ -50,5 +50,5 @@ for index, row in routes.itertuples():
     if not tokenOutDetails.empty:
         routes.loc[index, 'token_out_id'] = int(tokenOutDetails.iloc[0]["token_id"])
 
-    with open('data/db/done/routes_done_old.csv', 'w') as f:
+    with open('data/db/done/routes_done_old.csv', 'w', encoding='utf-8') as f:
         routes.to_csv(f, index=False, float_format='%.0f')
