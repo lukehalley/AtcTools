@@ -33,7 +33,7 @@ def getTokenIds(routeDict):
 
     routeIndex = routes.index(routeDict)
 
-    print("Collecting Routes: {}/{} [{}%]".format(routeIndex + 1, routesLen, (routeIndex + 1) / routesLen * 100))
+    print(f"Collecting Routes: {routeIndex + 1}/{routesLen} [{(routeIndex + 1) / routesLen * 100}%]")
 
     networkId = routeDict["network_id"]
     routeId = routeDict["route_id"]
@@ -67,7 +67,7 @@ def getTokenIds(routeDict):
     if "token_in_id" in updateDict or "token_out_id" in updateDict:
         return updateDict
 
-with open('data/routeFix/fixedRoutes.json') as f:
+with open('data/routeFix/fixedRoutes.json', encoding='utf-8') as f:
     loadedRoutes = json.load(f)
 
 if not loadedRoutes:
