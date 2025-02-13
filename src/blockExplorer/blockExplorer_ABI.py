@@ -2,6 +2,7 @@ import asyncio
 import json
 import os
 import urllib.request
+from typing import Tuple, List, Dict, Any, Optional
 
 import aiohttp
 
@@ -16,7 +17,7 @@ from src.utils.web.web_RateLimiter import RateLimiter
 
 logger = getProjectLogger()
 
-def getUniswapGenericAbis():
+def getUniswapGenericAbis() -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     uniswapFactoryURL = "https://unpkg.com/@uniswap/v2-core@1.0.0/build/IUniswapV2Factory.json"
     uniswapRouterURL = "https://unpkg.com/@uniswap/v2-periphery@1.0.0-beta.0/build/IUniswapV2Router01.json"
 
