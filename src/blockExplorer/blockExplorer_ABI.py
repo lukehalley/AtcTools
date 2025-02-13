@@ -17,6 +17,7 @@ from src.utils.web.web_RateLimiter import RateLimiter
 
 logger = getProjectLogger()
 
+
 def getUniswapGenericAbis() -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     uniswapFactoryURL = "https://unpkg.com/@uniswap/v2-core@1.0.0/build/IUniswapV2Factory.json"
     uniswapRouterURL = "https://unpkg.com/@uniswap/v2-periphery@1.0.0-beta.0/build/IUniswapV2Router01.json"
@@ -29,7 +30,17 @@ def getUniswapGenericAbis() -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]
 
     return uniswapFactory, uniswapRouter
 
-async def getAbi(clientSession, dbConnection, rateLimiter, networkName, dexDbId, dexName, contractType, apiUrl):
+
+async def getAbi(
+    clientSession: aiohttp.ClientSession,
+    dbConnection: Any,
+    rateLimiter: RateLimiter,
+    networkName: str,
+    dexDbId: int,
+    dexName: str,
+    contractType: str,
+    apiUrl: str
+) -> Optional[Dict[str, Any]]:
 
     async with rateLimiter.throttle():
         apiResponse = await clientSession.get(apiUrl)
@@ -108,6 +119,7 @@ async def getAbi(clientSession, dbConnection, rateLimiter, networkName, dexDbId,
 
     apiResponse.release()
     return result
+
 
 async def collectAbis():
 
