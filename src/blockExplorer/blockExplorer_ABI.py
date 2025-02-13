@@ -19,6 +19,21 @@ logger = getProjectLogger()
 
 
 def getUniswapGenericAbis() -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    """
+    Fetch generic Uniswap V2 ABIs from the official npm packages.
+
+    Retrieves the IUniswapV2Factory and IUniswapV2Router01 ABIs from unpkg CDN.
+    These generic ABIs can be used as fallbacks when specific DEX ABIs are unavailable.
+
+    Returns:
+        Tuple containing:
+            - uniswapFactory: The IUniswapV2Factory ABI as a list of dictionaries
+            - uniswapRouter: The IUniswapV2Router01 ABI as a list of dictionaries
+
+    Raises:
+        urllib.error.URLError: If unable to connect to unpkg CDN
+        json.JSONDecodeError: If response is not valid JSON
+    """
     uniswapFactoryURL = "https://unpkg.com/@uniswap/v2-core@1.0.0/build/IUniswapV2Factory.json"
     uniswapRouterURL = "https://unpkg.com/@uniswap/v2-periphery@1.0.0-beta.0/build/IUniswapV2Router01.json"
 
@@ -121,8 +136,13 @@ async def getAbi(
     return result
 
 
-async def collectAbis():
+async def collectAbis() -> None:
+    """
+    Main entry point for collecting contract ABIs from block explorers.
 
+    Iterates through all networks and their DEXes, fetching and storing
+    contract ABIs (factory and router) from block explorer APIs to S3.
+    """
     dbConnection = initDBConnection()
 
     networks = getAllNetworks(dbConnection=dbConnection)
