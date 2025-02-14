@@ -56,7 +56,26 @@ async def getAbi(
     contractType: str,
     apiUrl: str
 ) -> Optional[Dict[str, Any]]:
+    """
+    Fetch and store a contract ABI from a block explorer API.
 
+    Queries the block explorer API for contract source code and ABI,
+    validates the response, and uploads the ABI to S3 if valid.
+
+    Args:
+        clientSession: The aiohttp client session for making HTTP requests
+        dbConnection: Active database connection for updating DEX records
+        rateLimiter: Rate limiter instance to throttle API requests
+        networkName: Name of the blockchain network (e.g., 'ethereum', 'polygon')
+        dexDbId: Database ID of the DEX
+        dexName: Human-readable name of the DEX
+        contractType: Type of contract ('factory' or 'router')
+        apiUrl: Full URL for the block explorer API request
+
+    Returns:
+        Dictionary containing network, DEX, contract type, and ABI data
+        if successful, None otherwise
+    """
     async with rateLimiter.throttle():
         apiResponse = await clientSession.get(apiUrl)
 
