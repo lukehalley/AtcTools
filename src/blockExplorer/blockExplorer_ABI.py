@@ -103,9 +103,9 @@ async def getAbi(
             if validAbi:
 
                 if matchingContractType:
-                    logger.info(f"{networkName.title()} | {dexName.title()} | {contractName} | {contractType.title()} ✅")
+                    logger.info(f"[ABI_FETCH] Success: {networkName.title()} | {dexName.title()} | {contractName} | Type: {contractType.title()}")
                 else:
-                    logger.info(f"{networkName.title()} | {dexName.title()} | {contractName} | {contractType.title()} ⚠️")
+                    logger.warning(f"[ABI_FETCH] Type mismatch: {networkName.title()} | {dexName.title()} | {contractName} | Expected: {contractType.title()}")
 
                 result = {
                     "networkName": networkName,
@@ -122,6 +122,7 @@ async def getAbi(
                 )
 
                 if fileUploaded:
+                    logger.debug(f"[S3_UPLOAD] Uploaded ABI to {s3Path}")
                     updateDexFactoryS3Path(
                         dbConnection=dbConnection,
                         dexDbId=dexDbId,
@@ -130,12 +131,12 @@ async def getAbi(
                     )
 
             else:
-                logger.info(f"{networkName.title()} | {dexName.title()} | {contractType.title()} | Bad ABI ⚠️️")
+                logger.warning(f"[ABI_VALIDATION] Invalid ABI structure: {networkName.title()} | {dexName.title()} | {contractType.title()}")
                 result = None
 
         else:
 
-            logger.info(f"{networkName.title()} | {dexName.title()} | {contractType.title()} | Contract Not Verified ⛔️\n")
+            logger.error(f"[CONTRACT_VERIFY] Not verified: {networkName.title()} | {dexName.title()} | {contractType.title()}")
             result = None
 
     else:
@@ -146,9 +147,9 @@ async def getAbi(
             errorMessage = apiResponseJSON["message"]
 
             if not errorMessage:
-                errorMessage = "Unknown error!"
+                errorMessage = "Unknown error from block explorer API"
 
-        logger.info(f"{networkName.title()} | {dexName.title()} | {contractType.title()} | Contract Not Verified ⛔️\n")
+        logger.error(f"[API_ERROR] {networkName.title()} | {dexName.title()} | {contractType.title()} | Error: {errorMessage}")
         result = None
 
     apiResponse.release()
@@ -162,11 +163,13 @@ async def collectAbis() -> None:
     Iterates through all networks and their DEXes, fetching and storing
     contract ABIs (factory and router) from block explorer APIs to S3.
     """
+    logger.info("[ABI_COLLECTOR] Starting ABI collection process")
     dbConnection = initDBConnection()
 
     networks = getAllNetworks(dbConnection=dbConnection)
 
     validNetworks = [network for network in networks if (network["explorer_type"] == "scan" or network["explorer_type"] == "blockscout") and network["explorer_api_prefix"]]
+    logger.info(f"[ABI_COLLECTOR] Found {len(validNetworks)} networks with valid block explorers")
 
     s3Bucket = os.getenv("S3_BUCKET")
     s3Overwrite = strToBool(os.getenv("S3_OVERWRITE"))
@@ -186,6 +189,7 @@ async def collectAbis() -> None:
                 )
 
                 dexsWithAddresses = [dex for dex in dexs if dex["factory"] and dex["router"]]
+                logger.debug(f"[NETWORK] {networkName}: Found {len(dexsWithAddresses)} DEXes with complete addresses")
 
                 uploadedAbis = getCurrentStoredABIs(
                     networkName=networkName
@@ -230,8 +234,9 @@ async def collectAbis() -> None:
 
                         else:
 
-                            logger.info(f"File {predictedS3Key} already exists in {s3Bucket}\n")
+                            logger.debug(f"[SKIP] File already exists: {predictedS3Key} in bucket {s3Bucket}")
 
+            logger.info(f"[ABI_COLLECTOR] Queued {len(tasks)} ABI fetch tasks")
             await asyncio.gather(*tasks)
 
-            logger.info("All ABIs Collected ✅")
+            logger.info("[ABI_COLLECTOR] ABI collection completed successfully")
