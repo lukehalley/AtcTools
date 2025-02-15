@@ -1,12 +1,34 @@
+"""
+Block Explorer ABI Collection Module.
+
+This module provides functionality to fetch and store contract ABIs from
+various blockchain block explorers (Etherscan-like and Blockscout APIs).
+
+It supports:
+    - Fetching generic Uniswap V2 ABIs as fallbacks
+    - Async collection of factory and router ABIs from DEXes
+    - Rate-limited API requests to avoid throttling
+    - S3 storage for retrieved ABIs
+
+Typical usage:
+    import asyncio
+    from src.blockExplorer.blockExplorer_ABI import collectAbis
+    
+    asyncio.run(collectAbis())
+"""
+
+# Standard library imports
 import asyncio
 import json
 import os
 import urllib.request
-from typing import Tuple, List, Dict, Any, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
+# Third-party imports
 import aiohttp
 
-from src.aws.aws_s3 import writeJSONToS3, getCurrentStoredABIs
+# Local application imports
+from src.aws.aws_s3 import getCurrentStoredABIs, writeJSONToS3
 from src.db.actions.actions_Dexs import updateDexFactoryS3Path
 from src.db.actions.actions_Setup import initDBConnection
 from src.db.querys.querys_Dexs import getAllDexsForNetwork
@@ -162,13 +184,28 @@ async def collectAbis() -> None:
 
     Iterates through all networks and their DEXes, fetching and storing
     contract ABIs (factory and router) from block explorer APIs to S3.
+
+    The function performs the following steps:
+        1. Initializes database connection and retrieves all networks
+        2. Filters networks to those with valid block explorer APIs
+        3. For each network, retrieves all DEXes with factory/router addresses
+        4. Queues async tasks to fetch ABIs for each contract
+        5. Executes all tasks concurrently with rate limiting
+
+    Environment Variables:
+        S3_BUCKET: Target S3 bucket for storing ABIs
+        S3_OVERWRITE: Whether to overwrite existing ABIs (true/false)
     """
     logger.info("[ABI_COLLECTOR] Starting ABI collection process")
     dbConnection = initDBConnection()
 
     networks = getAllNetworks(dbConnection=dbConnection)
 
-    validNetworks = [network for network in networks if (network["explorer_type"] == "scan" or network["explorer_type"] == "blockscout") and network["explorer_api_prefix"]]
+    validNetworks = [
+        network for network in networks
+        if (network["explorer_type"] == "scan" or network["explorer_type"] == "blockscout")
+        and network["explorer_api_prefix"]
+    ]
     logger.info(f"[ABI_COLLECTOR] Found {len(validNetworks)} networks with valid block explorers")
 
     s3Bucket = os.getenv("S3_BUCKET")
@@ -178,7 +215,7 @@ async def collectAbis() -> None:
 
         async with aiohttp.ClientSession() as session:
 
-            tasks = []
+            tasks: List[asyncio.Task] = []
             for network in validNetworks:
 
                 networkName = network["name"]
@@ -221,16 +258,17 @@ async def collectAbis() -> None:
                                 apiUrl = f"{apiUrl}&apikey={apiToken}"
 
                             tasks.append(
-                                asyncio.ensure_future(getAbi(clientSession=session,
-                                                             dbConnection=dbConnection,
-                                                             rateLimiter=rate_limiter,
-                                                             networkName=networkName,
-                                                             dexName=dexName,
-                                                             dexDbId=dexDbId,
-                                                             apiUrl=apiUrl,
-                                                             contractType=contract
-                                                             )
-                                                      ))
+                                asyncio.ensure_future(getAbi(
+                                    clientSession=session,
+                                    dbConnection=dbConnection,
+                                    rateLimiter=rate_limiter,
+                                    networkName=networkName,
+                                    dexName=dexName,
+                                    dexDbId=dexDbId,
+                                    apiUrl=apiUrl,
+                                    contractType=contract
+                                ))
+                            )
 
                         else:
 
