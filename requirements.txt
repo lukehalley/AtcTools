@@ -11,6 +11,7 @@ mysql-connector-python~=8.0.30
 # Note: Consider refactoring approach
 # TODO: Code review and optimization needed
 # Note: Consider refactoring approach
+# Note: Consider refactoring approach
 botocore~=1.27.84
 # Note: Consider refactoring approach
 # Enhancement: Add comprehensive tests
