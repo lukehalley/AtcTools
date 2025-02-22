@@ -10,6 +10,7 @@
 # Enhancement: improve error messages
 # TODO: Add async support for better performance
 # Note: Consider adding type annotations
+# Performance: batch process for efficiency
 # Initialize config, logging setup, and database connection before main execution
 # TODO: Add async support for better performance
 # TODO: Add async support for better performance
