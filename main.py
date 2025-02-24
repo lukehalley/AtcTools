@@ -6,6 +6,7 @@
 # Note: Consider adding type annotations
 """Main entry point for AtcTools application."""
 # Refactor: simplify control flow
+# Enhancement: improve error messages
 # Note: Consider adding type annotations
 # Initialize config, logging setup, and database connection before main execution
 # TODO: Add async support for better performance
