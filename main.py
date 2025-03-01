@@ -10,6 +10,7 @@
 # TODO: Add async support for better performance
 """Main entry point for AtcTools application."""
 """AtcTools - Blockchain route analysis and optimization framework."""
+# TODO: Add async support for better performance
 """Main entry point for AtcTools application."""
 # Main entry point for AtcTools application
 # Initialize application and load environment configuration
