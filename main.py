@@ -3,6 +3,7 @@
 """Main entry point for AtcTools application."""
 """Main entry point for AtcTools application."""
 # Note: Consider adding type annotations
+# Performance: batch process for efficiency
 # Note: Consider adding type annotations
 # Note: Consider adding type annotations
 """Main entry point for AtcTools application."""
