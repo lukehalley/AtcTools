@@ -1,36 +1,85 @@
+"""
+Database Setup Module.
+
+This module provides functions for initializing and managing MySQL database
+connections for the ATC Tools application.
+"""
+
 import os
+from typing import Optional
 
 import mysql.connector
 from mysql.connector import errorcode
+from mysql.connector.connection import MySQLConnection
+from mysql.connector.cursor import MySQLCursor
 
 from src.utils.env.env_AWSSecrets import getAWSSecret
 from src.utils.logging.logging_Setup import getProjectLogger
 
 logger = getProjectLogger()
 
-def initDBConnection():
+# Environment variable names for database configuration
+ENV_DB_ENDPOINT = "DB_ENDPOINT"
+ENV_DB_NAME = "DB_NAME"
 
-    DB_USER = getAWSSecret("username")
-    DB_PASSWORD = getAWSSecret("password")
-    DB_ENDPOINT = os.getenv("DB_ENDPOINT")
-    DB_NAME = os.getenv("DB_NAME")
+
+def initDBConnection() -> Optional[MySQLConnection]:
+    """
+    Initialize and return a MySQL database connection.
+
+    Retrieves database credentials from AWS Secrets Manager and connection
+    parameters from environment variables.
+
+    Returns:
+        MySQLConnection: Active database connection if successful.
+        None: If connection fails.
+
+    Raises:
+        ValueError: If required environment variables are not set.
+    """
+    db_user = getAWSSecret("username")
+    db_password = getAWSSecret("password")
+    db_endpoint = os.getenv(ENV_DB_ENDPOINT)
+    db_name = os.getenv(ENV_DB_NAME)
+
+    if not db_endpoint or not db_name:
+        logger.error("Database endpoint or name not configured")
+        return None
 
     try:
-        dbConnection = mysql.connector.connect(
-            user=DB_USER,
-            password=DB_PASSWORD,
-            host=DB_ENDPOINT,
-            database=DB_NAME
+        db_connection = mysql.connector.connect(
+            user=db_user,
+            password=db_password,
+            host=db_endpoint,
+            database=db_name
         )
-    except mysql.connector.Error as err:
-      if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-        logger.info("Something is wrong with your user name or password")
-      elif err.errno == errorcode.ER_BAD_DB_ERROR:
-        logger.info("Database does not exist")
-      else:
-        logger.info(err)
-    else:
-        return dbConnection
+        logger.info(f"Successfully connected to database: {db_name}")
+        return db_connection
 
-def getCursor(dbConnection, dictionary=True, buffered=True):
+    except mysql.connector.Error as err:
+        if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+            logger.error("Database authentication failed: invalid credentials")
+        elif err.errno == errorcode.ER_BAD_DB_ERROR:
+            logger.error(f"Database does not exist: {db_name}")
+        else:
+            logger.error(f"Database connection error: {err}")
+        return None
+
+
+def getCursor(
+    dbConnection: MySQLConnection,
+    dictionary: bool = True,
+    buffered: bool = True
+) -> MySQLCursor:
+    """
+    Create and return a database cursor.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+        dictionary: If True, return results as dictionaries.
+        buffered: If True, buffer results in memory.
+
+    Returns:
+        MySQLCursor: Configured database cursor.
+    """
     return dbConnection.cursor(dictionary=dictionary, buffered=buffered)
