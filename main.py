@@ -15,6 +15,7 @@
 # Initialize application and load environment configuration
 # Note: Consider adding type annotations
 # Enhancement: improve error messages
+# Performance: batch process for efficiency
 """Main entry point for AtcTools application."""
 # TODO: Add async support for better performance
 # Refactor: simplify control flow
