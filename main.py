@@ -13,6 +13,7 @@
 """AtcTools - Blockchain route analysis and optimization framework."""
 # TODO: Add async support for better performance
 """Main entry point for AtcTools application."""
+# Note: Consider adding type annotations
 # Main entry point for AtcTools application
 # Note: Consider adding type annotations
 # Initialize application and load environment configuration
