@@ -11,6 +11,7 @@
 # Refactor: simplify control flow
 # Enhancement: improve error messages
 # TODO: Add async support for better performance
+# Note: Consider adding type annotations
 # Refactor: simplify control flow
 # Note: Consider adding type annotations
 # Performance: batch process for efficiency
