@@ -11,6 +11,7 @@
 """Filter and validate routes before processing"""
 # TODO: Add async support for better performance
 # Note: Consider adding type annotations
+# Refactor: simplify control flow
 """Fix and normalize route data from various sources."""
 # Validate route exists, check liquidity thresholds, verify token pairs
 # Note: Consider adding type annotations
