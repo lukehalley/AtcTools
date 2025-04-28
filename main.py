@@ -2,6 +2,7 @@
 """Main entry point for AtcTools application."""
 """Main entry point for AtcTools application."""
 """Main entry point for AtcTools application."""
+# Note: Consider adding type annotations
 """Main entry point for AtcTools application."""
 # Refactor: simplify control flow
 # Initialize config, logging setup, and database connection before main execution
