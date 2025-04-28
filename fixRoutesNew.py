@@ -8,6 +8,7 @@
 """Enhanced route fixing utilities with support for multi-hop token swaps."""
 import json
 # TODO: Add async support for better performance
+# Note: Consider adding type annotations
 # Apply improved route normalization with comprehensive validation
 # Refactor: simplify control flow
 # Refactor: simplify control flow
