@@ -1,11 +1,32 @@
+"""
+General Database Query Module.
+
+This module provides generic database query functions for checking database
+state and retrieving rows by various conditions.
+"""
+
+from typing import Any, Dict, List, Optional
+
 from src.db.actions.actions_Setup import getCursor
 from src.db.actions.actions_General import executeReadQuery
 from src.utils.logging.logging_Setup import getProjectLogger
 
 logger = getProjectLogger()
 
-def checkDbInitialised(dbConnection):
 
+def checkDbInitialised(dbConnection: Any) -> bool:
+    """
+    Check if the database has been properly initialised.
+
+    Verifies that the required tables (dexs, pairs, tokens, networks)
+    exist in the 'atc' database schema.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+
+    Returns:
+        True if all required tables exist, False otherwise.
+    """
     query = "" \
             "SELECT COUNT(*) AS tableCount " \
             "FROM `information_schema`.`tables` " \
@@ -21,8 +42,24 @@ def checkDbInitialised(dbConnection):
 
     return tableResults[0]["tableCount"] >= 4
 
-def getRowByValue(dbConnection, table, conditions):
 
+def getRowByValue(
+    dbConnection: Any,
+    table: str,
+    conditions: List[Dict[str, Any]]
+) -> Optional[Dict[str, Any]]:
+    """
+    Retrieve a single row from a table matching the given conditions.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+        table: Name of the database table to query.
+        conditions: List of condition dictionaries, each containing
+                   a single key-value pair for the WHERE clause.
+
+    Returns:
+        Dictionary containing the row data if found, None otherwise.
+    """
     cursor = getCursor(dbConnection=dbConnection)
 
     amountOfConditions = len(conditions)
@@ -57,8 +94,24 @@ def getRowByValue(dbConnection, table, conditions):
     else:
         return None
 
-def checkIfRowExistsByValue(dbConnection, table, column, value):
+def checkIfRowExistsByValue(
+    dbConnection: Any,
+    table: str,
+    column: str,
+    value: Any
+) -> bool:
+    """
+    Check if a row exists in a table with the specified column value.
 
+    Args:
+        dbConnection: Active MySQL database connection.
+        table: Name of the database table to query.
+        column: Name of the column to check.
+        value: Value to search for in the specified column.
+
+    Returns:
+        True if at least one matching row exists, False otherwise.
+    """
     cursor = getCursor(dbConnection=dbConnection)
 
     query = f"SELECT COUNT(*) count FROM " \
