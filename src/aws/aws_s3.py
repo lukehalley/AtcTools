@@ -33,15 +33,23 @@ def prepareJsonForS3(data: Dict[str, Any], indent: int = DEFAULT_JSON_INDENT) ->
     """
     return json.dumps(data, indent=indent)
 
-def checkIfPathExistsInS3(bucketName, s3Path):
+def checkIfPathExistsInS3(bucketName: str, s3Path: str) -> bool:
+    """
+    Check if a path exists in an S3 bucket.
+
+    Args:
+        bucketName: Name of the S3 bucket to check.
+        s3Path: Key path within the bucket.
+
+    Returns:
+        True if the path exists, False otherwise.
+    """
     s3 = boto3.client('s3')
-    exists = False
     try:
         s3.head_object(Bucket=bucketName, Key=s3Path)
-        exists = True
+        return True
     except ClientError:
-        pass
-    return exists
+        return False
 
 def writeJSONToS3(jsonData, s3Path):
 
