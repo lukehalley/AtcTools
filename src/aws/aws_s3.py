@@ -83,12 +83,26 @@ def writeJSONToS3(jsonData: Dict[str, Any], s3Path: str) -> bool:
 
     return upload_successful
 
-def getCurrentStoredABIs(networkName):
+def getCurrentStoredABIs(networkName: str) -> List[str]:
+    """
+    Retrieve a list of stored ABI file keys for a network from S3.
 
+    Args:
+        networkName: Name of the blockchain network to filter ABIs for.
+
+    Returns:
+        List of S3 object keys for non-empty ABI files under the network prefix.
+
+    Note:
+        Requires S3_BUCKET environment variable to be set.
+    """
     s3 = boto3.resource('s3')
-    s3Bucket = s3.Bucket(os.getenv("S3_BUCKET"))
+    bucket_name = os.getenv("S3_BUCKET")
+    s3_bucket = s3.Bucket(bucket_name)
 
-    filteredObjects = s3Bucket.objects.filter(Prefix=f'{networkName}/')
-    return [s3object.key for s3object in filteredObjects if s3object.size]
+    prefix = f'{networkName}/'
+    filtered_objects = s3_bucket.objects.filter(Prefix=prefix)
+
+    return [s3_object.key for s3_object in filtered_objects if s3_object.size]
 
 
