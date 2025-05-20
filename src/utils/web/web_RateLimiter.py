@@ -1,13 +1,49 @@
+"""
+Rate Limiter Module.
+
+This module provides an async rate limiter for controlling API request throughput.
+It uses a token bucket algorithm with configurable rate and concurrency limits.
+"""
+
 import asyncio
 import math
 import time
 from contextlib import asynccontextmanager
+from typing import Optional
 
 
 class RateLimiter:
+    """
+    Async rate limiter using token bucket algorithm.
+
+    Controls the rate of API requests by limiting both the number of
+    requests per second and the number of concurrent requests.
+
+    Attributes:
+        rate_limit: Maximum number of requests per second.
+        tokens_queue: Queue holding request tokens.
+        tokens_consumer_task: Background task consuming tokens.
+        semaphore: Semaphore for concurrency control.
+
+    Example:
+        async with RateLimiter(rate_limit=10, concurrency_limit=5) as limiter:
+            async with limiter.throttle():
+                await make_api_request()
+    """
+
     def __init__(self,
                  rate_limit: int,
                  concurrency_limit: int) -> None:
+        """
+        Initialize the rate limiter.
+
+        Args:
+            rate_limit: Maximum requests per second (must be >= 1).
+            concurrency_limit: Maximum concurrent requests (must be >= 1).
+
+        Raises:
+            ValueError: If rate_limit or concurrency_limit is less than 1.
+        """
         if not rate_limit or rate_limit < 1:
             raise ValueError('rate limit must be non zero positive number')
         if not concurrency_limit or concurrency_limit < 1:
