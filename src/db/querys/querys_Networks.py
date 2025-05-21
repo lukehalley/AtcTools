@@ -60,3 +60,59 @@ def getNetworkDbIdByName(dbConnection: Any, networkName: str) -> List[Dict[str, 
     )
 
 
+def getNetworkById(dbConnection: Any, networkId: int) -> Optional[Dict[str, Any]]:
+    """
+    Retrieve a network by its database ID.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+        networkId: The database ID of the network.
+
+    Returns:
+        Dictionary containing network information, or None if not found.
+    """
+    query = f"SELECT * FROM networks WHERE network_id={networkId}"
+    cursor = getCursor(dbConnection=dbConnection)
+
+    results = executeReadQuery(cursor=cursor, query=query)
+    return results[0] if results else None
+
+
+def getNetworkByChainId(dbConnection: Any, chainId: int) -> Optional[Dict[str, Any]]:
+    """
+    Retrieve a network by its blockchain chain ID.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+        chainId: The chain ID of the blockchain network (e.g., 1 for Ethereum).
+
+    Returns:
+        Dictionary containing network information, or None if not found.
+    """
+    query = f"SELECT * FROM networks WHERE chain_number={chainId}"
+    cursor = getCursor(dbConnection=dbConnection)
+
+    results = executeReadQuery(cursor=cursor, query=query)
+    return results[0] if results else None
+
+
+def getActiveNetworks(dbConnection: Any) -> List[Dict[str, Any]]:
+    """
+    Retrieve all networks that have block explorer API configured.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+
+    Returns:
+        List of dictionaries containing active network information.
+    """
+    query = (
+        "SELECT * FROM networks "
+        "WHERE explorer_api_prefix IS NOT NULL "
+        "AND explorer_api_prefix != ''"
+    )
+    cursor = getCursor(dbConnection=dbConnection)
+
+    return executeReadQuery(cursor=cursor, query=query)
+
+
