@@ -53,3 +53,44 @@ def loadCSVSafe(csvPath: str, default: Optional[List[Dict[str, str]]] = None) ->
         return loadCSVAsDict(csvPath)
     except (FileNotFoundError, csv.Error, StopIteration):
         return default
+
+
+def getCSVRowCount(csvPath: str) -> int:
+    """
+    Get the number of data rows in a CSV file (excluding header).
+
+    Args:
+        csvPath: Path to the CSV file.
+
+    Returns:
+        int: Number of data rows in the CSV file.
+
+    Raises:
+        FileNotFoundError: If the specified CSV file does not exist.
+    """
+    if not os.path.exists(csvPath):
+        raise FileNotFoundError(f"CSV file not found: {csvPath}")
+
+    with open(csvPath, 'r', encoding='utf-8') as f:
+        return sum(1 for _ in f) - 1  # Subtract 1 for header row
+
+
+def getCSVHeaders(csvPath: str) -> List[str]:
+    """
+    Get the column headers from a CSV file.
+
+    Args:
+        csvPath: Path to the CSV file.
+
+    Returns:
+        List[str]: List of column header names.
+
+    Raises:
+        FileNotFoundError: If the specified CSV file does not exist.
+    """
+    if not os.path.exists(csvPath):
+        raise FileNotFoundError(f"CSV file not found: {csvPath}")
+
+    with open(csvPath, 'r', encoding='utf-8') as f:
+        reader = csv.reader(f)
+        return next(reader)
