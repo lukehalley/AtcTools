@@ -1,11 +1,100 @@
+"""
+Bulk Database Operations Module.
+
+This module provides utilities for bulk data processing and CSV generation
+for database routes, using pandas for efficient data transformation.
+"""
+
+from typing import Any, Dict, List, Optional
+
 import pandas as pd
 
+# Column names for route data
+ROUTE_ID_COLUMNS = ['route_id', 'token_in_id', 'token_out_id']
 
-def update_many(dbConnection, data_list=None, mysql_table=None):
+# Keys to keep when merging route data
+ROUTE_KEYS_TO_KEEP = [
+    'route_id', 'network_id', 'dex_id', 'token_in_address',
+    'token_out_address', 'route', 'method', 'transaction_hash',
+    'block_number', 'amount_in', 'amount_out', 'tx_timestamp', 'created_at'
+]
 
-    newDicts = []
+# Final column order for output
+ROUTE_OUTPUT_ORDER = [
+    'route_id', 'network_id', 'dex_id', 'token_in_id',
+    'token_in_address', 'token_out_id', 'token_out_address',
+    'route', 'method', 'transaction_hash', 'block_number',
+    'amount_in', 'amount_out', 'tx_timestamp', 'created_at'
+]
 
+# Default file paths
+DEFAULT_ROUTES_INPUT = 'data/db/routes_raw_new.csv'
+DEFAULT_ROUTES_OUTPUT = 'data/db/done/routes_done.csv'
+
+# Null value placeholder for CSV export
+NULL_PLACEHOLDER = r"\N"
+
+
+def update_many(
+    dbConnection: Any,
+    data_list: Optional[List[Dict[str, Any]]] = None,
+    mysql_table: Optional[str] = None
+) -> None:
+    """
+    Process route data and export to CSV with proper formatting.
+
+    Takes a list of route dictionaries, normalizes the data, merges with
+    existing route information, and exports to a CSV file ready for
+    database import.
+
+    Args:
+        dbConnection: Database connection (currently unused, for future use).
+        data_list: List of dictionaries containing route data with keys:
+                   route_id, token_in_id, token_out_id.
+        mysql_table: Target MySQL table name (currently unused, for future use).
+
+    Note:
+        Currently exports to CSV file at 'data/db/done/routes_done.csv'.
+        Database operations are planned for future implementation.
+    """
+    if data_list is None or len(data_list) == 0:
+        return
+
+    normalized_data = _normalize_route_data(data_list)
+    route_ids_df = pd.DataFrame(normalized_data, columns=ROUTE_ID_COLUMNS)
+
+    # Convert ID columns to nullable integers
+    for col in ROUTE_ID_COLUMNS:
+        route_ids_df[col] = pd.to_numeric(
+            route_ids_df[col],
+            downcast='float',
+            errors='raise'
+        ).astype('Int64')
+
+    routes_df = pd.read_csv(DEFAULT_ROUTES_INPUT)
+    merged_df = pd.merge(route_ids_df, routes_df[ROUTE_KEYS_TO_KEEP], on=['route_id'])
+
+    # Format data for CSV export
+    merged_df = _format_for_csv_export(merged_df)
+
+    # Reorder columns and export
+    final_df = merged_df[ROUTE_OUTPUT_ORDER]
+    final_df.to_csv(DEFAULT_ROUTES_OUTPUT, index=False)
+
+
+def _normalize_route_data(data_list: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """
+    Normalize route data ensuring all keys are present and values are strings.
+
+    Args:
+        data_list: List of route dictionaries.
+
+    Returns:
+        List of normalized dictionaries with consistent keys.
+    """
+    normalized = []
     keys = data_list[0].keys()
+
     for data in data_list:
         if data:
             for key in keys:
@@ -13,110 +102,30 @@ def update_many(dbConnection, data_list=None, mysql_table=None):
                     data[key] = None
                 else:
                     data[key] = f"{data[key]}"
-            newDicts.append(data)
+            normalized.append(data)
 
-    routeIds = pd.DataFrame(newDicts, columns=['route_id', 'token_in_id', 'token_out_id'])
+    return normalized
 
-    routeIds['route_id'] = pd.to_numeric(routeIds['route_id'], downcast='float', errors='raise').astype('Int64')
-    routeIds['token_in_id'] = pd.to_numeric(routeIds['token_in_id'], downcast='float', errors='raise').astype('Int64')
-    routeIds['token_out_id'] = pd.to_numeric(routeIds['token_out_id'], downcast='float', errors='raise').astype('Int64')
 
-    routes = pd.read_csv(r'data/db/routes_raw_new.csv')
+def _format_for_csv_export(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Format DataFrame for CSV export with proper null handling.
 
-    keysToKeep = ['route_id', 'network_id', 'dex_id', 'token_in_address',
-                  'token_out_address', 'route', 'method', 'transaction_hash',
-                  'block_number', 'amount_in', 'amount_out', 'tx_timestamp', 'created_at']
+    Args:
+        df: DataFrame to format.
 
-    merged = pd.merge(routeIds, routes[keysToKeep], on=['route_id'])
+    Returns:
+        Formatted DataFrame ready for CSV export.
+    """
+    df = df.astype(str)
+    df = df.where(pd.notnull(df), None)
 
-    merged = merged.astype(str)
+    # Replace various null representations with standard placeholder
+    for null_repr in ["<NA>", "nan", ""]:
+        df = df.replace(null_repr, NULL_PLACEHOLDER)
 
-    merged = merged.where(pd.notnull(merged), None)
+    # Format route column
+    if 'route' in df.columns:
+        df['route'] = df['route'].str.replace(', ', '-')
 
-    merged = merged.replace("<NA>", r"\N")
-
-    merged = merged.replace("nan", r"\N")
-
-    merged = merged.replace("", r"\N")
-
-    merged['route'] = merged['route'].str.replace(', ', '-')
-
-    order = ['route_id',
-             'network_id',
-             'dex_id',
-             'token_in_id',
-             'token_in_address',
-             'token_out_id',
-             'token_out_address',
-             'route',
-             'method',
-             'transaction_hash',
-             'block_number',
-             'amount_in',
-             'amount_out',
-             'tx_timestamp',
-             'created_at']
-
-    mergedFinal = merged[order]
-
-    mergedFinal.to_csv("data/db/done/routes_done.csv", index=False)
-
-    x = 1
-
-    # cursor = getCursor(dbConnection=dbConnection)
-    #
-    # query = ""
-    # valuesToUpdate = []
-    #
-    # amountToUpdate = len(data_list)
-    #
-    # batchSize = 1000
-    #
-    # for data_dict in data_list:
-    #
-    #     if not query:
-    #         columns = ', '.join('`{0}`'.format(k) for k in data_dict)
-    #         duplicates = ', '.join('{0}=VALUES({0})'.format(k) for k in data_dict)
-    #         place_holders = ', '.join('%s'.format(k) for k in data_dict)
-    #         query = "INSERT INTO {0} ({1}) VALUES ({2})".format(mysql_table, columns, place_holders)
-    #         query = "{0} ON DUPLICATE KEY UPDATE {1}".format(query, duplicates)
-    #
-    #     if data_dict is not None:
-    #
-    #         print(data_dict)
-    #
-    #         cleanValues = []
-    #
-    #         if "route_id" in data_dict:
-    #             cleanValues.append(
-    #                 int(data_dict["route_id"])
-    #             )
-    #         else:
-    #             sys.exit("No Route ID!")
-    #
-    #         if "token_in_id" in data_dict:
-    #             cleanValues.append(
-    #                 int(data_dict["token_in_id"])
-    #             )
-    #         else:
-    #             cleanValues.append(None)
-    #
-    #         if "token_out_id" in data_dict:
-    #             cleanValues.append(
-    #                 int(data_dict["token_out_id"])
-    #             )
-    #         else:
-    #             cleanValues.append(None)
-    #
-    #         v = tuple(cleanValues)
-    #
-    #         print(v)
-    #
-    #         valuesToUpdate.append(v)
-    #
-    # cursor.executemany(query, valuesToUpdate)
-    #
-    # dbConnection.commit()
-    #
-    # cursor.close()
-    # dbConnection.close()
+    return df
