@@ -75,3 +75,25 @@ def useDatabase(dbConnection: Any, databaseName: str = DEFAULT_DATABASE_NAME) ->
         cursor=cursor,
         query=query
     )
+
+
+def checkDatabaseExists(dbConnection: Any, databaseName: str = DEFAULT_DATABASE_NAME) -> bool:
+    """
+    Check if a database exists.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+        databaseName: Name of the database to check.
+
+    Returns:
+        bool: True if the database exists, False otherwise.
+    """
+    cursor = getCursor(dbConnection=dbConnection)
+
+    query = f"SHOW DATABASES LIKE '{databaseName}'"
+    cursor.execute(query)
+    result = cursor.fetchall()
+
+    exists = len(result) > 0
+    logger.debug(f"Database '{databaseName}' exists: {exists}")
+    return exists

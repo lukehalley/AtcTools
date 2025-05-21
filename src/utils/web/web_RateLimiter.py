@@ -7,9 +7,18 @@ It uses a token bucket algorithm with configurable rate and concurrency limits.
 
 import asyncio
 import math
+import os
 import time
 from contextlib import asynccontextmanager
 from typing import Optional
+
+# Environment variable names for rate limiting configuration
+ENV_RATE_LIMIT = "RATE_LIMIT_RPS"
+ENV_CONCURRENCY_LIMIT = "CONCURRENCY_LIMIT"
+
+# Default values if environment variables are not set
+DEFAULT_RATE_LIMIT = 10
+DEFAULT_CONCURRENCY_LIMIT = 100
 
 
 class RateLimiter:
@@ -165,3 +174,26 @@ class RateLimiter:
                 await self.tokens_consumer_task
             except asyncio.CancelledError:
                 pass
+
+
+def createRateLimiterFromEnv() -> RateLimiter:
+    """
+    Create a RateLimiter instance using environment variables.
+
+    Reads RATE_LIMIT_RPS and CONCURRENCY_LIMIT from environment,
+    falling back to default values if not set.
+
+    Returns:
+        RateLimiter: Configured rate limiter instance.
+
+    Environment Variables:
+        RATE_LIMIT_RPS: Requests per second limit (default: 10)
+        CONCURRENCY_LIMIT: Maximum concurrent requests (default: 100)
+    """
+    rate_limit_str = os.getenv(ENV_RATE_LIMIT)
+    concurrency_str = os.getenv(ENV_CONCURRENCY_LIMIT)
+
+    rate_limit = int(rate_limit_str) if rate_limit_str else DEFAULT_RATE_LIMIT
+    concurrency = int(concurrency_str) if concurrency_str else DEFAULT_CONCURRENCY_LIMIT
+
+    return RateLimiter(rate_limit=rate_limit, concurrency_limit=concurrency)
