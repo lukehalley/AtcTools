@@ -37,3 +37,65 @@ def getAllDexsForNetwork(dbConnection: Any, networkDbId: int) -> List[Dict[str, 
 
     return dexsDict
 
+
+def getDexById(dbConnection: Any, dexId: int) -> Dict[str, Any]:
+    """
+    Retrieve a specific DEX by its database ID.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+        dexId: The database ID of the DEX to retrieve.
+
+    Returns:
+        Dictionary containing the DEX information, or empty dict if not found.
+    """
+    query = f"SELECT * FROM dexs WHERE dex_id={dexId}"
+    cursor = getCursor(dbConnection=dbConnection)
+
+    results = executeReadQuery(cursor=cursor, query=query)
+    return results[0] if results else {}
+
+
+def getDexByName(
+    dbConnection: Any,
+    networkDbId: int,
+    dexName: str
+) -> Dict[str, Any]:
+    """
+    Retrieve a DEX by its name within a specific network.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+        networkDbId: The database ID of the network.
+        dexName: The name of the DEX to find.
+
+    Returns:
+        Dictionary containing the DEX information, or empty dict if not found.
+    """
+    query = (
+        f"SELECT * FROM dexs "
+        f"WHERE network_id={networkDbId} AND name='{dexName}'"
+    )
+    cursor = getCursor(dbConnection=dbConnection)
+
+    results = executeReadQuery(cursor=cursor, query=query)
+    return results[0] if results else {}
+
+
+def countDexsForNetwork(dbConnection: Any, networkDbId: int) -> int:
+    """
+    Count the number of DEXes for a specific network.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+        networkDbId: The database ID of the network.
+
+    Returns:
+        int: Number of DEXes configured for the network.
+    """
+    query = f"SELECT COUNT(*) as count FROM dexs WHERE network_id={networkDbId}"
+    cursor = getCursor(dbConnection=dbConnection)
+
+    results = executeReadQuery(cursor=cursor, query=query)
+    return results[0]["count"] if results else 0
+
