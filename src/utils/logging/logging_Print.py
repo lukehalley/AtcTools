@@ -25,3 +25,44 @@ def printSeparator(newLine: bool = False) -> None:
         separator = f"{separator}\n"
 
     logger.info(separator)
+
+
+def printHeader(title: str, width: int = SEPARATOR_LENGTH) -> None:
+    """
+    Print a formatted header with title centered between separators.
+
+    Args:
+        title: The title text to display.
+        width: Total width of the header. Defaults to SEPARATOR_LENGTH.
+
+    Example:
+        printHeader("Processing")
+        # Output:
+        # --------------------------------
+        # |         Processing          |
+        # --------------------------------
+    """
+    printSeparator()
+    padding = width - len(title) - 2
+    left_pad = padding // 2
+    right_pad = padding - left_pad
+    header_line = f"|{' ' * left_pad}{title}{' ' * right_pad}|"
+    logger.info(header_line)
+    printSeparator()
+
+
+def printProgress(current: int, total: int, prefix: str = "Progress") -> None:
+    """
+    Print a progress indicator showing current position and percentage.
+
+    Args:
+        current: Current item number (1-indexed).
+        total: Total number of items.
+        prefix: Label to display before the progress. Defaults to "Progress".
+
+    Example:
+        printProgress(5, 10, "Processing")
+        # Output: Processing: 5/10 (50.0%)
+    """
+    percentage = (current / total * 100) if total > 0 else 0
+    logger.info(f"{prefix}: {current}/{total} ({percentage:.1f}%)")
