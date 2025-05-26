@@ -5,7 +5,7 @@ This module provides database query functions for retrieving trading route
 information from the database.
 """
 
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from src.db.actions.actions_Setup import getCursor
 from src.db.actions.actions_General import executeReadQuery
@@ -70,3 +70,41 @@ def getRoutesByNetworkId(dbConnection: Any, networkId: int) -> List[Dict[str, An
 
     cursor = getCursor(dbConnection=dbConnection)
     return executeReadQuery(cursor=cursor, query=query)
+
+
+def getRouteById(dbConnection: Any, routeId: int) -> Optional[Dict[str, Any]]:
+    """
+    Retrieve a single route by its database ID.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+        routeId: The database ID of the route to retrieve.
+
+    Returns:
+        Dictionary containing route information, or None if not found.
+    """
+    query = f"SELECT * FROM routes WHERE route_id = {routeId}"
+    cursor = getCursor(dbConnection=dbConnection)
+
+    results = executeReadQuery(cursor=cursor, query=query)
+    return results[0] if results else None
+
+
+def countRoutes(dbConnection: Any, activeOnly: bool = False) -> int:
+    """
+    Count the total number of routes in the database.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+        activeOnly: If True, only count active routes. Defaults to False.
+
+    Returns:
+        int: Number of routes matching the criteria.
+    """
+    query = "SELECT COUNT(*) as count FROM routes"
+    if activeOnly:
+        query += " WHERE is_active = 1"
+
+    cursor = getCursor(dbConnection=dbConnection)
+    results = executeReadQuery(cursor=cursor, query=query)
+    return results[0]["count"] if results else 0
