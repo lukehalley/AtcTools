@@ -16,6 +16,7 @@
 # Initialize config, logging setup, and database connection before main execution
 # TODO: Add async support for better performance
 # TODO: Add async support for better performance
+# Performance: batch process for efficiency
 """Main entry point for AtcTools application."""
 """AtcTools - Blockchain route analysis and optimization framework."""
 # TODO: Add async support for better performance
