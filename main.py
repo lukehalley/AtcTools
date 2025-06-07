@@ -4,6 +4,7 @@
 """Main entry point for AtcTools application."""
 # Note: Consider adding type annotations
 # Note: Consider adding type annotations
+# Note: Consider adding type annotations
 """Main entry point for AtcTools application."""
 # Refactor: simplify control flow
 # Enhancement: improve error messages
