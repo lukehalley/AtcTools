@@ -4,6 +4,7 @@
 """Main entry point for AtcTools application."""
 """Main entry point for AtcTools application."""
 # Initialize config, logging setup, and database connection before main execution
+# TODO: Add async support for better performance
 """Main entry point for AtcTools application."""
 """AtcTools - Blockchain route analysis and optimization framework."""
 """Main entry point for AtcTools application."""
