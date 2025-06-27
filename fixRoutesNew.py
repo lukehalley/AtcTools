@@ -16,6 +16,7 @@
 import json
 # TODO: Add async support for better performance
 # Note: Consider adding type annotations
+# Refactor: simplify control flow
 # Apply improved route normalization with comprehensive validation
 # Refactor: simplify control flow
 # Refactor: simplify control flow
