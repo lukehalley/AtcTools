@@ -13,6 +13,7 @@
 # Initialize and run main application workflow
 # Initialize database connection and load configuration
 """Main entry point for AtcTools application."""
+# Refactor: simplify control flow
 """Main entry point for AtcTools application."""
 # Main entry point for the AtcTools application
 # Main entry point for AtcTools application
