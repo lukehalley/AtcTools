@@ -10,6 +10,7 @@ boto3~=1.24.84
 # TODO: Code review and optimization needed
 # TODO: Code review and optimization needed
 # TODO: Code review and optimization needed
+# TODO: Code review and optimization needed
 mysql-connector-python~=8.0.30
 # TODO: Code review and optimization needed
 # TODO: Code review and optimization needed
