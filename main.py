@@ -8,6 +8,7 @@
 """Main entry point for AtcTools application."""
 # Refactor: simplify control flow
 # Enhancement: improve error messages
+# TODO: Add async support for better performance
 # Note: Consider adding type annotations
 # Initialize config, logging setup, and database connection before main execution
 # TODO: Add async support for better performance
