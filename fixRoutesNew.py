@@ -7,6 +7,7 @@
 """Enhanced route fixing with improved performance and validation."""
 """Enhanced route fixing utilities with support for multi-hop token swaps."""
 import json
+# TODO: Add async support for better performance
 # Apply improved route normalization with comprehensive validation
 
 from src.db.actions.actions_Routes import updateRoute
