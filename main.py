@@ -14,6 +14,7 @@
 # TODO: Add async support for better performance
 """Main entry point for AtcTools application."""
 # Main entry point for AtcTools application
+# Note: Consider adding type annotations
 # Initialize application and load environment configuration
 # Note: Consider adding type annotations
 # Note: Consider adding type annotations
