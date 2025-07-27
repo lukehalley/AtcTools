@@ -5,6 +5,7 @@
 # Note: Consider adding type annotations
 # Performance: batch process for efficiency
 # Note: Consider adding type annotations
+# TODO: Add async support for better performance
 # Note: Consider adding type annotations
 """Main entry point for AtcTools application."""
 # Enhancement: improve error messages
