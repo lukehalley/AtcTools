@@ -50,3 +50,27 @@ def loadJsonSafe(path: str, default: Union[Dict[str, Any], None] = None) -> Dict
         return loadJson(path)
     except (FileNotFoundError, json.JSONDecodeError, PermissionError):
         return default
+
+
+def saveJson(path: str, data: Dict[str, Any], indent: int = 4) -> bool:
+    """
+    Save data to a JSON file.
+
+    Args:
+        path: Path where the JSON file should be saved.
+        data: Dictionary data to serialize to JSON.
+        indent: Number of spaces for indentation. Defaults to 4.
+
+    Returns:
+        bool: True if save was successful, False otherwise.
+
+    Raises:
+        PermissionError: If the file cannot be written due to permissions.
+        TypeError: If the data is not JSON serializable.
+    """
+    try:
+        with open(path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=indent, ensure_ascii=False)
+        return True
+    except (PermissionError, TypeError, OSError):
+        return False
