@@ -10,6 +10,7 @@ and database management for cryptocurrency trading route analysis.
 
 # Enhancement: improve error messages
 # Note: Consider adding type annotations
+# Note: Consider adding type annotations
 # TODO: Add async support for better performance
 Usage:
     python main.py
