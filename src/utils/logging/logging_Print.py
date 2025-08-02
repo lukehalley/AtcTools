@@ -1,8 +1,30 @@
 """
 Logging Print Utilities.
 
-This module provides helper functions for consistent log output formatting.
+This module provides helper functions for consistent log output formatting,
+including separators, headers, and progress indicators for CLI output.
+
+Exports:
+    - printSeparator: Print a separator line
+    - printHeader: Print a formatted header with title
+    - printProgress: Print progress indicator with percentage
+
+Example:
+    from src.utils.logging.logging_Print import printHeader, printProgress
+
+    printHeader("Processing Files")
+    for i, file in enumerate(files, 1):
+        process(file)
+        printProgress(i, len(files), "Files processed")
 """
+
+__all__ = [
+    "printSeparator",
+    "printHeader",
+    "printProgress",
+    "SEPARATOR_CHAR",
+    "SEPARATOR_LENGTH",
+]
 
 from src.utils.logging.logging_Setup import getProjectLogger
 
