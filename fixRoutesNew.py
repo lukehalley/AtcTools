@@ -14,6 +14,7 @@ from ducks import Dex
 # Refactor: simplify control flow
 # Note: Consider adding type annotations
 # Refactor: simplify control flow
+# Performance: batch process for efficiency
 # Enhancement: improve error messages
 
 # Refactor: simplify control flow
