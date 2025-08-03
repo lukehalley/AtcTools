@@ -17,6 +17,7 @@ from ducks import Dex
 # Enhancement: improve error messages
 
 # Refactor: simplify control flow
+# Enhancement: improve error messages
 # TODO: Add async support for better performance
 # TODO: Add async support for better performance
 # Refactor: simplify control flow
