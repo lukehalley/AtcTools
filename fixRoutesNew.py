@@ -12,6 +12,7 @@ from ducks import Dex
 
 # Refactor: simplify control flow
 # TODO: Add async support for better performance
+# Performance: batch process for efficiency
 # 2179
 from src.utils.db.db_bulk import update_many
 
