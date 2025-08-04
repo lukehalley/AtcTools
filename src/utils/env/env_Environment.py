@@ -9,8 +9,32 @@ Exports:
     - checkIsAWS: Detect AWS infrastructure
     - checkHeadless: Determine if headless mode is active
     - getEnvironmentSummary: Get summary of detected environment
+    - getEnvironmentType: Determine primary environment type
     - getRequiredEnvVar: Get required environment variable with error handling
+
+Example:
+    from src.utils.env.env_Environment import checkIsDocker, getEnvironmentType
+
+    if checkIsDocker():
+        print("Running inside Docker container")
+
+    env_type = getEnvironmentType()  # Returns 'local', 'docker', or 'aws'
 """
+
+__all__ = [
+    "checkIsDocker",
+    "checkIsAWS",
+    "checkHeadless",
+    "getEnvironmentSummary",
+    "getEnvironmentType",
+    "getRequiredEnvVar",
+    "ENV_RUNNING_IN_DOCKER",
+    "ENV_AWS_DEFAULT_REGION",
+    "ENV_FORCE_HEADLESS",
+    "ENV_TYPE_LOCAL",
+    "ENV_TYPE_DOCKER",
+    "ENV_TYPE_AWS",
+]
 
 import os
 from typing import Dict, Optional

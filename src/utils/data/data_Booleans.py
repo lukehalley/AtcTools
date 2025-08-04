@@ -3,10 +3,16 @@ Boolean Conversion Utilities.
 
 This module provides helper functions for converting various types to boolean values,
 particularly useful for parsing environment variables and configuration values.
+
+Exports:
+    - strToBool: Convert string to boolean with strict validation
+    - strToBoolSafe: Safe boolean conversion with default fallback
+    - isTruthyString: Check if string represents a truthy value
+    - isFalsyString: Check if string represents a falsy value
 """
 
 from distutils.util import strtobool
-from typing import Union
+from typing import Optional, Union
 
 # Valid truthy string values (case-insensitive)
 TRUTHY_VALUES = ('true', 'yes', '1', 'on', 'y')
@@ -41,3 +47,92 @@ def strToBool(value: Union[str, bool]) -> bool:
     if isinstance(value, bool):
         return value
     return bool(strtobool(value))
+
+
+def strToBoolSafe(value: Optional[Union[str, bool]], default: bool = False) -> bool:
+    """
+    Safely convert a string or boolean to a boolean with default fallback.
+
+    Unlike strToBool, this function does not raise exceptions for invalid
+    input, instead returning the default value.
+
+    Args:
+        value: The value to convert. Can be string, boolean, or None.
+        default: Default value to return if conversion fails.
+
+    Returns:
+        bool: The converted boolean value or default on error.
+
+    Examples:
+        >>> strToBoolSafe("yes")
+        True
+        >>> strToBoolSafe("invalid", default=True)
+        True
+        >>> strToBoolSafe(None)
+        False
+    """
+    if value is None:
+        return default
+    if isinstance(value, bool):
+        return value
+    try:
+        return bool(strtobool(value))
+    except (ValueError, AttributeError):
+        return default
+
+
+def isTruthyString(value: str) -> bool:
+    """
+    Check if a string represents a truthy boolean value.
+
+    Args:
+        value: String to check.
+
+    Returns:
+        bool: True if the string is a recognized truthy value.
+
+    Examples:
+        >>> isTruthyString("yes")
+        True
+        >>> isTruthyString("no")
+        False
+    """
+    return value.lower() in TRUTHY_VALUES
+
+
+def isFalsyString(value: str) -> bool:
+    """
+    Check if a string represents a falsy boolean value.
+
+    Args:
+        value: String to check.
+
+    Returns:
+        bool: True if the string is a recognized falsy value.
+
+    Examples:
+        >>> isFalsyString("no")
+        True
+        >>> isFalsyString("yes")
+        False
+    """
+    return value.lower() in FALSY_VALUES
+
+
+def isBooleanString(value: str) -> bool:
+    """
+    Check if a string can be interpreted as a boolean value.
+
+    Args:
+        value: String to check.
+
+    Returns:
+        bool: True if the string represents either a truthy or falsy value.
+
+    Examples:
+        >>> isBooleanString("true")
+        True
+        >>> isBooleanString("maybe")
+        False
+    """
+    return isTruthyString(value) or isFalsyString(value)
