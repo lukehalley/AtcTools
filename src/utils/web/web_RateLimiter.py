@@ -3,6 +3,11 @@ Rate Limiter Module.
 
 This module provides an async rate limiter for controlling API request throughput.
 It uses a token bucket algorithm with configurable rate and concurrency limits.
+
+Exports:
+    - RateLimiter: Async rate limiter class using token bucket algorithm
+    - createRateLimiterFromEnv: Factory function to create limiter from env vars
+    - RateLimiterStats: Statistics container for rate limiter metrics
 """
 
 import asyncio
@@ -10,7 +15,8 @@ import math
 import os
 import time
 from contextlib import asynccontextmanager
-from typing import Optional
+from dataclasses import dataclass
+from typing import Dict, Optional
 
 # Environment variable names for rate limiting configuration
 ENV_RATE_LIMIT = "RATE_LIMIT_RPS"
@@ -19,6 +25,32 @@ ENV_CONCURRENCY_LIMIT = "CONCURRENCY_LIMIT"
 # Default values if environment variables are not set
 DEFAULT_RATE_LIMIT = 10
 DEFAULT_CONCURRENCY_LIMIT = 100
+
+
+@dataclass
+class RateLimiterStats:
+    """
+    Statistics container for rate limiter metrics.
+
+    Attributes:
+        pending_tokens: Number of tokens waiting in queue.
+        available_permits: Number of available semaphore permits.
+        rate_limit: Configured requests per second.
+        concurrency_limit: Configured maximum concurrent requests.
+    """
+    pending_tokens: int
+    available_permits: int
+    rate_limit: int
+    concurrency_limit: int
+
+    def to_dict(self) -> Dict[str, int]:
+        """Convert stats to dictionary format."""
+        return {
+            "pending_tokens": self.pending_tokens,
+            "available_permits": self.available_permits,
+            "rate_limit": self.rate_limit,
+            "concurrency_limit": self.concurrency_limit,
+        }
 
 
 class RateLimiter:

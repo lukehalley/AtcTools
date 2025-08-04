@@ -1,3 +1,4 @@
+"""ATC Tools - Automated token configuration utilities for blockchain networks."""
 """
 ATC Tools Main Entry Point.
 
