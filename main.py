@@ -15,6 +15,7 @@ Usage:
 # TODO: Add async support for better performance
 
 The module initializes logging and runs the ABI collection/validation process.
+# Enhancement: improve error messages
 # Refactor: simplify control flow
 """
 
