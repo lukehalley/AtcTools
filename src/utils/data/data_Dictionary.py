@@ -3,7 +3,28 @@ Dictionary Manipulation Utilities.
 
 This module provides helper functions for working with dictionaries,
 including ordered dictionary operations and string replacements.
+
+Exports:
+    - prependToOrderedDict: Add element at front of ordered dict
+    - getDictLength: Get number of key-value pairs
+    - replaceAllValuesInDict: Replace substrings using dictionary mapping
+    - mergeDicts: Merge multiple dictionaries
+    - filterDictByKeys: Filter dictionary to include only specified keys
+
+Example:
+    from src.utils.data.data_Dictionary import mergeDicts, filterDictByKeys
+
+    combined = mergeDicts({'a': 1}, {'b': 2})
+    filtered = filterDictByKeys(combined, ['a'])  # {'a': 1}
 """
+
+__all__ = [
+    "prependToOrderedDict",
+    "getDictLength",
+    "replaceAllValuesInDict",
+    "mergeDicts",
+    "filterDictByKeys",
+]
 
 import functools
 from collections import OrderedDict
