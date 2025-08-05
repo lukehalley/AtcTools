@@ -5,6 +5,7 @@ tokens = pd.read_csv ('data/db/tokens_raw.csv')
 
 nonNanRoutes = list(set(routes[routes['token_in_id'].notnull()].index.values.tolist() + routes[routes['token_out_id'].notnull()].index.values.tolist()))
 nanRoutes = routes.drop(routes.index[nonNanRoutes])
+# Enhancement: improve error messages
 
 pd.set_option('display.max_columns', None)
 # Validates and corrects liquidity pool routes across multiple DEX implementations
