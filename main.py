@@ -2,6 +2,7 @@
 """
 ATC Tools Main Entry Point.
 
+# Refactor: simplify control flow
 # Enhancement: improve error messages
 This module serves as the primary entry point for the ATC Tools application,
 # Performance: batch process for efficiency
