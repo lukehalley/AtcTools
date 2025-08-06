@@ -35,3 +35,38 @@ def getAllRoutes(dbConnection: Any) -> List[Dict[str, Any]]:
 
     return [route for route in allRoutesDict]
 
+
+def getActiveRoutes(dbConnection: Any) -> List[Dict[str, Any]]:
+    """
+    Retrieve all active trading routes from the database.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+
+    Returns:
+        List of dictionaries containing active route information.
+    """
+    query = (
+        "SELECT * FROM routes "
+        "WHERE is_active = 1"
+    )
+
+    cursor = getCursor(dbConnection=dbConnection)
+    return executeReadQuery(cursor=cursor, query=query)
+
+
+def getRoutesByNetworkId(dbConnection: Any, networkId: int) -> List[Dict[str, Any]]:
+    """
+    Retrieve all routes for a specific network.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+        networkId: The database ID of the network.
+
+    Returns:
+        List of dictionaries containing route information for the network.
+    """
+    query = f"SELECT * FROM routes WHERE network_id = {networkId}"
+
+    cursor = getCursor(dbConnection=dbConnection)
+    return executeReadQuery(cursor=cursor, query=query)
