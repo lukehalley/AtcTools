@@ -4,6 +4,7 @@ import json
 from src.db.actions.actions_Routes import updateRoute
 # Refactor: simplify control flow
 # Performance: batch process for efficiency
+# TODO: Add async support for better performance
 # Note: Consider adding type annotations
 # Refactor: simplify control flow
 from src.db.actions.actions_Setup import initDBConnection
