@@ -3,9 +3,16 @@ General Database Actions Module.
 
 This module provides common database operations like executing queries
 and running SQL scripts from files.
+
+Exports:
+    - executeReadQuery: Execute SELECT queries and return results
+    - executeWriteQuery: Execute INSERT/UPDATE/DELETE queries with commit
+    - executeScriptsFromFile: Run SQL commands from a file
+    - executeBatchWriteQuery: Execute batch insert operations
+    - executeTransactionQueries: Execute multiple queries in a transaction
 """
 
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional, Tuple
 
 from mysql.connector import OperationalError
 from mysql.connector.connection import MySQLConnection
@@ -14,6 +21,9 @@ from mysql.connector.cursor import MySQLCursor
 from src.utils.logging.logging_Setup import getProjectLogger
 
 logger = getProjectLogger()
+
+# SQL command delimiter for file parsing
+SQL_COMMAND_DELIMITER = ";"
 
 
 def executeReadQuery(cursor: MySQLCursor, query: str) -> List[Dict[str, Any]]:

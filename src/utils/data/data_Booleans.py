@@ -9,7 +9,28 @@ Exports:
     - strToBoolSafe: Safe boolean conversion with default fallback
     - isTruthyString: Check if string represents a truthy value
     - isFalsyString: Check if string represents a falsy value
+    - isBooleanString: Check if string can be interpreted as boolean
+
+Example:
+    from src.utils.data.data_Booleans import strToBoolSafe, isBooleanString
+
+    # Safe conversion for environment variables
+    debug = strToBoolSafe(os.getenv("DEBUG"))  # False if not set
+
+    # Validate user input
+    if isBooleanString(user_input):
+        result = strToBool(user_input)
 """
+
+__all__ = [
+    "strToBool",
+    "strToBoolSafe",
+    "isTruthyString",
+    "isFalsyString",
+    "isBooleanString",
+    "TRUTHY_VALUES",
+    "FALSY_VALUES",
+]
 
 from distutils.util import strtobool
 from typing import Optional, Union
