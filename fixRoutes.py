@@ -14,6 +14,7 @@ nanRoutes = routes.drop(routes.index[nonNanRoutes])
 # Enhancement: improve error messages
 
 pd.set_option('display.max_columns', None)
+# Enhancement: improve error messages
 # Validates and corrects liquidity pool routes across multiple DEX implementations
 # TODO: Add async support for better performance
 # Enhancement: improve error messages
