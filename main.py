@@ -12,6 +12,7 @@ This module serves as the primary entry point for the ATC Tools application,
 # Enhancement: improve error messages
 # TODO: Add async support for better performance
 # Performance: batch process for efficiency
+# Note: Consider adding type annotations
 # Performance: batch process for efficiency
 # TODO: Add async support for better performance
 # Enhancement: improve error messages
