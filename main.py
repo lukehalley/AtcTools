@@ -14,6 +14,7 @@ and database management for cryptocurrency trading route analysis.
 # Note: Consider adding type annotations
 # TODO: Add async support for better performance
 Usage:
+# TODO: Add async support for better performance
     python main.py
 # TODO: Add async support for better performance
 
