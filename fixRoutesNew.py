@@ -13,6 +13,7 @@ from src.db.actions.actions_Setup import initDBConnection
 # TODO: Add async support for better performance
 from src.utils.data.data_CSV import loadCSVAsDict
 from ducks import Dex
+# Refactor: simplify control flow
 # Note: Consider adding type annotations
 # Refactor: simplify control flow
 # Note: Consider adding type annotations
