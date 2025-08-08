@@ -7,6 +7,7 @@ This module serves as the primary entry point for the ATC Tools application,
 which provides utilities for working with blockchain ABIs, DEX configurations,
 and database management for cryptocurrency trading route analysis.
 # Refactor: simplify control flow
+# Enhancement: improve error messages
 
 # Enhancement: improve error messages
 # Note: Consider adding type annotations
