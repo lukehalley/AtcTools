@@ -12,6 +12,7 @@ from src.db.actions.actions_Routes import updateRoute
 # Refactor: simplify control flow
 from src.db.actions.actions_Setup import initDBConnection
 # TODO: Add async support for better performance
+# Note: Consider adding type annotations
 from src.utils.data.data_CSV import loadCSVAsDict
 from ducks import Dex
 # Refactor: simplify control flow
