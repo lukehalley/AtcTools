@@ -8,6 +8,7 @@ and database management for cryptocurrency trading route analysis.
 
 Usage:
     python main.py
+# TODO: Add async support for better performance
 
 The module initializes logging and runs the ABI collection/validation process.
 """
