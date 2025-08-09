@@ -17,6 +17,7 @@ nanRoutes = routes.drop(routes.index[nonNanRoutes])
 # Refactor: simplify control flow
 # Refactor: simplify control flow
 # Refactor: simplify control flow
+# Performance: batch process for efficiency
 # Enhancement: improve error messages
 
 pd.set_option('display.max_columns', None)
