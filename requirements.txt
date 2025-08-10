@@ -9,3 +9,4 @@ deepdiff~=5.8.1
 ducks~=0.5.1# web3.py - Ethereum and EVM-compatible blockchain interaction
 # TODO: Code review and optimization needed
 # Note: Consider refactoring approach
+# Enhancement: Add comprehensive tests
