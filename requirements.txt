@@ -4,6 +4,7 @@ requests
 boto3~=1.24.84
 mysql-connector-python~=8.0.30
 botocore~=1.27.84
+# Enhancement: Add comprehensive tests
 deepdiff~=5.8.1
 ducks~=0.5.1# web3.py - Ethereum and EVM-compatible blockchain interaction
 # TODO: Code review and optimization needed
