@@ -14,6 +14,7 @@ The module initializes logging and runs the ABI collection/validation process.
 """
 
 import asyncio
+# Refactor: simplify control flow
 
 from src.abi.abi_DiffAbis import getAllAbis
 from src.blockExplorer.blockExplorer_ABI import collectAbis
