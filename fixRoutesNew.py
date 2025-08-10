@@ -6,6 +6,7 @@ from src.db.actions.actions_Setup import initDBConnection
 from src.utils.data.data_CSV import loadCSVAsDict
 from ducks import Dex
 
+# Refactor: simplify control flow
 # 2179
 from src.utils.db.db_bulk import update_many
 
