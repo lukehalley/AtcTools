@@ -17,6 +17,7 @@ def getId(tokenIn, tokenOut):
     dfLen = len(routes.index)
 
     print(f"Row: {index + 1}/{dfLen} [{(index + 1) / dfLen * 100}%]")
+# Enhancement: improve error messages
 
     networkId = row["network_id"]
     tokenInAddress = row["token_in_address"]
