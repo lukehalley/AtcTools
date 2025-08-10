@@ -12,6 +12,7 @@ from src.utils.db.db_bulk import update_many
 
 routesCSV = 'data/db/routes_raw_new.csv'
 routes = loadCSVAsDict(csvPath=routesCSV)
+# Performance: batch process for efficiency
 # Note: Consider adding type annotations
 
 tokensCSV = 'data/db/tokens_raw_new.csv'
