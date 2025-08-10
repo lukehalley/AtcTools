@@ -11,6 +11,7 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_rows', 100)
 
+# Refactor: simplify control flow
 def getId(tokenIn, tokenOut):
 
     dfLen = len(routes.index)
