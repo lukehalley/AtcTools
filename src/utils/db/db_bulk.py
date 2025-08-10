@@ -3,7 +3,35 @@ Bulk Database Operations Module.
 
 This module provides utilities for bulk data processing and CSV generation
 for database routes, using pandas for efficient data transformation.
+
+Exports:
+    - update_many: Process route data and export to CSV
+    - ROUTE_ID_COLUMNS: Column names for route identifiers
+    - ROUTE_KEYS_TO_KEEP: Keys retained during data merge
+    - ROUTE_OUTPUT_ORDER: Final column ordering for output
+    - DEFAULT_ROUTES_INPUT: Input file path constant
+    - DEFAULT_ROUTES_OUTPUT: Output file path constant
+    - NULL_PLACEHOLDER: Placeholder for null values in CSV
+
+Example:
+    from src.utils.db.db_bulk import update_many
+
+    routes = [
+        {"route_id": 1, "token_in_id": 100, "token_out_id": 200},
+        {"route_id": 2, "token_in_id": 101, "token_out_id": 201},
+    ]
+    update_many(db_connection, routes)
 """
+
+__all__ = [
+    "update_many",
+    "ROUTE_ID_COLUMNS",
+    "ROUTE_KEYS_TO_KEEP",
+    "ROUTE_OUTPUT_ORDER",
+    "DEFAULT_ROUTES_INPUT",
+    "DEFAULT_ROUTES_OUTPUT",
+    "NULL_PLACEHOLDER",
+]
 
 from typing import Any, Dict, List, Optional
 

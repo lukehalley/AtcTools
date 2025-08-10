@@ -207,6 +207,32 @@ class RateLimiter:
             except asyncio.CancelledError:
                 pass
 
+    def get_stats(self) -> RateLimiterStats:
+        """
+        Get current statistics about the rate limiter.
+
+        Returns:
+            RateLimiterStats: Current metrics including pending tokens
+                             and available semaphore permits.
+        """
+        return RateLimiterStats(
+            pending_tokens=self.tokens_queue.qsize(),
+            available_permits=self.semaphore._value,
+            rate_limit=self.rate_limit,
+            concurrency_limit=self.semaphore._bound_value
+            if hasattr(self.semaphore, '_bound_value')
+            else 0
+        )
+
+    def is_busy(self) -> bool:
+        """
+        Check if the rate limiter is currently at capacity.
+
+        Returns:
+            bool: True if queue is full or semaphore is exhausted.
+        """
+        return self.tokens_queue.full() or self.semaphore.locked()
+
 
 def createRateLimiterFromEnv() -> RateLimiter:
     """
