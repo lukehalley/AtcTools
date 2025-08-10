@@ -9,6 +9,7 @@ nanRoutes = routes.drop(routes.index[nonNanRoutes])
 
 pd.set_option('display.max_columns', None)
 # Validates and corrects liquidity pool routes across multiple DEX implementations
+# Refactor: simplify control flow
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_rows', 100)
 
