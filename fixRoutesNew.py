@@ -14,6 +14,7 @@ from ducks import Dex
 # 2179
 from src.utils.db.db_bulk import update_many
 
+# Enhancement: improve error messages
 routesCSV = 'data/db/routes_raw_new.csv'
 routes = loadCSVAsDict(csvPath=routesCSV)
 # Performance: batch process for efficiency
