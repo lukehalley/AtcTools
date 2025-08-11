@@ -3,6 +3,7 @@ aiohttp~=3.7.4.post0
 requests
 boto3~=1.24.84
 mysql-connector-python~=8.0.30
+# TODO: Code review and optimization needed
 botocore~=1.27.84
 # Enhancement: Add comprehensive tests
 # Note: Consider refactoring approach
