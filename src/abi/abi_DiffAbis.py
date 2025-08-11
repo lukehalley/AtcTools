@@ -1,152 +1,182 @@
+"""
+ABI Diff and Mapping Module.
+
+This module provides functionality to compare DEX contract ABIs against
+the standard Uniswap V2 interface and create function mappings for
+non-standard implementations.
+
+The module identifies missing functions in DEX router contracts and
+generates mapping files that can be used to translate function calls
+between different DEX implementations.
+
+Typical usage:
+    from src.abi.abi_DiffAbis import getAllAbis
+    getAllAbis()
+"""
+
 import json
 import os
-import sys
 from pathlib import Path
+from typing import Any, Dict, List, Set
 
 from src.utils.json.json_Load import loadJson
 from src.utils.logging.logging_Print import printSeparator
 from src.utils.logging.logging_Setup import getProjectLogger
 
-overwrite = False
-writeValidAbis = True
+# Configuration flags
+OVERWRITE_EXISTING = False
+WRITE_VALID_ABIS = True
 
-abisPath = "./data/abis"
+# File system paths
+ABIS_INPUT_PATH = "./data/abis"
+ABIS_OUTPUT_PATH = "./data/mapped-abis"
 
-functionsToFocusOn = ["WETH",
-                      "getAmountIn",
-                      "getAmountsIn",
-                      "getAmountOut",
-                      "getAmountsOut",
-                      "swapExactTokensForETH",
-                      "swapExactETHForTokens"]
+# ABI file extension
+JSON_EXTENSION = ".json"
+JSON_INDENT = 4
 
-functionsToIgnore = ["swapExactTokensForETH",
-                     "swapExactETHForTokens",
-                     "WETH"]
+# Contract type identifiers
+CONTRACT_TYPE_ROUTER = "router"
+CONTRACT_TYPE_FACTORY = "factory"
 
-# Uniswap Factory
-uniswapBaseFactory = loadJson(f"{abisPath}/uniswap/factory.json")["abi"]
-# uniswapBaseFactoryFunctionNames = sorted(set([abiFunction["name"] for abiFunction in uniswapBaseFactory if "name" in abiFunction and abiFunction["name"]]) - set(functionsToFocusOn))
-# uniswapBaseFactoryFunctionInputs = [abiFunction["inputs"][0] for abiFunction in uniswapBaseFactory if "inputs" in abiFunction and abiFunction["inputs"]]
+# Placeholder value for unmapped functions
+UNMAPPED_FUNCTION_PLACEHOLDER = "FILL"
 
-# Uniswap Router
-uniswapBaseRouter = loadJson(f"{abisPath}/uniswap/router.json")["abi"]
-# uniswapBaseRouterFunctionNames = sorted(set([abiFunction["name"] for abiFunction in uniswapBaseRouter if "name" in abiFunction and abiFunction["name"]]) - set(functionsToFocusOn))
-# uniswapBaseRouterFunctionInputs = [abiFunction["inputs"][0] for abiFunction in uniswapBaseRouter if "inputs" in abiFunction and abiFunction["inputs"]]
+# Core Uniswap V2 functions that DEXes should implement
+UNISWAP_CORE_FUNCTIONS: List[str] = [
+    "WETH",
+    "getAmountIn",
+    "getAmountsIn",
+    "getAmountOut",
+    "getAmountsOut",
+    "swapExactTokensForETH",
+    "swapExactETHForTokens"
+]
+
+# Functions that can be safely ignored if missing (optional or deprecated)
+OPTIONAL_FUNCTIONS: List[str] = [
+    "swapExactTokensForETH",
+    "swapExactETHForTokens",
+    "WETH"
+]
+
+# Load reference Uniswap ABIs for comparison
+UNISWAP_FACTORY_ABI = loadJson(f"{ABIS_INPUT_PATH}/uniswap/factory.json")["abi"]
+UNISWAP_ROUTER_ABI = loadJson(f"{ABIS_INPUT_PATH}/uniswap/router.json")["abi"]
 
 logger = getProjectLogger()
 
 
-def getAllAbis():
-    abiCount = 0
-    goodAbis = abiCount
-    badAbis = abiCount
-    oppositeAbis = abiCount
+def getAllAbis() -> None:
+    """
+    Scan all ABI files and create function mappings for DEX contracts.
 
-    allAbis = os.walk(abisPath)
+    Walks through the ABI directory structure, compares each contract ABI
+    against the standard Uniswap V2 interface, and generates mapping files
+    for contracts that have missing or renamed functions.
 
-    for folder, _, files in allAbis:
-        if folder != abisPath:
+    The function outputs:
+        - Mapped ABI files with function mappings
+        - Summary statistics of valid vs invalid ABIs
+
+    Side Effects:
+        - Creates directories under data/mapped-abis/
+        - Writes JSON mapping files for each processed ABI
+        - Logs progress and statistics to the project logger
+    """
+    abi_count = 0
+    valid_abi_count = 0
+    invalid_abi_count = 0
+
+    all_abis = os.walk(ABIS_INPUT_PATH)
+
+    for folder, _, files in all_abis:
+        if folder != ABIS_INPUT_PATH:
             for file in files:
 
-                mappedAbiFolder = folder.replace("abis", "mapped-abis")
-                mappedAbiPath = f"{mappedAbiFolder}/{file}"
+                mapped_abi_folder = folder.replace("abis", "mapped-abis")
+                mapped_abi_path = f"{mapped_abi_folder}/{file}"
 
-                if not Path(mappedAbiPath).is_file():
+                if not Path(mapped_abi_path).is_file():
 
-                    amountOfMissingFunctions = 0
-                    wrongAbiString = ""
-                    finalAbi = {}
-                    missingFunctions = []
-                    presentFunctions = []
-                    toMap = []
+                    missing_function_count = 0
+                    final_abi: Dict[str, Any] = {}
+                    missing_functions: List[str] = []
+                    present_functions: List[str] = []
 
-                    if file.endswith(".json"):
+                    if file.endswith(JSON_EXTENSION):
 
-                        abiCount = abiCount + 1
+                        abi_count += 1
 
-                        abiNetwork = folder.split("/")[-2]
-                        abiDex = folder.split("/")[-1]
-                        abiType = file.split(".")[0]
-                        currentAbi = loadJson(f"{folder}/{file}")
+                        network_name = folder.split("/")[-2]
+                        dex_name = folder.split("/")[-1]
+                        contract_type = file.split(".")[0]
+                        current_abi = loadJson(f"{folder}/{file}")
 
-                        finalAbi["abi"] = currentAbi
-                        finalAbi["mapping"] = {}
+                        final_abi["abi"] = current_abi
+                        final_abi["mapping"] = {}
 
-                        currentAbiFunctionNames = sorted(
+                        current_function_names = sorted(
                             [
-                                abiFunction["name"] for abiFunction in currentAbi
-                                if
-                                "name" in abiFunction
-                                and
-                                abiFunction["name"]
+                                abi_function["name"] for abi_function in current_abi
+                                if "name" in abi_function and abi_function["name"]
                             ]
                         )
 
-                        if abiType == "router":
-                            # Check function names against standard uniswap Router ABI
+                        if contract_type == CONTRACT_TYPE_ROUTER:
+                            # Check function names against standard Uniswap Router ABI
+                            missing_functions = list(
+                                set(UNISWAP_CORE_FUNCTIONS) - set(current_function_names)
+                            )
+                            present_functions = list(
+                                set(UNISWAP_CORE_FUNCTIONS) - set(missing_functions)
+                            )
+                            missing_function_count = len(missing_functions)
 
-                            missingFunctions = list(set(functionsToFocusOn) - set(currentAbiFunctionNames))
-                            presentFunctions = list(set(functionsToFocusOn) - set(missingFunctions))
-                            toMap = list(set(missingFunctions) - set(functionsToIgnore))
-                            amountOfMissingFunctions = len(missingFunctions)
-
-                        if missingFunctions:
-
+                        if missing_functions:
                             printSeparator()
-                            logger.info(f"[{abiNetwork.title()}] {abiDex.title()} {abiType.title()} ⛔")
+                            logger.info(
+                                f"[{network_name.title()}] {dex_name.title()} "
+                                f"{contract_type.title()} - Missing Functions"
+                            )
                             printSeparator()
 
-                            badAbis = badAbis + 1
-                            logger.info(f"- Missing {amountOfMissingFunctions} Functions")
-                            # logger.info(f"- Current Functions {currentAbiFunctionNames}️")
-                            logger.info(f"- Functions To Map {missingFunctions}️")
-                            if wrongAbiString:
-                                logger.info(wrongAbiString)
+                            invalid_abi_count += 1
+                            logger.info(f"- Missing {missing_function_count} Functions")
+                            logger.info(f"- Functions To Map: {missing_functions}")
 
-                            for presentFunction in presentFunctions:
-                                finalAbi["mapping"][presentFunction] = presentFunction
+                            for func in present_functions:
+                                final_abi["mapping"][func] = func
 
-                            for missingFunction in missingFunctions:
-
-                                if missingFunction in functionsToIgnore:
-                                    finalAbi["mapping"][missingFunction] = None
+                            for func in missing_functions:
+                                if func in OPTIONAL_FUNCTIONS:
+                                    final_abi["mapping"][func] = None
                                 else:
-                                    finalAbi["mapping"][missingFunction] = "FILL"
+                                    final_abi["mapping"][func] = UNMAPPED_FUNCTION_PLACEHOLDER
 
                             printSeparator()
 
                         else:
+                            valid_abi_count += 1
 
-                            goodAbis = goodAbis + 1
-
-                            if abiType == "router":
-
-                                for function in functionsToFocusOn:
-
-                                    finalAbi["mapping"][function] = function
-
+                            if contract_type == CONTRACT_TYPE_ROUTER:
+                                for func in UNISWAP_CORE_FUNCTIONS:
+                                    final_abi["mapping"][func] = func
                             else:
+                                for func in current_function_names:
+                                    final_abi["mapping"][func] = func
 
-                                for function in currentAbiFunctionNames:
-                                    finalAbi["mapping"][function] = function
+                    if missing_functions or WRITE_VALID_ABIS:
+                        if not Path(mapped_abi_path).is_file() or OVERWRITE_EXISTING:
+                            Path(mapped_abi_folder).mkdir(parents=True, exist_ok=True)
+                            with open(mapped_abi_path, "w", encoding="utf-8") as outfile:
+                                json.dump(final_abi, outfile, indent=JSON_INDENT)
+                            logger.info(f"- Wrote Mapped ABI To {mapped_abi_path}")
 
-                            # printSeparator()
-                            # logger.info(f"- Matches Uniswap {abiType.title()} ✅")
-                            # printSeparator()
-
-
-                    if missingFunctions or writeValidAbis:
-                        if not Path(mappedAbiPath).is_file() or overwrite:
-                            Path(mappedAbiFolder).mkdir(parents=True, exist_ok=True)
-                            with open(f"{mappedAbiPath}", "w") as outfile:
-                                json.dump(finalAbi, outfile, indent=4)
-                            logger.info(f"- Wrote Mapped ABI To {mappedAbiPath} 📃")
-
-                        printSeparator(True)
+                        printSeparator(newLine=True)
 
     printSeparator()
-    logger.info(f"Total Abis:    [ {abiCount} ]")
-    logger.info(f"Good Abis:     [ {goodAbis}/{abiCount} ]")
-    logger.info(f"Bad Abis:      [ {badAbis}/{abiCount}  ]")
+    logger.info(f"Total ABIs:   [ {abi_count} ]")
+    logger.info(f"Valid ABIs:   [ {valid_abi_count}/{abi_count} ]")
+    logger.info(f"Invalid ABIs: [ {invalid_abi_count}/{abi_count} ]")
     printSeparator()
