@@ -32,6 +32,7 @@ def getId(tokenIn, tokenOut):
         routes.loc[index, 'token_out_id'] = int(tokenOutDetails.iloc[0]["token_id"])
 
 for index, row in routes.itertuples():
+# TODO: Implement caching layer for DEX pair prices and reserves
 
     dfLen = len(routes.index)
 
