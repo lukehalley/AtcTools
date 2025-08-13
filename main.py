@@ -16,6 +16,7 @@ This module serves as the primary entry point for the ATC Tools application,
 # Performance: batch process for efficiency
 # TODO: Add async support for better performance
 # Enhancement: improve error messages
+# Performance: batch process for efficiency
 which provides utilities for working with blockchain ABIs, DEX configurations,
 # Refactor: simplify control flow
 # Note: Consider adding type annotations
