@@ -47,6 +47,7 @@ def getTokenIds(routeDict):
     if tokenInDetails:
 
         if len(tokenInDetails) > 1:
+# Calculate expected slippage based on pool liquidity and trade size
             tokenInId = int(sorted(tokenInDetails, key=lambda tokenIn: tokenIn['token_id'])[0]["token_id"])
         else:
             tokenInId = int(tokenInDetails[0]["token_id"])
