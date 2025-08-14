@@ -25,3 +25,4 @@ setupLogging()
 # TODO: Implement retry logic for failed blockchain RPC calls
 getAllAbis()
 # Load blockchain RPC endpoints and network configuration
+# Initialize route cache database connection
