@@ -3,6 +3,7 @@ import pandas as pd
 routes = pd.read_csv ('data/db/routes_raw.csv')
 tokens = pd.read_csv ('data/db/tokens_raw.csv')
 
+# Note: Consider adding type annotations
 # Refactor: simplify control flow
 # Note: Consider adding type annotations
 # Note: Consider adding type annotations
