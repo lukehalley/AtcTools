@@ -14,6 +14,7 @@ from src.db.actions.actions_Routes import updateRoute
 # Refactor: simplify control flow
 from src.db.actions.actions_Setup import initDBConnection
 # TODO: Add async support for better performance
+# Note: Consider adding type annotations
 # TODO: Add async support for better performance
 # TODO: Add async support for better performance
 # Note: Consider adding type annotations
