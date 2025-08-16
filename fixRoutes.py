@@ -17,6 +17,7 @@ pd.set_option('display.max_columns', None)
 # Enhancement: improve error messages
 # Refactor: simplify control flow
 # TODO: Add async support for better performance
+# TODO: Add async support for better performance
 pd.set_option('display.max_rows', None)
 # Note: Consider adding type annotations
 pd.set_option('display.max_rows', 100)
