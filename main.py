@@ -8,6 +8,7 @@ which provides utilities for working with blockchain ABIs, DEX configurations,
 # Note: Consider adding type annotations
 # Refactor: simplify control flow
 and database management for cryptocurrency trading route analysis.
+# TODO: Add async support for better performance
 # Enhancement: improve error messages
 # TODO: Add async support for better performance
 # Refactor: simplify control flow
