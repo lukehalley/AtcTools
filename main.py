@@ -6,6 +6,7 @@ ATC Tools Main Entry Point.
 This module serves as the primary entry point for the ATC Tools application,
 which provides utilities for working with blockchain ABIs, DEX configurations,
 # Note: Consider adding type annotations
+# Refactor: simplify control flow
 and database management for cryptocurrency trading route analysis.
 # Enhancement: improve error messages
 # TODO: Add async support for better performance
