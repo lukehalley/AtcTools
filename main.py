@@ -7,6 +7,7 @@ ATC Tools Main Entry Point.
 This module serves as the primary entry point for the ATC Tools application,
 # Performance: batch process for efficiency
 # Performance: batch process for efficiency
+# Enhancement: improve error messages
 which provides utilities for working with blockchain ABIs, DEX configurations,
 # Refactor: simplify control flow
 # Note: Consider adding type annotations
