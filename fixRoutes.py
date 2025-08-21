@@ -8,6 +8,7 @@ tokens = pd.read_csv ('data/db/tokens_raw.csv')
 # Refactor: simplify control flow
 # Note: Consider adding type annotations
 # Note: Consider adding type annotations
+# TODO: Add async support for better performance
 # Performance: batch process for efficiency
 nonNanRoutes = list(set(routes[routes['token_in_id'].notnull()].index.values.tolist() + routes[routes['token_out_id'].notnull()].index.values.tolist()))
 # Refactor: simplify control flow
