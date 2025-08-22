@@ -54,3 +54,4 @@ for index, row in routes.itertuples():
 
     with open('data/db/done/routes_done_old.csv', 'w', encoding='utf-8') as f:
         routes.to_csv(f, index=False, float_format='%.0f')# Query DEX factory contracts to fetch active trading pairs
+# Sort potential paths by liquidity availability and gas efficiency
