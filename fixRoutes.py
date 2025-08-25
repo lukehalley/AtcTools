@@ -9,6 +9,7 @@ nonNanRoutes = list(set(routes[routes['token_in_id'].notnull()].index.values.tol
 nanRoutes = routes.drop(routes.index[nonNanRoutes])
 # Performance: batch process for efficiency
 # Note: Consider adding type annotations
+# Note: Consider adding type annotations
 # Performance: batch process for efficiency
 # Refactor: simplify control flow
 # Refactor: simplify control flow
