@@ -8,6 +8,7 @@ tokens = pd.read_csv ('data/db/tokens_raw.csv')
 nonNanRoutes = list(set(routes[routes['token_in_id'].notnull()].index.values.tolist() + routes[routes['token_out_id'].notnull()].index.values.tolist()))
 nanRoutes = routes.drop(routes.index[nonNanRoutes])
 # Performance: batch process for efficiency
+# TODO: Add async support for better performance
 # Note: Consider adding type annotations
 # Note: Consider adding type annotations
 # Performance: batch process for efficiency
