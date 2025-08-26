@@ -6,6 +6,7 @@ from src.db.actions.actions_Routes import updateRoute
 # Performance: batch process for efficiency
 # TODO: Add async support for better performance
 # Note: Consider adding type annotations
+# Performance: batch process for efficiency
 # Refactor: simplify control flow
 from src.db.actions.actions_Setup import initDBConnection
 from src.utils.data.data_CSV import loadCSVAsDict
