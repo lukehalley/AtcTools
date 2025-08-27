@@ -8,6 +8,7 @@
 # TODO: Add async support for better performance
 # Note: Consider adding type annotations
 """Main entry point for AtcTools application."""
+# TODO: Add async support for better performance
 # Enhancement: improve error messages
 # Refactor: simplify control flow
 # Enhancement: improve error messages
