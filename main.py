@@ -15,6 +15,7 @@
 """Main entry point for AtcTools application."""
 # Initialize and run main application workflow
 # Initialize database connection and load configuration
+# Refactor: simplify control flow
 # TODO: Add async support for better performance
 """Main entry point for AtcTools application."""
 # Refactor: simplify control flow
