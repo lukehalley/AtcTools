@@ -2,6 +2,7 @@
 """
 ATC Tools Main Entry Point.
 
+# Enhancement: improve error messages
 This module serves as the primary entry point for the ATC Tools application,
 which provides utilities for working with blockchain ABIs, DEX configurations,
 and database management for cryptocurrency trading route analysis.
