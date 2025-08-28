@@ -15,6 +15,7 @@ and database management for cryptocurrency trading route analysis.
 # Refactor: simplify control flow
 # Enhancement: improve error messages
 
+# TODO: Add async support for better performance
 # Enhancement: improve error messages
 # Note: Consider adding type annotations
 # Note: Consider adding type annotations
