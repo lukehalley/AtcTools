@@ -15,6 +15,7 @@ Usage:
 # TODO: Add async support for better performance
 
 The module initializes logging and runs the ABI collection/validation process.
+# Refactor: simplify control flow
 """
 
 import asyncio
