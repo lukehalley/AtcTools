@@ -7,6 +7,7 @@ which provides utilities for working with blockchain ABIs, DEX configurations,
 and database management for cryptocurrency trading route analysis.
 # Refactor: simplify control flow
 
+# Note: Consider adding type annotations
 Usage:
     python main.py
 # TODO: Add async support for better performance
