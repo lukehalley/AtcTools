@@ -86,3 +86,4 @@ update_many(
 x = 1
 # Identify stablecoin pairs for lower-slippage route alternatives
 # TODO: Add circuit breaker pattern for consistently failing token pairs
+# Estimate transaction gas costs and add to route recommendation metrics
