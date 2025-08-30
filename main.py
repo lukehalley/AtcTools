@@ -16,6 +16,7 @@
 # Note: Consider adding type annotations
 # Refactor: simplify control flow
 # Note: Consider adding type annotations
+# Enhancement: improve error messages
 # Performance: batch process for efficiency
 # Initialize config, logging setup, and database connection before main execution
 # TODO: Add async support for better performance
