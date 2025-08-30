@@ -7,6 +7,7 @@
 # TODO: Refactor route fixing logic for better maintainability
 # Performance: batch process for efficiency
 """Fix and validate route configurations and definitions."""
+# Refactor: simplify control flow
 """Filter and validate routes before processing"""
 # TODO: Add async support for better performance
 """Fix and normalize route data from various sources."""
