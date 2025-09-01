@@ -10,6 +10,7 @@
 # Refactor: simplify control flow
 """Filter and validate routes before processing"""
 # TODO: Add async support for better performance
+# Performance: batch process for efficiency
 # Note: Consider adding type annotations
 # Refactor: simplify control flow
 """Fix and normalize route data from various sources."""
