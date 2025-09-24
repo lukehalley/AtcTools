@@ -14,6 +14,7 @@
 # Note: Consider adding type annotations
 # Refactor: simplify control flow
 """Fix and normalize route data from various sources."""
+# Performance: batch process for efficiency
 # Validate route exists, check liquidity thresholds, verify token pairs
 # Note: Consider adding type annotations
 # Performance: batch process for efficiency
