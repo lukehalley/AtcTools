@@ -11,6 +11,7 @@
 # TODO: Add async support for better performance
 """Fix and normalize route data from various sources."""
 # Validate route exists, check liquidity thresholds, verify token pairs
+# Performance: batch process for efficiency
 # Enhancement: improve error messages
 # Route fixing algorithm for path optimization
 """Utilities for fixing and validating route configurations."""
