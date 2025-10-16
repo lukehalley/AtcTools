@@ -1,14 +1,37 @@
-import json, boto3
-import os
+"""
+AWS S3 Utilities Module.
 
+This module provides helper functions for interacting with AWS S3,
+including JSON upload, path checking, and listing stored objects.
+"""
+
+import json
+import os
+from typing import Any, Dict, List
+
+import boto3
 from botocore.errorfactory import ClientError
 
 from src.utils.logging.logging_Setup import getProjectLogger
 
 logger = getProjectLogger()
 
-def prepareJsonForS3(data):
-    return json.dumps(data, indent=4)
+# Default JSON indent for S3 uploads
+DEFAULT_JSON_INDENT = 4
+
+
+def prepareJsonForS3(data: Dict[str, Any], indent: int = DEFAULT_JSON_INDENT) -> str:
+    """
+    Serialize data to a JSON string formatted for S3 storage.
+
+    Args:
+        data: Dictionary data to serialize.
+        indent: Number of spaces for indentation. Defaults to 4.
+
+    Returns:
+        str: JSON formatted string.
+    """
+    return json.dumps(data, indent=indent)
 
 def checkIfPathExistsInS3(bucketName, s3Path):
     s3 = boto3.client('s3')
