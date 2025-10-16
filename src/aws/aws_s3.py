@@ -51,15 +51,24 @@ def checkIfPathExistsInS3(bucketName: str, s3Path: str) -> bool:
     except ClientError:
         return False
 
-def writeJSONToS3(jsonData, s3Path):
+def writeJSONToS3(jsonData: Dict[str, Any], s3Path: str) -> bool:
+    """
+    Upload JSON data to an S3 bucket.
 
+    Args:
+        jsonData: Dictionary data to upload as JSON.
+        s3Path: Target key path within the S3 bucket.
+
+    Returns:
+        True if upload was successful, False otherwise.
+
+    Note:
+        Requires S3_BUCKET environment variable to be set.
+    """
     s3 = boto3.client('s3')
     s3Bucket = os.getenv("S3_BUCKET")
-    fileUploaded = False
 
-    dataString = prepareJsonForS3(
-        data=jsonData
-    )
+    dataString = prepareJsonForS3(data=jsonData)
 
     result = s3.put_object(
         Body=dataString,
@@ -67,13 +76,12 @@ def writeJSONToS3(jsonData, s3Path):
         Key=s3Path
     )
 
-    uploadSuccessfull = result["ResponseMetadata"]["HTTPStatusCode"] == 200
+    upload_successful = result["ResponseMetadata"]["HTTPStatusCode"] == 200
 
-    if uploadSuccessfull:
-        logger.info(f"Uploaded {s3Path} to {s3Bucket}\n")
-        fileUploaded = True
+    if upload_successful:
+        logger.info(f"Uploaded {s3Path} to {s3Bucket}")
 
-    return fileUploaded
+    return upload_successful
 
 def getCurrentStoredABIs(networkName):
 
