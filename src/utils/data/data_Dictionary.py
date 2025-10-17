@@ -72,3 +72,43 @@ def replaceAllValuesInDict(text: str, dictionary: Dict[str, str]) -> str:
         'hi earth'
     """
     return functools.reduce(lambda a, kv: a.replace(*kv), dictionary.items(), text)
+
+
+def mergeDicts(*dicts: Dict[Any, Any]) -> Dict[Any, Any]:
+    """
+    Merge multiple dictionaries into a single dictionary.
+
+    Later dictionaries take precedence for duplicate keys.
+
+    Args:
+        *dicts: Variable number of dictionaries to merge.
+
+    Returns:
+        Dict[Any, Any]: Merged dictionary containing all key-value pairs.
+
+    Example:
+        >>> mergeDicts({'a': 1}, {'b': 2}, {'a': 3})
+        {'a': 3, 'b': 2}
+    """
+    result: Dict[Any, Any] = {}
+    for d in dicts:
+        result.update(d)
+    return result
+
+
+def filterDictByKeys(dictionary: Dict[Any, Any], keys: list) -> Dict[Any, Any]:
+    """
+    Filter a dictionary to only include specified keys.
+
+    Args:
+        dictionary: The source dictionary to filter.
+        keys: List of keys to keep in the result.
+
+    Returns:
+        Dict[Any, Any]: Dictionary containing only the specified keys.
+
+    Example:
+        >>> filterDictByKeys({'a': 1, 'b': 2, 'c': 3}, ['a', 'c'])
+        {'a': 1, 'c': 3}
+    """
+    return {k: v for k, v in dictionary.items() if k in keys}
