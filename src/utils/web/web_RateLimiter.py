@@ -55,10 +55,19 @@ class RateLimiter:
         self.semaphore = asyncio.Semaphore(concurrency_limit)
 
     async def add_token(self) -> None:
+        """Add a token to the queue to represent a pending request."""
         await self.tokens_queue.put(1)
-        return None
 
-    async def consume_tokens(self):
+    async def consume_tokens(self) -> None:
+        """
+        Background task that consumes tokens at the configured rate.
+
+        Runs continuously until cancelled, removing tokens from the queue
+        at intervals determined by the rate limit.
+
+        Raises:
+            asyncio.CancelledError: When the task is cancelled.
+        """
         try:
             consumption_rate = 1 / self.rate_limit
             last_consumption_time = 0
@@ -77,21 +86,36 @@ class RateLimiter:
                     total_tokens
                 )
 
-                for i in range(0, tokens_to_consume):
+                for _ in range(tokens_to_consume):
                     self.tokens_queue.get_nowait()
 
                 last_consumption_time = time.monotonic()
-
                 await asyncio.sleep(consumption_rate)
+
         except asyncio.CancelledError:
-            # you can ignore the error here and deal with closing this task later but this is not advised
             raise
-        except Exception as e:
-            # do something with the error and re-raise
+        except Exception:
             raise
 
     @staticmethod
-    def get_tokens_amount_to_consume(consumption_rate, current_consumption_time, last_consumption_time, total_tokens):
+    def get_tokens_amount_to_consume(
+        consumption_rate: float,
+        current_consumption_time: float,
+        last_consumption_time: float,
+        total_tokens: int
+    ) -> int:
+        """
+        Calculate the number of tokens to consume based on elapsed time.
+
+        Args:
+            consumption_rate: Time interval between token consumptions.
+            current_consumption_time: Current monotonic time.
+            last_consumption_time: Time of last consumption.
+            total_tokens: Total tokens currently in queue.
+
+        Returns:
+            int: Number of tokens to consume this cycle.
+        """
         time_from_last_consumption = current_consumption_time - last_consumption_time
         calculated_tokens_to_consume = math.floor(time_from_last_consumption / consumption_rate)
         tokens_to_consume = min(total_tokens, calculated_tokens_to_consume)
@@ -99,6 +123,15 @@ class RateLimiter:
 
     @asynccontextmanager
     async def throttle(self):
+        """
+        Context manager for rate-limited operations.
+
+        Acquires semaphore and adds token before yielding,
+        then releases semaphore when done.
+
+        Yields:
+            None: Control is yielded for the rate-limited operation.
+        """
         await self.semaphore.acquire()
         await self.add_token()
         try:
@@ -106,24 +139,29 @@ class RateLimiter:
         finally:
             self.semaphore.release()
 
-    async def __aenter__(self):
+    async def __aenter__(self) -> "RateLimiter":
+        """Async context manager entry."""
         return self
 
-    async def __aexit__(self, exc_type, exc_val, exc_tb):
-        if exc_type:
-            # log error here and safely close the class
-            pass
-
+    async def __aexit__(
+        self,
+        exc_type: Optional[type],
+        exc_val: Optional[BaseException],
+        exc_tb: Optional[object]
+    ) -> None:
+        """Async context manager exit with cleanup."""
         await self.close()
 
     async def close(self) -> None:
+        """
+        Clean up resources and cancel background tasks.
+
+        Cancels the token consumer task if it's still running
+        and waits for it to complete.
+        """
         if self.tokens_consumer_task and not self.tokens_consumer_task.cancelled():
             try:
                 self.tokens_consumer_task.cancel()
                 await self.tokens_consumer_task
             except asyncio.CancelledError:
-                # we ignore this exception but it is good to log and signal the task was cancelled
                 pass
-            except Exception as e:
-                # log here and deal with the exception
-                raise
