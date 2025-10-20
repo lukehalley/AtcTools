@@ -56,3 +56,38 @@ def updateDexFactoryS3Path(
     logger.debug(f"Updated DEX {dexDbId}: {column_name} = {s3Path}")
     return cursor.lastrowid
 
+
+def updateDexStatus(
+    dbConnection: MySQLConnection,
+    dexDbId: int,
+    isActive: bool
+) -> int:
+    """
+    Update the active status of a DEX.
+
+    Args:
+        dbConnection: Active database connection.
+        dexDbId: The database ID of the DEX to update.
+        isActive: Whether the DEX should be marked as active.
+
+    Returns:
+        int: The last row ID affected by the update.
+    """
+    cursor = getCursor(dbConnection=dbConnection)
+    status_value = 1 if isActive else 0
+
+    query = (
+        f"UPDATE dexs "
+        f"SET is_active = {status_value} "
+        f"WHERE dex_id = {dexDbId};"
+    )
+
+    executeWriteQuery(
+        dbConnection=dbConnection,
+        cursor=cursor,
+        query=query
+    )
+
+    status_text = "active" if isActive else "inactive"
+    logger.info(f"Updated DEX {dexDbId} status to {status_text}")
+    return cursor.lastrowid
