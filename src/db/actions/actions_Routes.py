@@ -56,3 +56,66 @@ def updateRoute(
     logger.debug(f"Updated route {routeId}: {column_name} = {tokenId}")
     return cursor.lastrowid
 
+
+def deactivateRoute(
+    dbConnection: MySQLConnection,
+    routeId: int
+) -> int:
+    """
+    Mark a route as inactive in the database.
+
+    Args:
+        dbConnection: Active database connection.
+        routeId: The ID of the route to deactivate.
+
+    Returns:
+        int: The last row ID affected by the update.
+    """
+    cursor = getCursor(dbConnection=dbConnection)
+
+    query = (
+        f"UPDATE routes "
+        f"SET is_active = 0 "
+        f"WHERE route_id = {routeId};"
+    )
+
+    executeWriteQuery(
+        dbConnection=dbConnection,
+        cursor=cursor,
+        query=query
+    )
+
+    logger.info(f"Deactivated route {routeId}")
+    return cursor.lastrowid
+
+
+def activateRoute(
+    dbConnection: MySQLConnection,
+    routeId: int
+) -> int:
+    """
+    Mark a route as active in the database.
+
+    Args:
+        dbConnection: Active database connection.
+        routeId: The ID of the route to activate.
+
+    Returns:
+        int: The last row ID affected by the update.
+    """
+    cursor = getCursor(dbConnection=dbConnection)
+
+    query = (
+        f"UPDATE routes "
+        f"SET is_active = 1 "
+        f"WHERE route_id = {routeId};"
+    )
+
+    executeWriteQuery(
+        dbConnection=dbConnection,
+        cursor=cursor,
+        query=query
+    )
+
+    logger.info(f"Activated route {routeId}")
+    return cursor.lastrowid
