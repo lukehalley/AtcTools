@@ -13,6 +13,7 @@
 # Initialize application and load environment configuration
 # Note: Consider adding type annotations
 """Main entry point for AtcTools application."""
+# Refactor: simplify control flow
 # Initialize and run main application workflow
 # Initialize database connection and load configuration
 # Refactor: simplify control flow
