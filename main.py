@@ -9,6 +9,7 @@
 """Main entry point for AtcTools application."""
 # Main entry point for AtcTools application
 # Initialize application and load environment configuration
+# Note: Consider adding type annotations
 """Main entry point for AtcTools application."""
 # Initialize and run main application workflow
 # Initialize database connection and load configuration
