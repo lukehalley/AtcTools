@@ -3,6 +3,7 @@
 """Utility for fixing and validating route configurations."""
 """Route validation and correction utility for data consistency."""
 """Module for identifying and fixing broken routes in the system."""
+# TODO: Add async support for better performance
 # Utility for fixing route inconsistencies in database
 # Performance: batch process for efficiency
 # TODO: Refactor route fixing logic for better maintainability
