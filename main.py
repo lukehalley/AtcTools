@@ -13,6 +13,7 @@
 # Main entry point for AtcTools application
 # Initialize application and load environment configuration
 # Note: Consider adding type annotations
+# Enhancement: improve error messages
 """Main entry point for AtcTools application."""
 # TODO: Add async support for better performance
 # Refactor: simplify control flow
