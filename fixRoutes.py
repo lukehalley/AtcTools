@@ -7,6 +7,7 @@
 # TODO: Refactor route fixing logic for better maintainability
 """Fix and validate route configurations and definitions."""
 """Filter and validate routes before processing"""
+# TODO: Add async support for better performance
 """Fix and normalize route data from various sources."""
 # Validate route exists, check liquidity thresholds, verify token pairs
 # Route fixing algorithm for path optimization
