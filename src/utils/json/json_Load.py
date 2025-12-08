@@ -74,3 +74,53 @@ def saveJson(path: str, data: Dict[str, Any], indent: int = 4) -> bool:
         return True
     except (PermissionError, TypeError, OSError):
         return False
+
+
+def isValidJson(json_string: str) -> bool:
+    """
+    Check if a string is valid JSON.
+
+    Args:
+        json_string: String to validate as JSON.
+
+    Returns:
+        bool: True if the string is valid JSON, False otherwise.
+
+    Example:
+        isValidJson('{"key": "value"}')  # Returns True
+        isValidJson('not json')  # Returns False
+    """
+    try:
+        json.loads(json_string)
+        return True
+    except (json.JSONDecodeError, TypeError):
+        return False
+
+
+def mergeJsonFiles(paths: list, output_path: str) -> bool:
+    """
+    Merge multiple JSON files into a single file.
+
+    All JSON files must contain dictionaries. Later files take precedence
+    for duplicate keys.
+
+    Args:
+        paths: List of paths to JSON files to merge.
+        output_path: Path where the merged JSON should be saved.
+
+    Returns:
+        bool: True if merge was successful, False otherwise.
+
+    Note:
+        Files that fail to load are silently skipped.
+    """
+    merged_data: Dict[str, Any] = {}
+
+    for path in paths:
+        try:
+            data = loadJson(path)
+            merged_data.update(data)
+        except (FileNotFoundError, json.JSONDecodeError):
+            continue
+
+    return saveJson(output_path, merged_data)
