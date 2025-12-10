@@ -94,3 +94,63 @@ def getCSVHeaders(csvPath: str) -> List[str]:
     with open(csvPath, 'r', encoding='utf-8') as f:
         reader = csv.reader(f)
         return next(reader)
+
+
+def writeCSV(
+    csvPath: str,
+    data: List[Dict[str, str]],
+    headers: Optional[List[str]] = None
+) -> bool:
+    """
+    Write data to a CSV file.
+
+    Args:
+        csvPath: Path where the CSV file should be saved.
+        data: List of dictionaries to write as CSV rows.
+        headers: Optional list of column headers. If None, uses keys from first row.
+
+    Returns:
+        bool: True if write was successful, False otherwise.
+
+    Example:
+        data = [{"name": "Alice", "age": "30"}, {"name": "Bob", "age": "25"}]
+        writeCSV("output.csv", data)
+    """
+    if not data:
+        return False
+
+    try:
+        # Determine headers from first row if not provided
+        fieldnames = headers if headers else list(data[0].keys())
+
+        with open(csvPath, 'w', encoding='utf-8', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(data)
+
+        return True
+    except (PermissionError, OSError, csv.Error):
+        return False
+
+
+def filterCSVByColumn(
+    csvPath: str,
+    column: str,
+    value: str
+) -> List[Dict[str, str]]:
+    """
+    Filter CSV rows by a specific column value.
+
+    Args:
+        csvPath: Path to the CSV file.
+        column: Column name to filter by.
+        value: Value to match in the specified column.
+
+    Returns:
+        List[Dict[str, str]]: List of matching rows as dictionaries.
+
+    Raises:
+        FileNotFoundError: If the CSV file does not exist.
+    """
+    data = loadCSVAsDict(csvPath)
+    return [row for row in data if row.get(column) == value]
