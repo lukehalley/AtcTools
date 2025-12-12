@@ -3,7 +3,28 @@ Logging Setup Module.
 
 This module provides centralized logging configuration for the ATC Tools project.
 It sets up a consistent logging format across all modules.
+
+Exports:
+    - setupLogging: Initialize and configure the project logger
+    - getProjectLogger: Retrieve the configured logger instance
+    - getLogLevel: Get logging level from environment
+    - LOGGER_NAME: Default logger name constant
+
+Example:
+    from src.utils.logging.logging_Setup import setupLogging, getProjectLogger
+
+    setupLogging()
+    logger = getProjectLogger()
+    logger.info("Application started")
 """
+
+__all__ = [
+    "setupLogging",
+    "getProjectLogger",
+    "getLogLevel",
+    "LOGGER_NAME",
+    "DEFAULT_LOG_FORMAT",
+]
 
 import logging
 import os

@@ -7,7 +7,7 @@ including JSON upload, path checking, and listing stored objects.
 
 import json
 import os
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 import boto3
 from botocore.errorfactory import ClientError
@@ -18,6 +18,14 @@ logger = getProjectLogger()
 
 # Default JSON indent for S3 uploads
 DEFAULT_JSON_INDENT = 4
+
+# Environment variable names for S3 configuration
+ENV_S3_BUCKET = "S3_BUCKET"
+ENV_S3_REGION = "AWS_DEFAULT_REGION"
+
+# HTTP status codes for S3 operations
+HTTP_STATUS_OK = 200
+HTTP_STATUS_NO_CONTENT = 204
 
 
 def prepareJsonForS3(data: Dict[str, Any], indent: int = DEFAULT_JSON_INDENT) -> str:
@@ -66,7 +74,11 @@ def writeJSONToS3(jsonData: Dict[str, Any], s3Path: str) -> bool:
         Requires S3_BUCKET environment variable to be set.
     """
     s3 = boto3.client('s3')
-    s3Bucket = os.getenv("S3_BUCKET")
+    s3Bucket = os.getenv(ENV_S3_BUCKET)
+
+    if not s3Bucket:
+        logger.error("S3_BUCKET environment variable is not set")
+        return False
 
     dataString = prepareJsonForS3(data=jsonData)
 
@@ -76,7 +88,7 @@ def writeJSONToS3(jsonData: Dict[str, Any], s3Path: str) -> bool:
         Key=s3Path
     )
 
-    upload_successful = result["ResponseMetadata"]["HTTPStatusCode"] == 200
+    upload_successful = result["ResponseMetadata"]["HTTPStatusCode"] == HTTP_STATUS_OK
 
     if upload_successful:
         logger.info(f"Uploaded {s3Path} to {s3Bucket}")
@@ -97,7 +109,12 @@ def getCurrentStoredABIs(networkName: str) -> List[str]:
         Requires S3_BUCKET environment variable to be set.
     """
     s3 = boto3.resource('s3')
-    bucket_name = os.getenv("S3_BUCKET")
+    bucket_name = os.getenv(ENV_S3_BUCKET)
+
+    if not bucket_name:
+        logger.warning("S3_BUCKET environment variable is not set")
+        return []
+
     s3_bucket = s3.Bucket(bucket_name)
 
     prefix = f'{networkName}/'
@@ -105,4 +122,36 @@ def getCurrentStoredABIs(networkName: str) -> List[str]:
 
     return [s3_object.key for s3_object in filtered_objects if s3_object.size]
 
+
+def deleteFromS3(s3Path: str) -> bool:
+    """
+    Delete an object from S3 bucket.
+
+    Args:
+        s3Path: Key path of the object to delete.
+
+    Returns:
+        bool: True if deletion was successful, False otherwise.
+
+    Note:
+        Requires S3_BUCKET environment variable to be set.
+    """
+    s3 = boto3.client('s3')
+    s3Bucket = os.getenv(ENV_S3_BUCKET)
+
+    if not s3Bucket:
+        logger.error("S3_BUCKET environment variable is not set")
+        return False
+
+    try:
+        result = s3.delete_object(Bucket=s3Bucket, Key=s3Path)
+        delete_successful = result["ResponseMetadata"]["HTTPStatusCode"] == HTTP_STATUS_NO_CONTENT
+
+        if delete_successful:
+            logger.info(f"Deleted {s3Path} from {s3Bucket}")
+
+        return delete_successful
+    except ClientError as e:
+        logger.error(f"Failed to delete {s3Path}: {e}")
+        return False
 
