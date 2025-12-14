@@ -3,10 +3,17 @@ Environment Detection Module.
 
 This module provides utility functions for detecting the runtime environment,
 such as Docker containers, AWS, and headless mode.
+
+Exports:
+    - checkIsDocker: Detect Docker container environment
+    - checkIsAWS: Detect AWS infrastructure
+    - checkHeadless: Determine if headless mode is active
+    - getEnvironmentSummary: Get summary of detected environment
+    - getRequiredEnvVar: Get required environment variable with error handling
 """
 
 import os
-from typing import Optional
+from typing import Dict, Optional
 
 from src.utils.data.data_Booleans import strToBool
 
@@ -14,6 +21,11 @@ from src.utils.data.data_Booleans import strToBool
 ENV_RUNNING_IN_DOCKER = "RUNNING_IN_DOCKER"
 ENV_AWS_DEFAULT_REGION = "AWS_DEFAULT_REGION"
 ENV_FORCE_HEADLESS = "FORCE_HEADLESS"
+
+# Environment type constants
+ENV_TYPE_LOCAL = "local"
+ENV_TYPE_DOCKER = "docker"
+ENV_TYPE_AWS = "aws"
 
 
 def checkIsDocker() -> bool:
@@ -55,3 +67,53 @@ def checkHeadless() -> bool:
     if force_headless is None:
         return False
     return strToBool(force_headless)
+
+
+def getEnvironmentSummary() -> Dict[str, bool]:
+    """
+    Get a summary of the current environment configuration.
+
+    Returns:
+        Dict[str, bool]: Dictionary with environment flags:
+            - is_docker: Whether running in Docker
+            - is_aws: Whether running on AWS
+            - is_headless: Whether headless mode is active
+    """
+    return {
+        "is_docker": checkIsDocker(),
+        "is_aws": checkIsAWS(),
+        "is_headless": checkHeadless(),
+    }
+
+
+def getEnvironmentType() -> str:
+    """
+    Determine the primary environment type.
+
+    Returns:
+        str: Environment type constant (ENV_TYPE_AWS, ENV_TYPE_DOCKER, or ENV_TYPE_LOCAL).
+    """
+    if checkIsAWS():
+        return ENV_TYPE_AWS
+    if checkIsDocker():
+        return ENV_TYPE_DOCKER
+    return ENV_TYPE_LOCAL
+
+
+def getRequiredEnvVar(var_name: str) -> str:
+    """
+    Get a required environment variable or raise an error.
+
+    Args:
+        var_name: Name of the environment variable.
+
+    Returns:
+        str: Value of the environment variable.
+
+    Raises:
+        EnvironmentError: If the variable is not set.
+    """
+    value = os.getenv(var_name)
+    if value is None:
+        raise EnvironmentError(f"Required environment variable '{var_name}' is not set")
+    return value

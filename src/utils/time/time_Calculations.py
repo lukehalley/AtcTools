@@ -1,8 +1,32 @@
 """
 Time Calculation Utilities.
 
-This module provides helper functions for time formatting and calculations.
+This module provides helper functions for time formatting, parsing,
+validation, and duration calculations.
+
+Exports:
+    - getCurrentDateTime: Get current timestamp as formatted string
+    - getMinSecString: Format seconds as minutes:seconds string
+    - getTimestampFromString: Parse date string to Unix timestamp
+    - formatDuration: Format seconds to human-readable duration
+    - isValidDateFormat: Validate date string against format
+
+Example:
+    from src.utils.time.time_Calculations import formatDuration, getCurrentDateTime
+
+    print(f"Started at: {getCurrentDateTime()}")
+    elapsed = formatDuration(3725)  # "1h 2m 5s"
 """
+
+__all__ = [
+    "getCurrentDateTime",
+    "getMinSecString",
+    "getTimestampFromString",
+    "formatDuration",
+    "isValidDateFormat",
+    "DEFAULT_DATE_FORMAT",
+    "DEFAULT_TIMER_FORMAT",
+]
 
 from datetime import datetime
 import os
