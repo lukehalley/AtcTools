@@ -3,6 +3,13 @@ General Database Query Module.
 
 This module provides generic database query functions for checking database
 state and retrieving rows by various conditions.
+
+Exports:
+    - checkDbInitialised: Verify database setup
+    - getRowByValue: Retrieve single row by conditions
+    - checkIfRowExistsByValue: Check row existence
+    - getRowCount: Count rows in a table
+    - getAllRows: Retrieve all rows from a table
 """
 
 from typing import Any, Dict, List, Optional
@@ -12,6 +19,13 @@ from src.db.actions.actions_General import executeReadQuery
 from src.utils.logging.logging_Setup import getProjectLogger
 
 logger = getProjectLogger()
+
+# Database schema name
+DB_SCHEMA_NAME = "atc"
+
+# Required tables for database initialization check
+REQUIRED_TABLES = ("dexs", "pairs", "tokens", "networks")
+MIN_REQUIRED_TABLE_COUNT = 4
 
 
 def checkDbInitialised(dbConnection: Any) -> bool:
@@ -27,11 +41,13 @@ def checkDbInitialised(dbConnection: Any) -> bool:
     Returns:
         True if all required tables exist, False otherwise.
     """
-    query = "" \
-            "SELECT COUNT(*) AS tableCount " \
-            "FROM `information_schema`.`tables` " \
-            "WHERE `TABLE_SCHEMA` = 'atc' AND " \
-            "`TABLE_NAME` IN ('dexs', 'pairs', 'tokens', 'networks')"
+    tables_list = ", ".join(f"'{t}'" for t in REQUIRED_TABLES)
+    query = (
+        f"SELECT COUNT(*) AS tableCount "
+        f"FROM `information_schema`.`tables` "
+        f"WHERE `TABLE_SCHEMA` = '{DB_SCHEMA_NAME}' AND "
+        f"`TABLE_NAME` IN ({tables_list})"
+    )
 
     cursor = getCursor(dbConnection=dbConnection)
 
@@ -40,7 +56,7 @@ def checkDbInitialised(dbConnection: Any) -> bool:
         query=query
     )
 
-    return tableResults[0]["tableCount"] >= 4
+    return tableResults[0]["tableCount"] >= MIN_REQUIRED_TABLE_COUNT
 
 
 def getRowByValue(
@@ -124,4 +140,55 @@ def checkIfRowExistsByValue(
     )
 
     return bool(results[0]["count"])
+
+
+def getRowCount(dbConnection: Any, table: str) -> int:
+    """
+    Get the total number of rows in a table.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+        table: Name of the database table to count.
+
+    Returns:
+        int: Total number of rows in the table.
+    """
+    cursor = getCursor(dbConnection=dbConnection)
+
+    query = f"SELECT COUNT(*) AS row_count FROM {table}"
+
+    results = executeReadQuery(
+        cursor=cursor,
+        query=query
+    )
+
+    return results[0]["row_count"]
+
+
+def getAllRows(
+    dbConnection: Any,
+    table: str,
+    limit: Optional[int] = None
+) -> List[Dict[str, Any]]:
+    """
+    Retrieve all rows from a table with optional limit.
+
+    Args:
+        dbConnection: Active MySQL database connection.
+        table: Name of the database table to query.
+        limit: Maximum number of rows to return. None for all rows.
+
+    Returns:
+        List[Dict[str, Any]]: List of dictionaries representing table rows.
+    """
+    cursor = getCursor(dbConnection=dbConnection)
+
+    query = f"SELECT * FROM {table}"
+    if limit is not None:
+        query += f" LIMIT {limit}"
+
+    return executeReadQuery(
+        cursor=cursor,
+        query=query
+    )
 
