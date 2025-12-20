@@ -78,7 +78,7 @@ def executeScriptsFromFile(dbConnection: MySQLConnection, filename: str) -> int:
         sql_content = sql_file.read()
 
     cursor = getCursor(dbConnection=dbConnection)
-    sql_commands = sql_content.split(';')
+    sql_commands = sql_content.split(SQL_COMMAND_DELIMITER)
 
     successful_commands = 0
     for command in sql_commands:
@@ -94,3 +94,57 @@ def executeScriptsFromFile(dbConnection: MySQLConnection, filename: str) -> int:
 
     logger.info(f"Executed {successful_commands}/{len(sql_commands)} SQL commands")
     return successful_commands
+
+
+def executeBatchWriteQuery(
+    dbConnection: MySQLConnection,
+    cursor: MySQLCursor,
+    query: str,
+    data: List[Tuple[Any, ...]]
+) -> int:
+    """
+    Execute a batch write query with multiple data rows.
+
+    Uses executemany for efficient batch inserts/updates.
+
+    Args:
+        dbConnection: Active database connection.
+        cursor: Database cursor to execute the query.
+        query: SQL query string with placeholders.
+        data: List of tuples containing values for each row.
+
+    Returns:
+        int: Number of rows affected.
+    """
+    cursor.executemany(query, data)
+    dbConnection.commit()
+    return cursor.rowcount
+
+
+def executeTransactionQueries(
+    dbConnection: MySQLConnection,
+    cursor: MySQLCursor,
+    queries: List[str]
+) -> bool:
+    """
+    Execute multiple queries within a single transaction.
+
+    All queries succeed or all fail (atomic operation).
+
+    Args:
+        dbConnection: Active database connection.
+        cursor: Database cursor to execute the queries.
+        queries: List of SQL query strings to execute.
+
+    Returns:
+        bool: True if all queries succeeded, False otherwise.
+    """
+    try:
+        for query in queries:
+            cursor.execute(query)
+        dbConnection.commit()
+        return True
+    except OperationalError as err:
+        dbConnection.rollback()
+        logger.error(f"Transaction failed, rolling back: {err}")
+        return False
