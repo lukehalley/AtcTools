@@ -8,7 +8,30 @@ Exports:
     - RateLimiter: Async rate limiter class using token bucket algorithm
     - createRateLimiterFromEnv: Factory function to create limiter from env vars
     - RateLimiterStats: Statistics container for rate limiter metrics
+    - ENV_RATE_LIMIT: Environment variable name for rate limit
+    - ENV_CONCURRENCY_LIMIT: Environment variable name for concurrency
+
+Example:
+    from src.utils.web.web_RateLimiter import RateLimiter, createRateLimiterFromEnv
+
+    # Using environment configuration
+    limiter = createRateLimiterFromEnv()
+
+    # Or with explicit configuration
+    async with RateLimiter(rate_limit=5, concurrency_limit=10) as limiter:
+        async with limiter.throttle():
+            response = await fetch_data()
 """
+
+__all__ = [
+    "RateLimiter",
+    "RateLimiterStats",
+    "createRateLimiterFromEnv",
+    "ENV_RATE_LIMIT",
+    "ENV_CONCURRENCY_LIMIT",
+    "DEFAULT_RATE_LIMIT",
+    "DEFAULT_CONCURRENCY_LIMIT",
+]
 
 import asyncio
 import math
